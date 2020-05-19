@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{342F6ACB-809A-477F-A38B-EB7CF0CDC4FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EksamensProjekt20</RootNamespace>
+    <AssemblyName>EksamensProjekt20</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Characters\Archibald.cs" />
+    <Compile Include="Characters\Blob.cs" />
+    <Compile Include="Buffs\Buff.cs" />
+    <Compile Include="Buffs\Burn.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Buffs\DamageBuffFlat.cs" />
+    <Compile Include="Buffs\DamageBuffScale.cs" />
+    <Compile Include="Buffs\DamageReduction.cs" />
+    <Compile Include="Characters\DamnedSoul.cs" />
+    <Compile Include="MapNManager\ClimbablePlatform.cs" />
+    <Compile Include="MapNManager\Database.cs" />
+    <Compile Include="Characters\Doodles.cs" />
+    <Compile Include="Characters\Doomer.cs" />
+    <Compile Include="Characters\Enemy.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="MapNManager\FallingPlatform.cs" />
+    <Compile Include="MapNManager\GameManager.cs" />
+    <Compile Include="GameObject.cs" />
+    <Compile Include="Buffs\HealthBuff.cs" />
+    <Compile Include="Characters\Hunter.cs" />
+    <Compile Include="Characters\Impastor.cs" />
+    <Compile Include="Characters\PlasmaGhost.cs" />
+    <Compile Include="Characters\Player.cs" />
+    <Compile Include="MapNManager\NormalPlatform.cs" />
+    <Compile Include="MapNManager\SlowingPlatform.cs" />
+    <Compile Include="MapNManager\TriggerPlatform.cs" />
+    <Compile Include="PrimaryAttacks\ArchersCliche.cs" />
+    <Compile Include="PrimaryAttacks\DaggerSlash.cs" />
+    <Compile Include="PrimaryAttacks\DoomerBoom.cs" />
+    <Compile Include="PrimaryAttacks\Fireball.cs" />
+    <Compile Include="PrimaryAttacks\Judgement.cs" />
+    <Compile Include="PrimaryAttacks\MasterfulCasting.cs" />
+    <Compile Include="PrimaryAttacks\PrimaryAttack.cs" />
+    <Compile Include="PrimaryAttacks\Scream.cs" />
+    <Compile Include="PrimaryAttacks\Spit.cs" />
+    <Compile Include="PrimaryAttacks\Swipe.cs" />
+    <Compile Include="PrimaryAttacks\SwordSlash.cs" />
+    <Compile Include="PrimaryAttacks\Timber.cs" />
+    <Compile Include="PrimaryAttacks\Transformation.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Projectile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Characters\Rogue.cs" />
+    <Compile Include="Buffs\SavingGrace.cs" />
+    <Compile Include="ScreenObject.cs" />
+    <Compile Include="Buffs\Snare.cs" />
+    <Compile Include="Buffs\SpeedBuff.cs" />
+    <Compile Include="SecondaryAttacks\ChangeElement.cs" />
+    <Compile Include="SecondaryAttacks\Cloak.cs" />
+    <Compile Include="SecondaryAttacks\FireInTheHole.cs" />
+    <Compile Include="SecondaryAttacks\Multishot.cs" />
+    <Compile Include="SecondaryAttacks\Rage.cs" />
+    <Compile Include="SecondaryAttacks\SecondaryAttack.cs" />
+    <Compile Include="MapNManager\Stage.cs" />
+    <Compile Include="MapNManager\StageBlock.cs" />
+    <Compile Include="Buffs\Stealth.cs" />
+    <Compile Include="Buffs\Stun.cs" />
+    <Compile Include="MapNManager\TerrainPiece.cs" />
+    <Compile Include="Spells\AllOrNothing.cs" />
+    <Compile Include="Spells\Blink.cs" />
+    <Compile Include="Spells\BullRush.cs" />
+    <Compile Include="Spells\DaggerToss.cs" />
+    <Compile Include="Spells\DemonSpeed.cs" />
+    <Compile Include="Spells\DodgeRoll.cs" />
+    <Compile Include="Spells\DoomerRage.cs" />
+    <Compile Include="Spells\DoubleTime.cs" />
+    <Compile Include="Spells\ElementalShape.cs" />
+    <Compile Include="Spells\Enhance.cs" />
+    <Compile Include="Spells\ExplosiveDemons.cs" />
+    <Compile Include="Spells\FirePillar.cs" />
+    <Compile Include="Spells\Frenzy.cs" />
+    <Compile Include="Spells\FrostGrenade.cs" />
+    <Compile Include="Spells\GatlingGun.cs" />
+    <Compile Include="Spells\HeavyArmament.cs" />
+    <Compile Include="Spells\LavaForm.cs" />
+    <Compile Include="Spells\Parry.cs" />
+    <Compile Include="Spells\RapidFire.cs" />
+    <Compile Include="Spells\Ricochet.cs" />
+    <Compile Include="Spells\SavingGraceSpell.cs" />
+    <Compile Include="Spells\ShadowStep.cs" />
+    <Compile Include="Spells\SmokeScreen.cs" />
+    <Compile Include="Spells\Spell.cs" />
+    <Compile Include="Spells\SpellSlinger.cs" />
+    <Compile Include="Spells\TacticalDodge.cs" />
+    <Compile Include="Spells\TailWhip.cs" />
+    <Compile Include="Spells\ThunderSlam.cs" />
+    <Compile Include="Spells\Trickery.cs" />
+    <Compile Include="Spells\TrollWarfare.cs" />
+    <Compile Include="Spells\VenomousStrike.cs" />
+    <Compile Include="Spells\WomboCombo.cs" />
+    <Compile Include="UI\ButtonEffect.cs" />
+    <Compile Include="UI\UIButton.cs" />
+    <Compile Include="UI\UIElement.cs" />
+    <Compile Include="UI\UIStatic.cs" />
+    <Compile Include="Buffs\Venom.cs" />
+    <Compile Include="Characters\Warrior.cs" />
+    <Compile Include="Characters\Ziggy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
