@@ -8,6 +8,8 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class ArchersCliche : PrimaryAttack
     {
+        private Projectile projectile = new Projectile();
+
         public override void Attack()
         {
 
