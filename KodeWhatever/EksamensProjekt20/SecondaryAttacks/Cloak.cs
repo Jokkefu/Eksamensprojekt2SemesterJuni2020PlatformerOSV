@@ -8,5 +8,6 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class Cloak : SecondaryAttack
     {
+        //Rasmus Er Gay
     }
 }
