@@ -8,5 +8,9 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Scream : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
     }
 }

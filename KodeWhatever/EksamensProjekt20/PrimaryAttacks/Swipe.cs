@@ -8,5 +8,10 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Swipe : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
+
     }
 }

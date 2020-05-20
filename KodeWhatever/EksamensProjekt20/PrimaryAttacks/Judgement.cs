@@ -8,6 +8,9 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Judgement : PrimaryAttack
     {
+        public override void Attack()
+        {
 
+        }
     }
 }

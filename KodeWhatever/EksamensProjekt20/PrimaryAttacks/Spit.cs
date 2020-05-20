@@ -8,5 +8,9 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Spit : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
     }
 }

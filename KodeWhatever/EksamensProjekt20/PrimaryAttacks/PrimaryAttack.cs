@@ -8,5 +8,17 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class PrimaryAttack
     {
+        public int power;
+        public float speed;
+
+        public virtual void Attack()
+        {
+
+        }
+
+        public virtual void HoldAttack()
+        {
+
+        }
     }
 }
