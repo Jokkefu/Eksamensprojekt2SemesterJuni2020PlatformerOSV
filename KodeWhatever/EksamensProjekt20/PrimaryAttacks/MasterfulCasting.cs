@@ -8,5 +8,14 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class MasterfulCasting : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
+
+        public override void HoldAttack()
+        {
+
+        }
     }
 }

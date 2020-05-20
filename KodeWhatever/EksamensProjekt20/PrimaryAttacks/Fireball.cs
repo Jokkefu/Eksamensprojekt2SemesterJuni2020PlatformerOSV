@@ -8,5 +8,9 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Fireball : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
     }
 }

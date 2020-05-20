@@ -8,5 +8,14 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class SwordSlash : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
+
+        public override void HoldAttack()
+        {
+
+        }
     }
 }
