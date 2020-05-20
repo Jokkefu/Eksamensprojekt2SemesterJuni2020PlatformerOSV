@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 namespace EksamensProjekt20
 {
     /// <summary>
-    /// This is the main type for your game.
+    /// This is the main type for your game. Which lau's pc cant handle
     /// </summary>
     public class Game1 : Game
     {
