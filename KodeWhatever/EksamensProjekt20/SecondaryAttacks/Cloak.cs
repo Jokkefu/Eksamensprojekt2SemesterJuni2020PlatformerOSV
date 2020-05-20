@@ -8,6 +8,13 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class Cloak : SecondaryAttack
     {
-        //Rasmus Er Gay
+        public override void Attack()
+        {
+            base.Attack();
+        }
+        public override void HoldAttack()
+        {
+            base.HoldAttack();
+        }
     }
 }
