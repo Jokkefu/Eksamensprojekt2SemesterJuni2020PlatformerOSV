@@ -8,5 +8,17 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class Multishot : SecondaryAttack
     {
+        Projectile projectile = new Projectile();
+
+        public override void Attack()
+        {
+            base.Attack();
+        }
+        public override void HoldAttack()
+        {
+            base.HoldAttack();
+        }
+
+
     }
 }

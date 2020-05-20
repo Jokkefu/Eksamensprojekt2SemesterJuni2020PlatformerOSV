@@ -8,5 +8,13 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class Cloak : SecondaryAttack
     {
+        public override void Attack()
+        {
+            base.Attack();
+        }
+        public override void HoldAttack()
+        {
+            base.HoldAttack();
+        }
     }
 }

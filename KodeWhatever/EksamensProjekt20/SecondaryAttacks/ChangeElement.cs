@@ -8,5 +8,14 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class ChangeElement : SecondaryAttack
     {
+        public override void Attack()
+        {
+            base.Attack();
+        }
+        public override void HoldAttack()
+        {
+            base.HoldAttack();
+        }
+
     }
 }
