@@ -8,5 +8,10 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Timber : PrimaryAttack
     {
+        public override void Attack()
+        {
+
+        }
+
     }
 }
