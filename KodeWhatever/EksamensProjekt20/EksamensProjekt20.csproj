@@ -115,6 +115,7 @@
     <Compile Include="Spells\FrostGrenade.cs" />
     <Compile Include="Spells\GatlingGun.cs" />
     <Compile Include="Spells\HeavyArmament.cs" />
+    <Compile Include="Spells\HookShot.cs" />
     <Compile Include="Spells\LavaForm.cs" />
     <Compile Include="Spells\Parry.cs" />
     <Compile Include="Spells\RapidFire.cs" />
