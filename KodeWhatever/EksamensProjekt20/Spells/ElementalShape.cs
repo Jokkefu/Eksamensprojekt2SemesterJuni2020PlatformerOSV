@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class ElementalShape : Spell
     {
+        public ElementalShape()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

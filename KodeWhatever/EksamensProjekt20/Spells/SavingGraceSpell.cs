@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class SavingGraceSpell : Spell
     {
+        public SavingGraceSpell()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

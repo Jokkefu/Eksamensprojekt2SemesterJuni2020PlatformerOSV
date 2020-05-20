@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class SmokeScreen : Spell
     {
+        public SmokeScreen()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

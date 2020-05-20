@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class ThunderSlam : Spell
     {
+        public ThunderSlam()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

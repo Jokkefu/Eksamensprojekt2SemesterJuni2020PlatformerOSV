@@ -8,5 +8,14 @@ namespace EksamensProjekt20.Spells
 {
     class Ricochet : Spell
     {
+        private Projectile projectile = new Projectile();
+        public Ricochet()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class FirePillar : Spell
     {
+        public FirePillar()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

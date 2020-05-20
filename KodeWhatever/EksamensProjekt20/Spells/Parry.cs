@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class Parry : Spell
     {
+        public Parry()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

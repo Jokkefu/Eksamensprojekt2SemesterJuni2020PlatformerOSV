@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class VenomousStrike : Spell
     {
+        public VenomousStrike()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

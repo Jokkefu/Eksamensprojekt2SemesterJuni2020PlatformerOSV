@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class LavaForm : Spell
     {
+        public LavaForm()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

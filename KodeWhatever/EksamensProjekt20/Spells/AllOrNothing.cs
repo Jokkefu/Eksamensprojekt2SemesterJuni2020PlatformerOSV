@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class AllOrNothing : Spell
     {
+        public AllOrNothing()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

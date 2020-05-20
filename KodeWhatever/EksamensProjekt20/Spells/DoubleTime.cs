@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class DoubleTime : Spell
     {
+        public DoubleTime()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

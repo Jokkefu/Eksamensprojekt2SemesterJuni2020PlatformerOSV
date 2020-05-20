@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class ExplosiveDemons : Spell
     {
+        public ExplosiveDemons()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

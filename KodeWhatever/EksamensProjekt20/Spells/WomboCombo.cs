@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class WomboCombo : Spell
     {
+        public WomboCombo()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

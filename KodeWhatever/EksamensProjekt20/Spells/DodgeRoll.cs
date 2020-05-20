@@ -8,5 +8,14 @@ namespace EksamensProjekt20.Spells
 {
     class DodgeRoll : Spell
     {
+        public DodgeRoll()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
+
 }

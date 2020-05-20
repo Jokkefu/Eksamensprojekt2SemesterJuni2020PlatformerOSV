@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class DemonSpeed : Spell
     {
+        public DemonSpeed()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

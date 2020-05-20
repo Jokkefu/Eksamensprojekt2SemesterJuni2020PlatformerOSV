@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class RapidFire : Spell
     {
+        public RapidFire()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

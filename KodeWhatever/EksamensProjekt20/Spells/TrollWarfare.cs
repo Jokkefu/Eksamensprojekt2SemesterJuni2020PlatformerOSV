@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class TrollWarfare : Spell
     {
+        public TrollWarfare()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

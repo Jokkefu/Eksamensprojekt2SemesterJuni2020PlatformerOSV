@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class Frenzy : Spell
     {
+        public Frenzy()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

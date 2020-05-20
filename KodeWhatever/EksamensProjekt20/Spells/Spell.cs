@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Spells
 {
     class Spell
     {
+        public virtual void Spellcast()
+        {
+
+        }
     }
 }

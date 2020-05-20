@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class Blink : Spell
     {
+        public Blink()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class TailWhip : Spell
     {
+        public TailWhip()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class Enhance : Spell
     {
+        public Enhance()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

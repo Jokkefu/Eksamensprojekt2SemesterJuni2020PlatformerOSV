@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class GatlingGun : Spell
     {
+        public GatlingGun()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

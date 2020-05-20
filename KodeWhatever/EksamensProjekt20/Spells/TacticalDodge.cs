@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class TacticalDodge : Spell
     {
+        public TacticalDodge()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

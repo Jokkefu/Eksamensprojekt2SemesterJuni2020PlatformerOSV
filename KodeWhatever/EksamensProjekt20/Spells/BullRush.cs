@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class BullRush : Spell
     {
+        public BullRush()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

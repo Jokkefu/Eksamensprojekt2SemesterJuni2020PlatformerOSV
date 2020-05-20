@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.Spells
 {
-    class HeavyArmament : Spell
+    class HookShot : Spell
     {
-        public HeavyArmament()
+        private Projectile projectile = new Projectile();
+        public HookShot()
         {
 
         }

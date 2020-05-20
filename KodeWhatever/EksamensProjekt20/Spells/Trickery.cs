@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class Trickery : Spell
     {
+        public Trickery()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class ShadowStep : Spell
     {
+        public ShadowStep()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

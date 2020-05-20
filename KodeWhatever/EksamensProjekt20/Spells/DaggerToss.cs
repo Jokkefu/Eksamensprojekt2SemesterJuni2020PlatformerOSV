@@ -8,5 +8,14 @@ namespace EksamensProjekt20.Spells
 {
     class DaggerToss : Spell
     {
+        private Projectile projectile = new Projectile();
+        public DaggerToss()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }

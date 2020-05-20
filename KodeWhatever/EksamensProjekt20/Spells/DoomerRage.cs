@@ -8,5 +8,13 @@ namespace EksamensProjekt20.Spells
 {
     class DoomerRage : Spell
     {
+        public DoomerRage()
+        {
+
+        }
+        public override void Spellcast()
+        {
+
+        }
     }
 }
