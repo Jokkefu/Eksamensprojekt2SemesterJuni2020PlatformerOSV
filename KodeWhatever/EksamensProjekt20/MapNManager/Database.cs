@@ -8,5 +8,16 @@ namespace EksamensProjekt20.MapNManager
 {
     class Database
     {
+        public SQLite database;
+
+        public void InsertData()
+        {
+
+        }
+        public void ShowLeaderBoard()
+        {
+
+        }
+
     }
 }

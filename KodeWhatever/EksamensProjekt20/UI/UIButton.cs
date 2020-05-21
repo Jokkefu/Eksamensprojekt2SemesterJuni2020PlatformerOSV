@@ -8,5 +8,12 @@ namespace EksamensProjekt20.UI
 {
     class UIButton : UIElement
     {
+        private ButtonEffect buttonEffect;
+
+        public void OnClick()
+        {
+
+        }
+
     }
 }

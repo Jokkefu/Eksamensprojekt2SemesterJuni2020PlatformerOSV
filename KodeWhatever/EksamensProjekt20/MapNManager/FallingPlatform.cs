@@ -8,5 +8,6 @@ namespace EksamensProjekt20.MapNManager
 {
     class FallingPlatform : TerrainPiece
     {
+        private double delay;
     }
 }

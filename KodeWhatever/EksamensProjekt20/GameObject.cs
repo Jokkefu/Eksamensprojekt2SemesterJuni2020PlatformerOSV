@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,11 @@ namespace EksamensProjekt20
 {
     class GameObject
     {
+        public Vector2 gamePosition;
+
+        public bool CollisionDetection()
+        {
+            
+        }
     }
 }
