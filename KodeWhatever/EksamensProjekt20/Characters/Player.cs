@@ -8,5 +8,6 @@ namespace EksamensProjekt20.Characters
 {
     class Player : Character
     {
+        protected SecondaryAttacks secondaryAttacks;
     }
 }

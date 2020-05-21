@@ -8,5 +8,7 @@ namespace EksamensProjekt20.MapNManager
 {
     class StageBlock
     {
+        public List<TerrainPiece> terrainSetup = new List<TerrainPiece>;
+
     }
 }

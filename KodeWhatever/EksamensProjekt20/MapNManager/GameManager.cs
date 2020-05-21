@@ -8,5 +8,24 @@ namespace EksamensProjekt20.MapNManager
 {
     class GameManager
     {
+        private Database database;
+        public Stage currentStage;
+
+        public void EndRun()
+        {
+
+        }
+        public void NextStage()
+        {
+
+        }
+        public void StartGame()
+        {
+
+        }
+        public void OutOfBoundsCheck()
+        {
+
+        }
     }
 }
