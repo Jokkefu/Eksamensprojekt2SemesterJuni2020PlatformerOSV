@@ -8,5 +8,6 @@ namespace EksamensProjekt20.MapNManager
 {
     class TerrainPiece : GameObject
     {
+
     }
 }

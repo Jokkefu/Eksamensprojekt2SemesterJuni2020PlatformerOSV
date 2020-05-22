@@ -19,9 +19,10 @@ namespace EksamensProjekt20
         {
 
         }
-        public void Draw()
+        public void Draw(SpriteBatch spriteBatch)
         {
-
+            spriteRect = new Rectangle((int)screenPosition.X, (int)screenPosition.Y, (int)spriteSize.X, (int)spriteSize.Y);
+            spriteBatch.Draw(sprite, spriteRect, Color.White);
         }
 
     }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -12,7 +13,7 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        public static ContentManager contMan;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -28,7 +29,7 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            contMan = Content;
             base.Initialize();
         }
 
