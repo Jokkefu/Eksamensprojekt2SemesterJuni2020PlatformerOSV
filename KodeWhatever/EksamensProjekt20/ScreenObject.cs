@@ -15,11 +15,11 @@ namespace EksamensProjekt20
         protected Vector2 spriteSize;
         public Rectangle spriteRect;
 
-        public void Update()
+        public virtual void Update()
         {
 
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteRect = new Rectangle((int)screenPosition.X, (int)screenPosition.Y, (int)spriteSize.X, (int)spriteSize.Y);
             spriteBatch.Draw(sprite, spriteRect, Color.White);
