@@ -16,9 +16,10 @@ namespace EksamensProjekt20.Characters
         protected PrimaryAttack primaryAttack;
         protected Spell[] spells = new Spell[0];
         //protected List<Item> items = new List<Item>();
-        protected List<Buff> buffs = new List<Buff>();
+        public List<Buff> buffs = new List<Buff>();
         public float movementSpeed;
-        public float health;
+        public float currentHealth;
+        public float maxHealth;
         public int ammo;
         public int damage;
         protected Thread thread;
@@ -48,7 +49,7 @@ namespace EksamensProjekt20.Characters
         {
             foreach(Buff buff in buffs)
             {
-                buff.Update(this, gameTime);
+                buff.Update(gameTime);
             }
             base.Update(gameTime);
         }

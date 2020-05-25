@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class Snare : Buff
     {
+        public Snare(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

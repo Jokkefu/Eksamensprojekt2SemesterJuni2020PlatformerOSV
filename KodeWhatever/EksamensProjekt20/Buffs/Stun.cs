@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class Stun : Buff
     {
+        public Stun(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

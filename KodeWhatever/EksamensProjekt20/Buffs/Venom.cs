@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class Venom : Buff
     {
+        public Venom(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

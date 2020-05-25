@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class SpeedBuff : Buff
     {
+        public SpeedBuff(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

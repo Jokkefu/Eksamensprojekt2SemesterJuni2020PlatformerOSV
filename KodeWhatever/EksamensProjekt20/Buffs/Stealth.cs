@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class Stealth : Buff
     {
+        public Stealth(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

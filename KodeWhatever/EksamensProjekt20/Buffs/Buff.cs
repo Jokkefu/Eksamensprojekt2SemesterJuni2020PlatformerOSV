@@ -11,9 +11,13 @@ namespace EksamensProjekt20.Buffs
 {
     class Buff : ScreenObject
     {
-        protected int efficiency;
+        protected float efficiency;
         protected double duration;
-
+        public Buff(float potency, float duration)
+        {
+            efficiency = potency;
+            this.duration = duration;
+        }
         public virtual void ApplyEffect (Character target)
         {
 

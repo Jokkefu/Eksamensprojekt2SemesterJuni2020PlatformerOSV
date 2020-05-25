@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,10 @@ namespace EksamensProjekt20.Spells
 {
     class Spell
     {
-        public virtual void Spellcast()
+        
+
+
+        public virtual void Spellcast(Character source)
         {
 
         }

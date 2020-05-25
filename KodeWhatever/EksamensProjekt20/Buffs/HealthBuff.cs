@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class HealthBuff : Buff
     {
+        public HealthBuff(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

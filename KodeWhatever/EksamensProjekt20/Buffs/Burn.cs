@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class Burn : Buff
     {
+        public Burn(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }

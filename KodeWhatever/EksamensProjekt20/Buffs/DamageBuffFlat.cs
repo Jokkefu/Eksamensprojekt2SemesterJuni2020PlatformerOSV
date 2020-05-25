@@ -8,5 +8,9 @@ namespace EksamensProjekt20.Buffs
 {
     class DamageBuffFlat : Buff
     {
+        public DamageBuffFlat(float potency, float duration) : base(potency, duration)
+        {
+
+        }
     }
 }
