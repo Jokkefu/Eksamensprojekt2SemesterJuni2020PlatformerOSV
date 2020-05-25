@@ -20,7 +20,7 @@ namespace EksamensProjekt20.CommandPattern
 
         public void Execute(Player player)
         {
-
+            player.Move(velocity);
         }
     }
 }

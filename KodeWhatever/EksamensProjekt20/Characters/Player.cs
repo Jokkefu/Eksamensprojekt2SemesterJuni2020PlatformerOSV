@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.SecondaryAttacks;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace EksamensProjekt20.Characters
         public Player(Vector2 startPos)
         {
             this.position = startPos;
+            this.speed = 100;
         }
 
         public void Move(Vector2 velocity)
@@ -31,9 +33,9 @@ namespace EksamensProjekt20.Characters
             }
 
             velocity *= speed;
-            position += (velocity)
+            position += (velocity * Game1.DeltaTime);
         }
 
-        protected SecondaryAttacks secondaryAttacks;
+        protected SecondaryAttack secondaryAttack;
     }
 }

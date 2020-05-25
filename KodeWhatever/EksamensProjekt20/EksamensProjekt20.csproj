@@ -52,7 +52,11 @@
     <Compile Include="Characters\DamnedSoul.cs" />
     <Compile Include="CommandPattern\ICommand.cs" />
     <Compile Include="CommandPattern\InputHandler.cs" />
+    <Compile Include="CommandPattern\JumpCommand.cs" />
     <Compile Include="CommandPattern\MoveCommand.cs" />
+    <Compile Include="CommandPattern\PrimaryAttackCommand.cs" />
+    <Compile Include="CommandPattern\SecondaryAttackCommand.cs" />
+    <Compile Include="CommandPattern\SpellCommand.cs" />
     <Compile Include="MapNManager\ClimbablePlatform.cs" />
     <Compile Include="MapNManager\Database.cs" />
     <Compile Include="Characters\Doodles.cs" />
