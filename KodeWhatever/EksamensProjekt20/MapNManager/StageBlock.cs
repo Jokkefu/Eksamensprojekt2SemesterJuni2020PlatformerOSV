@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace EksamensProjekt20.MapNManager
 {
@@ -24,6 +25,13 @@ namespace EksamensProjekt20.MapNManager
                     terrainSetup.Add(new TriggerPlatform(new Vector2(148, 762), new Vector2(208, 956)));
                     break;
 
+            }
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach(TerrainPiece terrain in terrainSetup)
+            {
+                terrain.Draw(spriteBatch);
             }
         }
     }
