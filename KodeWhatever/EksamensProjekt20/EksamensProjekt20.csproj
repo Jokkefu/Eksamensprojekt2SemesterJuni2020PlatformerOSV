@@ -41,6 +41,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Buffs\HealingBuff.cs" />
     <Compile Include="Characters\Archibald.cs" />
     <Compile Include="Characters\Blob.cs" />
     <Compile Include="Buffs\Buff.cs" />

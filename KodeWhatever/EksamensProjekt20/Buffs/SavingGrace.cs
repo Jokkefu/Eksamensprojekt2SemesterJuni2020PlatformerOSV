@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace EksamensProjekt20.Buffs
 {
     class SavingGrace : Buff
     {
-        public SavingGrace(float potency, float duration) : base(potency, duration)
+        public SavingGrace(float potency, float duration, Character target) : base(potency, duration, target)
         {
 
         }

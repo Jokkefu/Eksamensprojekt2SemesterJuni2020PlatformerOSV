@@ -13,21 +13,42 @@ namespace EksamensProjekt20.Buffs
     {
         protected float efficiency;
         protected double duration;
-        public Buff(float potency, float duration)
+        protected Character buffTarget;
+        protected double toTick;
+        protected float tickRate;
+
+        public Buff(float potency, float duration, int ticks, Character target)
         {
             efficiency = potency;
             this.duration = duration;
+            buffTarget = target;
+            tickRate = duration / ticks;
         }
-        public virtual void ApplyEffect (Character target)
+        public virtual void ApplyEffect()
         {
-
+            toTick = tickRate;
         }
-        
+        public virtual void RemoveEffect()
+        {
+            buffTarget.RemoveBuff(this);
+        }
         public override void Draw(SpriteBatch spriteBatch)
         {
             if (sprite != null)
             {
                 base.Draw(spriteBatch);
+            }
+        }
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            if (duration <= 0)
+            {
+                RemoveEffect();
+            }
+            else
+            {
+                duration -= gameTime.ElapsedGameTime.TotalSeconds;
             }
         }
     }

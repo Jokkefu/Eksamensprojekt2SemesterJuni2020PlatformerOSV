@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,10 @@ namespace EksamensProjekt20.Buffs
 {
     class DamageBuffFlat : Buff
     {
-        public DamageBuffFlat(float potency, float duration) : base(potency, duration)
+        public DamageBuffFlat(float potency, float duration, Character target) : base(potency, duration, 0, target)
         {
 
         }
+
     }
 }
