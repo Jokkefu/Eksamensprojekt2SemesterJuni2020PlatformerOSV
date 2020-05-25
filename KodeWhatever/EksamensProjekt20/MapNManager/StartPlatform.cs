@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.MapNManager
 {
-    class StartPlatform : TerrainPiece
+    class StartPlatform : StageBlock
     {
-        public StartPlatform()
+        public StartPlatform(int stageID) : base(stageID)
         {
 
         }

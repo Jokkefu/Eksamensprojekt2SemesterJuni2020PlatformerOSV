@@ -9,6 +9,8 @@ namespace EksamensProjekt20.MapNManager
     class StageFactory
     {
 
+
+
         public StageFactory()
         {
 
@@ -26,5 +28,7 @@ namespace EksamensProjekt20.MapNManager
             tempStage.stageSetup = tempBlock;
             return tempStage;
         }
+
+
     }
 }
