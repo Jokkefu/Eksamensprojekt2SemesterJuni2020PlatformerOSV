@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.Characters;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -12,6 +13,8 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        public static float DeltaTime { get; set; }
 
         public Game1()
         {
@@ -28,7 +31,7 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            Player = new Player(Vector2.Zero);
             base.Initialize();
         }
 
