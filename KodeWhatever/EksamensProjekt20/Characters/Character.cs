@@ -1,11 +1,13 @@
 ﻿using EksamensProjekt20.PrimaryAttacks;
 using EksamensProjekt20.Spells;
+using EksamensProjekt20.Buffs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace EksamensProjekt20.Characters
 {
@@ -13,39 +15,44 @@ namespace EksamensProjekt20.Characters
     {
         protected PrimaryAttack primaryAttack;
         protected Spell[] spells = new Spell[0];
-        protected List<Item> items = new List<Item>();
-        protected List<Buff> buffs = new List<Buff>();
+        //protected List<Item> items = new List<Item>();
+        public List<Buff> buffs = new List<Buff>();
         public float movementSpeed;
         public float health;
         public int ammo;
         public int damage;
         protected Thread thread;
+        public int maxAmmo;
 
-        public void Attack()
+        public virtual void Attack()
         {
 
         }
-        public void SecondaryAttack()
+        
+        public virtual void Spell()
         {
 
         }
-        public void Spell()
+        public virtual void Spell1()
         {
 
         }
-        public void Spell1()
+        public virtual void Spell2()
         {
 
         }
-        public void Spell2()
+        public virtual void Death()
         {
 
         }
-        public void Death()
+        public override void Update(GameTime gameTime)
         {
-
+            foreach(Buff buff in buffs)
+            {
+                buff.Update(this, gameTime);
+            }
+            base.Update(gameTime);
         }
 
-            
     }
 }
