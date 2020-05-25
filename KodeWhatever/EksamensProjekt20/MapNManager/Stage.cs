@@ -16,10 +16,8 @@ namespace EksamensProjekt20.MapNManager
         public List<StageBlock> stageSetup = new List<StageBlock>();
         private Texture2D mapSprite;
         private Rectangle mapRect;
-        private int theme;
         public Stage(int stageTheme)
         {
-            theme = stageTheme;
             switch (stageTheme)
             {
                 case 1:

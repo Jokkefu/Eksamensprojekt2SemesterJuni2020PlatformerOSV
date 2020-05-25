@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.PrimaryAttacks;
 using EksamensProjekt20.Spells;
+using EksamensProjekt20.Buffs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace EksamensProjekt20.Characters
     {
         protected PrimaryAttack primaryAttack;
         protected Spell[] spells = new Spell[0];
-        protected List<Item> items = new List<Item>();
+        //protected List<Item> items = new List<Item>();
         protected List<Buff> buffs = new List<Buff>();
         public float movementSpeed;
         public float health;
