@@ -15,7 +15,7 @@ namespace EksamensProjekt20
         protected Vector2 spriteSize;
         public Rectangle spriteRect;
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
 
         }

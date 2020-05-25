@@ -9,23 +9,22 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.Buffs
 {
-    class Buff
+    class Buff : ScreenObject
     {
         protected int efficiency;
         protected double duration;
-        protected Texture2D buffSprite;
 
-        public void ApplyEffect (Character[] target)
+        public virtual void ApplyEffect (Character target)
         {
 
         }
-        public void Update(GameTime gameTime)
+        
+        public override void Draw(SpriteBatch spriteBatch)
         {
-
-        }
-        public void Draw(SpriteBatch spriteBatch)
-        {
-
+            if (sprite != null)
+            {
+                base.Draw(spriteBatch);
+            }
         }
     }
 }

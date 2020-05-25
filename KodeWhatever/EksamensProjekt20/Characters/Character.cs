@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework;
 
 namespace EksamensProjekt20.Characters
 {
@@ -22,31 +23,35 @@ namespace EksamensProjekt20.Characters
         public int damage;
         protected Thread thread;
 
-        public void Attack()
+        public virtual void Attack()
         {
 
         }
-        public void SecondaryAttack()
+        
+        public virtual void Spell()
         {
 
         }
-        public void Spell()
+        public virtual void Spell1()
         {
 
         }
-        public void Spell1()
+        public virtual void Spell2()
         {
 
         }
-        public void Spell2()
+        public virtual void Death()
         {
 
         }
-        public void Death()
+        public override void Update(GameTime gameTime)
         {
-
+            foreach(Buff buff in buffs)
+            {
+                buff.Update(this, gameTime);
+            }
+            base.Update(gameTime);
         }
 
-            
     }
 }
