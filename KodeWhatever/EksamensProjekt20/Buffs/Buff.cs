@@ -9,23 +9,47 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.Buffs
 {
-    class Buff
+    class Buff : ScreenObject
     {
-        protected int efficiency;
+        protected float efficiency;
         protected double duration;
-        protected Texture2D buffSprite;
+        protected Character buffTarget;
+        protected double toTick;
+        protected float tickRate;
 
-        public void ApplyEffect (Character[] target)
+        public Buff(float potency, float duration, int ticks, Character target)
         {
-
+            efficiency = potency;
+            this.duration = duration;
+            buffTarget = target;
+            tickRate = duration / ticks;
         }
-        public void Update(GameTime gameTime)
+        public virtual void ApplyEffect()
         {
-
+            toTick = tickRate;
         }
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void RemoveEffect()
         {
-
+            buffTarget.RemoveBuff(this);
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            if (sprite != null)
+            {
+                base.Draw(spriteBatch);
+            }
+        }
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            if (duration <= 0)
+            {
+                RemoveEffect();
+            }
+            else
+            {
+                duration -= gameTime.ElapsedGameTime.TotalSeconds;
+            }
         }
     }
 }

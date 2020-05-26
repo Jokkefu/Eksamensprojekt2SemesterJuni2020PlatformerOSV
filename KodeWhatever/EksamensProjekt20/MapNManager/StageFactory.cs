@@ -8,6 +8,9 @@ namespace EksamensProjekt20.MapNManager
 {
     class StageFactory
     {
+
+
+
         public StageFactory()
         {
 
@@ -16,7 +19,16 @@ namespace EksamensProjekt20.MapNManager
         {
             Stage tempStage = new Stage(stageTheme);
             List<StageBlock> tempBlock = new List<StageBlock>();
-            List<TerrainPiece> tempTerrain = new List<TerrainPiece>();
+            for(int i = 0; i < 8; i++)
+            {
+                List<TerrainPiece> tempTerrain = new List<TerrainPiece>();
+                tempTerrain.Add(new TerrainPiece());
+                tempBlock[i].terrainSetup = tempTerrain;
+            }
+            tempStage.stageSetup = tempBlock;
+            return tempStage;
         }
+
+
     }
 }

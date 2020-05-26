@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.SecondaryAttacks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace EksamensProjekt20.Characters
 {
     class Player : Character
     {
-        protected SecondaryAttacks secondaryAttacks;
+        protected SecondaryAttack secondaryAttack;
     }
 }

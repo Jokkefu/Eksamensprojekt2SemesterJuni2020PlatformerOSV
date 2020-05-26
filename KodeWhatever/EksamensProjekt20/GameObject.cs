@@ -10,6 +10,7 @@ namespace EksamensProjekt20
     class GameObject : ScreenObject
     {
         public Vector2 gamePosition;
+        
 
         public bool CollisionDetection()
         {
