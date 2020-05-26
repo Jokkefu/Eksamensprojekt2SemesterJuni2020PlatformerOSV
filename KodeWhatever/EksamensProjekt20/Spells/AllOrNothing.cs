@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.Buffs;
 using EksamensProjekt20.Characters;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,15 @@ namespace EksamensProjekt20.Spells
         {
             
         }
-        public override void Spellcast(Character source)
+        public override void Spellcast()
         {
             source.buffs.Add(new DamageBuffScale());
             source.buffs.Add(new HealthBuff());
             source.buffs.Add(new Snare());
+        }
+        public override void Update(GameTime gameTime)
+        {
+            
         }
     }
 }

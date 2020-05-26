@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace EksamensProjekt20.Spells
         {
 
         }
-        public override void Spellcast()
+        public override void Spellcast(Character source)
         {
 
         }
