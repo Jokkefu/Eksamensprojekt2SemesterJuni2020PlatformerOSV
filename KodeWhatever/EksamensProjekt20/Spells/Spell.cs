@@ -18,6 +18,7 @@ namespace EksamensProjekt20.Spells
         public virtual void Spellcast()
         {
             channelTime = channelDuration;
+
             channel = false;
         }
         public virtual void Update(GameTime gameTime)

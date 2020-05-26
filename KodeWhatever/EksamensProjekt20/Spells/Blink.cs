@@ -18,7 +18,7 @@ namespace EksamensProjekt20.Spells
         {
 
         }
-        public override void Spellcast(Character source)
+        public override void Spellcast()
         {
             if (Mouse.GetState().X >= source.screenPosition.X)
             {
