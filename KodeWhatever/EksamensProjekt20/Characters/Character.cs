@@ -21,6 +21,7 @@ namespace EksamensProjekt20.Characters
         public float movementSpeed;
         public float currentHealth;
         public float maxHealth;
+        protected float healthRegen;
         protected int maxAmmo;
         public int ammo;
         public int damage;
@@ -60,6 +61,7 @@ namespace EksamensProjekt20.Characters
                 
             }
             buffRemovals = new List<Buff>();
+            base.Update(gameTime);
         }
         public void AddBuff(Buff buff)
         {
