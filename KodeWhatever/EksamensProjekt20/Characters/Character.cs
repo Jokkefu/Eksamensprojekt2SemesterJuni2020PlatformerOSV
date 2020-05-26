@@ -50,7 +50,12 @@ namespace EksamensProjekt20.Characters
         }
         public override void Update(GameTime gameTime)
         {
-            foreach(Buff buff in buffs)
+            if ((currentHealth + (healthRegen * gameTime.ElapsedGameTime.TotalSeconds)) >= maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            else currentHealth += healthRegen * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            foreach (Buff buff in buffs)
             {
                 buff.Update(gameTime);
             }
