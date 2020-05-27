@@ -8,5 +8,6 @@ namespace EksamensProjekt20.CommandPattern
 {
     class JumpCommand
     {
+
     }
 }
