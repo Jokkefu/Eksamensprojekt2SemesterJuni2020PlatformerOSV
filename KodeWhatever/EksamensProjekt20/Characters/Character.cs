@@ -25,8 +25,18 @@ namespace EksamensProjekt20.Characters
         protected int maxAmmo;
         public int ammo;
         public int damage;
+        protected bool alive;
         protected Thread thread;
 
+        public virtual void StartThread()
+        {
+            thread = new Thread(ThreadMethod);
+            thread.Start();
+        }
+        protected void ThreadMethod()
+        {
+            Update(Game1.gameTime);
+        }
         public virtual void Attack()
         {
 
@@ -46,10 +56,14 @@ namespace EksamensProjekt20.Characters
         }
         public virtual void Death()
         {
-
+            thread.Abort();
         }
         public override void Update(GameTime gameTime)
         {
+            if (currentHealth <= 0)
+            {
+                Death();
+            }
             if ((currentHealth + (healthRegen * gameTime.ElapsedGameTime.TotalSeconds)) >= maxHealth)
             {
                 currentHealth = maxHealth;

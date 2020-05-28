@@ -15,6 +15,8 @@ namespace EksamensProjekt20
         SpriteBatch spriteBatch;
         public static ContentManager contMan;
         public static Vector2 screenSize;
+        public static GameTime gameTime;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
