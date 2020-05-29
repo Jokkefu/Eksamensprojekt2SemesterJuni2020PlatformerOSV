@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,11 @@ namespace EksamensProjekt20.MapNManager
 {
     class ClimbablePlatform : TerrainPiece
     {
+        public ClimbablePlatform(Vector2 pos, Vector2 size)
+        {
+            screenPosition = pos;
+            spriteSize = size;
+            sprite = Game1.contMan.Load<Texture2D>("ClimbablePlatform");
+        }
     }
 }

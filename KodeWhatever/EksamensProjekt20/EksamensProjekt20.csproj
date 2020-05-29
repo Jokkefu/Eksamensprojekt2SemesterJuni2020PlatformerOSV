@@ -43,6 +43,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Buffs\HealingBuff.cs" />
     <Compile Include="Characters\Archibald.cs" />
     <Compile Include="Characters\Blob.cs" />
     <Compile Include="Buffs\Buff.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Characters\Doomer.cs" />
     <Compile Include="Characters\Enemy.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="MapNManager\EndPlatform.cs" />
     <Compile Include="MapNManager\FallingPlatform.cs" />
     <Compile Include="MapNManager\GameManager.cs" />
     <Compile Include="GameObject.cs" />
@@ -75,6 +77,8 @@
     <Compile Include="Characters\Player.cs" />
     <Compile Include="MapNManager\NormalPlatform.cs" />
     <Compile Include="MapNManager\SlowingPlatform.cs" />
+    <Compile Include="MapNManager\StageFactory.cs" />
+    <Compile Include="MapNManager\StartPlatform.cs" />
     <Compile Include="MapNManager\TriggerPlatform.cs" />
     <Compile Include="PrimaryAttacks\ArchersCliche.cs" />
     <Compile Include="PrimaryAttacks\DaggerSlash.cs" />

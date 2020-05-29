@@ -9,6 +9,10 @@ namespace EksamensProjekt20.MapNManager
 {
     class Database
     {
+<<<<<<< HEAD
+=======
+        //public SQLite database;
+>>>>>>> 99657528414d3a1f90e3f69333537516fb315705
 
         public void CreateTables()
         {

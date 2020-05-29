@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.MapNManager
 {
-    class TerrainPiece : GameObject
+    class EndPlatform : StageBlock
     {
-        
+        public EndPlatform(int stageID) : base(stageID)
+        {
+
+        }
     }
 }
