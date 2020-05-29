@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.MapNManager;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,36 +19,36 @@ namespace EksamensProjekt20
 
         
 
-        public bool CollisionDetection(GameObject other)
+        public void CollisionDetection(GameObject other)
         {
-            Buildingblocks b = (Buildingblocks)other;
-            if (GameObject.tag == "Terrain")
+            TerrainPiece t = (TerrainPiece)other;
+            if (other.tag == "Terrain")
             {
                 //Bottom Player Collision
-                if (b.Position.Y - b.Sprite.Height / 2 < this.position.Y + sprite.Height / 2 && b.Position.Y - b.Sprite.Height / 3 > this.position.Y + sprite.Height / 2 && b.Position.X - b.Sprite.Width / 3 * 1.40 < this.position.X + sprite.Width / 2 && b.Position.X + b.Sprite.Width / 3 * 1.40 > this.position.X - sprite.Width / 2)
+                if (t.gamePosition.Y - t.sprite.Height / 2 < this.gamePosition.Y + this.sprite.Height / 2 && t.gamePosition.Y - t.sprite.Height / 3 > this.gamePosition.Y + this.sprite.Height / 2 && t.gamePosition.X - t.sprite.Width / 3 * 1.40 < this.gamePosition.X + this.sprite.Width / 2 && t.gamePosition.X + t.sprite.Width / 3 * 1.40 > this.gamePosition.X - this.sprite.Width / 2)
                 {
-                    int height = CollisionBox.Bottom - other.CollisionBox.Top;
-                    position.Y -= height;
+                    int height = spriteRect.Bottom - other.spriteRect.Top;
+                    gamePosition.Y -= height;
 
                     isGrounded = true;
 
                 }
                 //Top Player Collision
-                if (b.Position.Y + b.Sprite.Height / 2 > this.position.Y - sprite.Height / 2 && b.Position.X - b.Sprite.Width / 3 * 1.40 < this.position.X + sprite.Width / 2 && b.Position.X + b.Sprite.Width / 3 * 1.40 > this.position.X - sprite.Width / 2 && isGrounded == false)
+                if (t.gamePosition.Y + t.sprite.Height / 2 > this.gamePosition.Y - this.sprite.Height / 2 && t.gamePosition.X - t.sprite.Width / 3 * 1.40 < this.gamePosition.X + this.sprite.Width / 2 && t.gamePosition.X + t.sprite.Width / 3 * 1.40 > this.gamePosition.X - this.sprite.Width / 2 && isGrounded == false)
                 {
                     velocity = new Vector2(velocity.X, velocity.Y - velocity.Y * 2);
                 }
                 //Right Player Collision
-                if (b.Position.X - sprite.Width / 2 >= this.position.X + sprite.Width / 2 && b.Position.X > this.position.X + sprite.Width / 2 && b.Position.Y + b.Sprite.Height / 3 > this.position.Y - sprite.Height / 2 && isGrounded == false)
+                if (t.gamePosition.X - this.sprite.Width / 2 >= this.gamePosition.X + this.sprite.Width / 2 && t.gamePosition.X > this.gamePosition.X + sprite.Width / 2 && t.gamePosition.Y + t.sprite.Height / 3 > this.gamePosition.Y - this.sprite.Height / 2 && isGrounded == false)
                 {
-                    int width = CollisionBox.Right - other.CollisionBox.Left;
-                    position.X -= width;
+                    int width = spriteRect.Right - other.spriteRect.Left;
+                    gamePosition.X -= width;
                 }
                 //Left Player Collision
-                if (b.Position.X + sprite.Width / 2 <= this.position.X - sprite.Width / 2 && b.Position.X < this.position.X - sprite.Width / 2 && b.Position.Y + b.Sprite.Height / 3 > this.position.Y - sprite.Height / 2 && isGrounded == false)
+                if (t.gamePosition.X + this.sprite.Width / 2 <= this.gamePosition.X - this.sprite.Width / 2 && t.gamePosition.X < this.gamePosition.X - sprite.Width / 2 && t.gamePosition.Y + t.sprite.Height / 3 > this.gamePosition.Y - this.sprite.Height / 2 && isGrounded == false)
                 {
-                    int width = CollisionBox.Left - other.CollisionBox.Right;
-                    position.X -= width;
+                    int width = spriteRect.Left - other.spriteRect.Right;
+                    gamePosition.X -= width;
                 }
 
             }
