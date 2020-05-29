@@ -9,7 +9,7 @@ namespace EksamensProjekt20.Buffs
 {
     class Stealth : Buff
     {
-        public Stealth(float potency, float duration, Character target) : base(potency, duration, target)
+        public Stealth(float potency, float duration, Character target) : base(potency, duration, 1, target)
         {
 
         }

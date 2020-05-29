@@ -9,7 +9,7 @@ namespace EksamensProjekt20.Buffs
 {
     class Stun : Buff
     {
-        public Stun(float potency, float duration, Character target) : base(potency, duration, target)
+        public Stun(float potency, float duration, Character target) : base(potency, duration, 1, target)
         {
 
         }

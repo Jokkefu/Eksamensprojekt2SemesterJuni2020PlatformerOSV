@@ -9,7 +9,7 @@ namespace EksamensProjekt20.Buffs
 {
     class SavingGrace : Buff
     {
-        public SavingGrace(float potency, float duration, Character target) : base(potency, duration, target)
+        public SavingGrace(float potency, float duration, Character target) : base(potency, duration, 1, target)
         {
 
         }
