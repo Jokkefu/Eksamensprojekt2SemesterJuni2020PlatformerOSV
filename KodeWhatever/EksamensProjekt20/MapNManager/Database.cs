@@ -9,7 +9,6 @@ namespace EksamensProjekt20.MapNManager
 {
     class Database
     {
-        public SQLite database;
 
         public void CreateTables()
         {
@@ -25,11 +24,49 @@ namespace EksamensProjekt20.MapNManager
             cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Game (CurrentStage integer PRIMARY KEY, userID integer, FOREIGN KEY (userID) REFERENCES player (userID));", connection);
             cmd.ExecuteNonQuery();
 
+
+
+            cmd = new SQLiteCommand("INSERT INTO Player (CurrentStageID) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Player (Highscore) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Player (TotalKills) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Player (CharacterKills) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Player (RunKills) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Player (Ranking) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Leaderboard (Ranking) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Leaderboard (CurrentStageID) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand("INSERT INTO Game (CurrentStage) VALUES (placeholder)", connection);
+            cmd.ExecuteNonQuery();
+
+
+            cmd = new SQLiteCommand("SELECT * from Player", connection);
+            var dataset = cmd.ExecuteReader();
+
+            while (dataset.Read())
+            {
+                var id = dataset.GetInt
+            }
+          
             connection.Close();
         }
         public void InsertData()
         {
-
+         
         }
         public void ShowLeaderBoard()
         {
