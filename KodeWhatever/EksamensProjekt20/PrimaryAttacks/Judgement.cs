@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,13 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class Judgement : PrimaryAttack
     {
+        public Judgement(Character character)
+        {
+            unit = character;
+        }
         public override void Attack()
         {
-
+            base.Attack();
         }
     }
 }
