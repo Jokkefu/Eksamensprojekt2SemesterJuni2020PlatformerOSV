@@ -11,8 +11,6 @@ namespace EksamensProjekt20.MapNManager
     class StageBlock
     {
         public List<TerrainPiece> terrainSetup = new List<TerrainPiece>();
-<<<<<<< HEAD
-=======
         public StageBlock(int stageID)
         {
             switch (stageID)
@@ -26,7 +24,6 @@ namespace EksamensProjekt20.MapNManager
                     terrainSetup.Add(new TriggerPlatform(new Vector2(132, 656), new Vector2(482, 736)));
                     terrainSetup.Add(new TriggerPlatform(new Vector2(148, 762), new Vector2(208, 956)));
                     break;
->>>>>>> 99657528414d3a1f90e3f69333537516fb315705
 
             }
         }

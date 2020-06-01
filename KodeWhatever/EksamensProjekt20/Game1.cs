@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
 using Microsoft.Xna.Framework;
-=======
-﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
->>>>>>> 99657528414d3a1f90e3f69333537516fb315705
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -19,15 +15,12 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-<<<<<<< HEAD
         private InputHandler inputHandler;
         Player player;
         public static float DeltaTime { get; set; }
-=======
         public static ContentManager contMan;
         public static Vector2 screenSize;
         public static GameTime gameTime;
->>>>>>> 99657528414d3a1f90e3f69333537516fb315705
 
         public Game1()
         {
@@ -44,12 +37,9 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-<<<<<<< HEAD
             inputHandler = new InputHandler();
             player = new Player(Vector2.Zero);
-=======
             contMan = Content;
->>>>>>> 99657528414d3a1f90e3f69333537516fb315705
             base.Initialize();
         }
 

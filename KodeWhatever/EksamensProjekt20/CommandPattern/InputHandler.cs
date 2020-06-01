@@ -17,9 +17,9 @@ namespace EksamensProjekt20.CommandPattern
         {
             keybinds.Add(Keys.D, new MoveCommand(new Vector2(1, 0)));
             keybinds.Add(Keys.A, new MoveCommand(new Vector2(-1, 0)));
-            keybinds.Add(Keys.W, new JumpCommand);
-            keybinds.Add(Keys.J, new PrimaryAttackCommand);
-            keybinds.Add(Keys.K, new SecondaryAttackCommand);
+            //keybinds.Add(Keys.W, new JumpCommand);
+            //keybinds.Add(Keys.J, new PrimaryAttackCommand);
+            //keybinds.Add(Keys.K, new SecondaryAttackCommand);
 
         }
 
