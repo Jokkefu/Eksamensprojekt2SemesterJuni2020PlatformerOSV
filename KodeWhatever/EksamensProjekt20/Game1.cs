@@ -17,7 +17,7 @@ namespace EksamensProjekt20
         SpriteBatch spriteBatch;
         private InputHandler inputHandler;
         Player player;
-        public static float DeltaTime { get; set; }
+
         public static ContentManager contMan;
         public static Vector2 screenSize;
         public static GameTime gameTime;

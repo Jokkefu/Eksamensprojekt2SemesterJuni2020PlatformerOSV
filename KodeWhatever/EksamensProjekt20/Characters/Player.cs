@@ -16,6 +16,8 @@ namespace EksamensProjekt20.Characters
 
         private Vector2 origin;
 
+        
+
         public Player(Vector2 startPos)
         {
             gamePosition = startPos;
@@ -30,7 +32,7 @@ namespace EksamensProjekt20.Characters
             }
 
             velocity *= speed;
-            gamePosition += (velocity * Game1.DeltaTime);
+            gamePosition += (velocity * (float)Game1.gameTime.ElapsedGameTime.TotalSeconds);
         }
 
         protected SecondaryAttack secondaryAttack;
