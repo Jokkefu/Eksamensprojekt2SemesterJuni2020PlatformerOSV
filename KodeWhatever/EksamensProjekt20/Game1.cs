@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.MapNManager;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,9 +14,9 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public static ContentManager contMan;
         public static Vector2 screenSize;
         public static GameTime gameTime;
+        
 
         public Game1()
         {
@@ -32,7 +33,6 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            contMan = Content;
             base.Initialize();
         }
 
@@ -44,7 +44,7 @@ namespace EksamensProjekt20
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 

@@ -68,6 +68,7 @@
     <Compile Include="Characters\Player.cs" />
     <Compile Include="MapNManager\NormalPlatform.cs" />
     <Compile Include="MapNManager\SlowingPlatform.cs" />
+    <Compile Include="MapNManager\SpriteCollection.cs" />
     <Compile Include="MapNManager\StageFactory.cs" />
     <Compile Include="MapNManager\StartPlatform.cs" />
     <Compile Include="MapNManager\TriggerPlatform.cs" />
