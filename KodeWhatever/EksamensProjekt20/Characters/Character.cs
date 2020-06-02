@@ -21,10 +21,22 @@ namespace EksamensProjekt20.Characters
         public float movementSpeed;
         public float currentHealth;
         public float maxHealth;
+        protected float healthRegen;
+        protected int maxAmmo;
         public int ammo;
         public int damage;
+        protected bool alive;
         protected Thread thread;
 
+        public virtual void StartThread()
+        {
+            thread = new Thread(ThreadMethod);
+            thread.Start();
+        }
+        protected void ThreadMethod()
+        {
+            Update(Game1.gameTime);
+        }
         public virtual void Attack()
         {
 
@@ -44,11 +56,20 @@ namespace EksamensProjekt20.Characters
         }
         public virtual void Death()
         {
-
+            thread.Abort();
         }
         public override void Update(GameTime gameTime)
         {
-            foreach(Buff buff in buffs)
+            if (currentHealth <= 0)
+            {
+                Death();
+            }
+            if ((currentHealth + (healthRegen * gameTime.ElapsedGameTime.TotalSeconds)) >= maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            else currentHealth += healthRegen * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            foreach (Buff buff in buffs)
             {
                 buff.Update(gameTime);
             }
@@ -59,6 +80,7 @@ namespace EksamensProjekt20.Characters
                 
             }
             buffRemovals = new List<Buff>();
+            base.Update(gameTime);
         }
         public void AddBuff(Buff buff)
         {

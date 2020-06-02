@@ -1,4 +1,8 @@
-﻿using EksamensProjekt20.States;
+
+using EksamensProjekt20.States;
+﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.CommandPattern;
+using EksamensProjekt20.MapNManager;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,7 +18,7 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public static ContentManager contMan;
+
 
         private State currentState;
         private State nextState;
@@ -23,6 +27,12 @@ namespace EksamensProjekt20
         {
             nextState = state;
         }
+
+
+        public static Vector2 screenSize;
+        public static GameTime gameTime;
+        
+
 
         public Game1()
         {
@@ -40,7 +50,7 @@ namespace EksamensProjekt20
         {
             IsMouseVisible = true;
             // TODO: Add your initialization logic here
-            contMan = Content;
+            
             base.Initialize();
         }
 
@@ -53,7 +63,9 @@ namespace EksamensProjekt20
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
             currentState = new MenuState(this, graphics.GraphicsDevice, Content);
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -87,7 +99,7 @@ namespace EksamensProjekt20
             currentState.PostUpdate(gameTime);
 
             // TODO: Add your update logic here
-
+            
             base.Update(gameTime);
         }
 

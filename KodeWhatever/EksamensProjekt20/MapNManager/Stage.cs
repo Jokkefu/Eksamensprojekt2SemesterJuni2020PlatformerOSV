@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.Characters;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace EksamensProjekt20.MapNManager
         public StartPlatform startPlatform;
         public EndPlatform endPlatform;
         public List<StageBlock> stageSetup = new List<StageBlock>();
+        public List<Enemy> enemySetup = new List<Enemy>();
         private Texture2D mapSprite;
         private Rectangle mapRect;
         public Stage(int stageTheme)
@@ -21,7 +23,7 @@ namespace EksamensProjekt20.MapNManager
             switch (stageTheme)
             {
                 case 1:
-                    mapSprite = Game1.contMan.Load<Texture2D>("Stage1");
+                    mapSprite = SpriteCollection.background1;
                     break;
                 
             }

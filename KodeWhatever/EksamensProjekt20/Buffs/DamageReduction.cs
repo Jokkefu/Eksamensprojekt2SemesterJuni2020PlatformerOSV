@@ -9,7 +9,7 @@ namespace EksamensProjekt20.Buffs
 {
     class DamageReduction : Buff
     {
-        public DamageReduction(float potency, float duration, Character target) : base(potency, duration, target)
+        public DamageReduction(float potency, float duration, Character target) : base(potency, duration, 1, target)
         {
 
         }

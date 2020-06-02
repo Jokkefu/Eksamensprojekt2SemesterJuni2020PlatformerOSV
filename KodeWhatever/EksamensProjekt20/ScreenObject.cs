@@ -22,7 +22,13 @@ namespace EksamensProjekt20
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             spriteRect = new Rectangle((int)screenPosition.X, (int)screenPosition.Y, (int)spriteSize.X, (int)spriteSize.Y);
-            spriteBatch.Draw(sprite, spriteRect, Color.White);
+            if(spriteRect.Right>0 && spriteRect.Left<Game1.screenSize.X)
+            {
+                if (spriteRect.Bottom < Game1.screenSize.Y && spriteRect.Top > 0)
+                {
+                    spriteBatch.Draw(sprite, spriteRect, Color.White);
+                }
+            }
         }
 
     }

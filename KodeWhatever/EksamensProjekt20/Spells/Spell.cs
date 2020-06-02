@@ -11,34 +11,31 @@ namespace EksamensProjekt20.Spells
 {
     class Spell
     {
+        protected double channelDelay;
         protected float channelDuration;
-        protected double channelTime;
-        protected bool channel = false;
+        protected bool channeling;
         protected Character source;
+
         public virtual void Spellcast()
         {
-            channelTime = channelDuration;
-
-            channel = false;
+            channelDelay = channelDuration;
+            channeling = false;
         }
         public virtual void Update(GameTime gameTime)
         {
-            if (channel)
+            if (channeling)
             {
-                if (channelTime <= 0)
+                if (channelDelay <= 0)
                 {
                     Spellcast();
                 }
-                else
-                {
-                    channelTime -= gameTime.ElapsedGameTime.TotalSeconds;
-                }
+                else channelDelay -= gameTime.ElapsedGameTime.TotalSeconds;
             }
         }
-        public virtual void PrimeAbility(Character source)
+        public virtual void PrimeSpell(Character sourceChar)
         {
-            this.source = source;
-            channel = true;
+            source = sourceChar;
+            channeling = true;
         }
     }
 }
