@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,10 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class SecondaryAttack
     {
-        public int power;
-        public float speed;
+        protected Character unit;
+        protected int basePower;
+        protected float baseSpeed;
+        protected Projectile projectile = new Projectile();
 
         public virtual void Attack()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +9,18 @@ namespace EksamensProjekt20.PrimaryAttacks
 {
     class ArchersCliche : PrimaryAttack
     {
-        private Projectile projectile = new Projectile();
-
+        public ArchersCliche(Character character)
+        {
+            unit = character;
+        }
         public override void Attack()
         {
 
+            base.Attack();
         }
-
         public override void HoldAttack()
         {
-
+            base.HoldAttack();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.MapNManager;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,9 @@ namespace EksamensProjekt20.Characters
 {
     class Warrior : Player
     {
+        public Warrior()
+        {
+            sprite = SpriteCollection.hunter;
+        }
     }
 }

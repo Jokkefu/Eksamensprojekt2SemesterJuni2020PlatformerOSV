@@ -1,5 +1,7 @@
+
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
+using EksamensProjekt20.MapNManager;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -18,9 +20,9 @@ namespace EksamensProjekt20
         private InputHandler inputHandler;
         Player player;
 
-        public static ContentManager contMan;
         public static Vector2 screenSize;
         public static GameTime gameTime;
+        
 
         public Game1()
         {
@@ -39,7 +41,6 @@ namespace EksamensProjekt20
             // TODO: Add your initialization logic here
             inputHandler = new InputHandler();
             player = new Player(Vector2.Zero);
-            contMan = Content;
             base.Initialize();
         }
 
@@ -51,7 +52,7 @@ namespace EksamensProjekt20
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -75,7 +76,7 @@ namespace EksamensProjekt20
                 Exit();
 
             // TODO: Add your update logic here
-            inputHandler.Excecute(player);
+            inputHandler.Execute(player);
             base.Update(gameTime);
         }
 

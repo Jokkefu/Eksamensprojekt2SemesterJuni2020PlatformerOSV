@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,10 @@ namespace EksamensProjekt20.SecondaryAttacks
 {
     class Multishot : SecondaryAttack
     {
-        Projectile projectile = new Projectile();
-
+        public Multishot(Character character)
+        {
+            unit = character;
+        }
         public override void Attack()
         {
             base.Attack();

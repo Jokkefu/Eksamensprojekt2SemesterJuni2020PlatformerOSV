@@ -8,9 +8,10 @@ namespace EksamensProjekt20.MapNManager
 {
     class EndPlatform : StageBlock
     {
+
         public EndPlatform(int stageID) : base(stageID)
         {
-
+            
         }
     }
 }

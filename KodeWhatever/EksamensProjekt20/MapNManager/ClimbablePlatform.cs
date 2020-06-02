@@ -14,7 +14,7 @@ namespace EksamensProjekt20.MapNManager
         {
             screenPosition = pos;
             spriteSize = size;
-            sprite = Game1.contMan.Load<Texture2D>("ClimbablePlatform");
+            sprite = SpriteCollection.climbablePlatform;
         }
     }
 }
