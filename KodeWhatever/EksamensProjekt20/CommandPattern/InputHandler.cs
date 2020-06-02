@@ -23,7 +23,7 @@ namespace EksamensProjekt20.CommandPattern
 
         }
 
-        public void Excecute(Player player)
+        public void Execute(Player player)
         {
             KeyboardState keyState = Keyboard.GetState();
 

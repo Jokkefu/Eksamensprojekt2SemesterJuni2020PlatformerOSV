@@ -18,9 +18,8 @@ namespace EksamensProjekt20.Characters
 
         
 
-        public Player(Vector2 startPos)
+        public Player()
         {
-            gamePosition = startPos;
             speed = 100;
         }
 

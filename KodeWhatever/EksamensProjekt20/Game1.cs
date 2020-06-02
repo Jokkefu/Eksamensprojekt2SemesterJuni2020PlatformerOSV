@@ -40,7 +40,7 @@ namespace EksamensProjekt20
         {
             // TODO: Add your initialization logic here
             inputHandler = new InputHandler();
-            player = new Player(Vector2.Zero);
+            player = new Player();
             base.Initialize();
         }
 
