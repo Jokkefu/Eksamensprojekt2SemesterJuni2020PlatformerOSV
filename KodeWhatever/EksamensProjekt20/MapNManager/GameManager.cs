@@ -18,11 +18,11 @@ namespace EksamensProjekt20.MapNManager
         }
         public void NextStage()
         {
-
+            stageNumber++;
         }
         public void StartGame()
         {
-
+            stageNumber = 1;
         }
         public void OutOfBoundsCheck()
         {
