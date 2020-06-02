@@ -1,4 +1,7 @@
-﻿using EksamensProjekt20.MapNManager;
+
+﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.CommandPattern;
+using EksamensProjekt20.MapNManager;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,6 +17,9 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private InputHandler inputHandler;
+        Player player;
+
         public static Vector2 screenSize;
         public static GameTime gameTime;
         
@@ -33,6 +39,8 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            inputHandler = new InputHandler();
+            player = new Player();
             base.Initialize();
         }
 
@@ -68,7 +76,7 @@ namespace EksamensProjekt20
                 Exit();
 
             // TODO: Add your update logic here
-
+            inputHandler.Execute(player);
             base.Update(gameTime);
         }
 

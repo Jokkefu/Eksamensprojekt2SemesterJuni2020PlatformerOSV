@@ -10,7 +10,9 @@ namespace EksamensProjekt20.MapNManager
     {
         private Database database;
         public Stage currentStage;
+
         public int stageNumber;
+        public int runKills;
 
         public void EndRun()
         {
