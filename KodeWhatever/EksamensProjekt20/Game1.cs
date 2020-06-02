@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.States;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -14,6 +15,15 @@ namespace EksamensProjekt20
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static ContentManager contMan;
+
+        private State currentState;
+        private State nextState;
+
+        public void ChangeState(State state)
+        {
+            nextState = state;
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -28,6 +38,7 @@ namespace EksamensProjekt20
         /// </summary>
         protected override void Initialize()
         {
+            IsMouseVisible = true;
             // TODO: Add your initialization logic here
             contMan = Content;
             base.Initialize();
@@ -41,6 +52,8 @@ namespace EksamensProjekt20
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            currentState = new MenuState(this, graphics.GraphicsDevice, Content);
 
             // TODO: use this.Content to load your game content here
         }
@@ -61,8 +74,17 @@ namespace EksamensProjekt20
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            if (nextState != null)
+            {
+                currentState = nextState;
+
+                nextState = null;
+            }
+
+
+            currentState.Update(gameTime);
+
+            currentState.PostUpdate(gameTime);
 
             // TODO: Add your update logic here
 
@@ -76,6 +98,8 @@ namespace EksamensProjekt20
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            currentState.Draw(gameTime, spriteBatch);
 
             // TODO: Add your drawing code here
 
