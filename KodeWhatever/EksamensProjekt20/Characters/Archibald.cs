@@ -10,7 +10,7 @@ namespace EksamensProjekt20.Characters
 {
     class Archibald : Enemy
     {
-        public Archibald(Vector2 position) : base(position)
+        public Archibald(Vector2 position, Vector2 lazyShit) : base(position)
         {
             sprite = SpriteCollection.archibald;
         }

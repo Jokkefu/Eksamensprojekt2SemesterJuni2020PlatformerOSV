@@ -15,9 +15,13 @@ namespace EksamensProjekt20
         public bool isGrounded;
         public Vector2 velocity;
         public Vector2 gamePosition;
-        
+        public float movementSpeed;
 
-        
+        public override void Update(GameTime gameTime)
+        {
+            Movement();
+            base.Update(gameTime);
+        }
 
         public void CollisionDetection(GameObject other)
         {
@@ -59,17 +63,18 @@ namespace EksamensProjekt20
             velocity = new Vector2(velocity.X, -2);
         }
 
-        private void Gravity(GameTime gametime)
+        public void Gravity(GameTime gametime)
         {
             if (isGrounded == false)
             {
                 velocity += new Vector2(0, 2 * (float)gametime.ElapsedGameTime.TotalSeconds);
             }
-            else
-            {
-                velocity = Vector2.Zero;
-            }
 
+        }
+
+        public void Movement()
+        {
+            gamePosition += velocity * movementSpeed;
         }
     }
 }

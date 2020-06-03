@@ -10,7 +10,7 @@ namespace EksamensProjekt20.Characters
 {
     class Ziggy : Enemy
     {
-        public Ziggy(Vector2 position) : base(position)
+        public Ziggy(Vector2 position, Vector2 lazyShit) : base(position)
         {
             sprite = SpriteCollection.ziggy;
         }

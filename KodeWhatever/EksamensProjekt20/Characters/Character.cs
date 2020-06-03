@@ -18,7 +18,7 @@ namespace EksamensProjekt20.Characters
         //protected List<Item> items = new List<Item>();
         private List<Buff> buffs = new List<Buff>();
         private List<Buff> buffRemovals = new List<Buff>();
-        public float movementSpeed;
+        
         public float currentHealth;
         public float maxHealth;
         protected float healthRegen;
@@ -31,6 +31,7 @@ namespace EksamensProjekt20.Characters
         public virtual void StartThread()
         {
             thread = new Thread(ThreadMethod);
+            thread.IsBackground = true;
             thread.Start();
         }
         protected void ThreadMethod()

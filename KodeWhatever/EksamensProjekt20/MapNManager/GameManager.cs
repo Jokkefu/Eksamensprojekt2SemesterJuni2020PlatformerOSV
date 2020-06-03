@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EksamensProjekt20.Characters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,10 @@ namespace EksamensProjekt20.MapNManager
     {
         private Database database;
         public Stage currentStage;
-
+        protected Player playerCharacter;
         public int stageNumber;
         public int runKills;
+
 
         public void EndRun()
         {
@@ -24,6 +26,7 @@ namespace EksamensProjekt20.MapNManager
         }
         public void StartGame()
         {
+            playerCharacter = new Warrior();
             stageNumber = 1;
         }
         public void OutOfBoundsCheck()

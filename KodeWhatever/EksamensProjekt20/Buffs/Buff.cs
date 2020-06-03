@@ -19,7 +19,7 @@ namespace EksamensProjekt20.Buffs
 
         public Buff(float potency, float duration, int ticks, Character target)
         {
-            efficiency = potency;
+            efficiency = potency/ticks;
             this.duration = duration;
             buffTarget = target;
             tickRate = duration / ticks;

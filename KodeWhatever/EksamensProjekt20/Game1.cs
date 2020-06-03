@@ -18,8 +18,6 @@ namespace EksamensProjekt20
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private InputHandler inputHandler;
-        Player player;
-
         public static Vector2 screenSize;
         public static GameTime gameTime;
         
@@ -40,7 +38,6 @@ namespace EksamensProjekt20
         {
             // TODO: Add your initialization logic here
             inputHandler = new InputHandler();
-            player = new Player();
             base.Initialize();
         }
 
@@ -76,7 +73,7 @@ namespace EksamensProjekt20
                 Exit();
 
             // TODO: Add your update logic here
-            inputHandler.Execute(player);
+            
             base.Update(gameTime);
         }
 
