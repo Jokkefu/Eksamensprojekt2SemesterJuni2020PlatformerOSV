@@ -16,15 +16,27 @@ namespace EksamensProjekt20.StatePattern
 
         private float elapsed;
 
+        private Enemy enemy;
+
 
         public void Enter(Enemy enemy)
         {
-            this.
+            this.enemy = enemy;
+            enemy.MovementSpeed = 50;
+            elapsed = 0;
+            cooldown = 3;
+
         }
 
         public void Execute()
         {
-            throw new NotImplementedException();
+            //ChangeState
+            elapsed += (float)Game1.gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (elapsed >= cooldown)
+            {
+                enemy.ChangeState(new Attack());
+            }
         }
 
         public void Exit()

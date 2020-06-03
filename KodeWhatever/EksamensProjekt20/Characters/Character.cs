@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using EksamensProjekt20.StatePattern;
 
 namespace EksamensProjekt20.Characters
 {
@@ -18,7 +19,18 @@ namespace EksamensProjekt20.Characters
         //protected List<Item> items = new List<Item>();
         private List<Buff> buffs = new List<Buff>();
         private List<Buff> buffRemovals = new List<Buff>();
-        public float movementSpeed;
+        private float movementSpeed;
+        public float MovementSpeed
+        {
+            get
+            {
+                return movementSpeed;
+            }
+            set
+            {
+                movementSpeed = value;
+            }
+        }
         public float currentHealth;
         public float maxHealth;
         protected float healthRegen;

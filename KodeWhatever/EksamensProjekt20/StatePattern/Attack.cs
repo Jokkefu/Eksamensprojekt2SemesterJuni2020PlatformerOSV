@@ -1,4 +1,5 @@
 ﻿using EksamensProjekt20.Characters;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,26 @@ namespace EksamensProjekt20.StatePattern
 {
     class Attack : IEnemyState
     {
+        private Vector2 velocity;
+
+        private float cooldown;
+
+        private float elapsed;
+
+        private Enemy enemy;
+
+
         public void Enter(Enemy enemy)
         {
-            throw new NotImplementedException();
+            this.enemy = enemy;
+            enemy.MovementSpeed = 200;
+            elapsed = 0;
+
         }
 
         public void Execute()
         {
-            throw new NotImplementedException();
+            //ChangeState
         }
 
         public void Exit()
