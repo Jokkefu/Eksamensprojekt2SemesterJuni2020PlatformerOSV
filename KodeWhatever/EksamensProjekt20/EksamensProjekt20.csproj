@@ -149,6 +149,9 @@
     <Compile Include="Spells\TrollWarfare.cs" />
     <Compile Include="Spells\VenomousStrike.cs" />
     <Compile Include="Spells\WomboCombo.cs" />
+    <Compile Include="StatePattern\Attack.cs" />
+    <Compile Include="StatePattern\IEnemyState.cs" />
+    <Compile Include="StatePattern\Idle.cs" />
     <Compile Include="States\GameState.cs" />
     <Compile Include="States\MenuState.cs" />
     <Compile Include="States\State.cs" />
