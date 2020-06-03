@@ -10,10 +10,10 @@ namespace EksamensProjekt20.MapNManager
 {
     class NormalPlatform : TerrainPiece
     {
-        public NormalPlatform(Vector2 pos, Vector2 size)
+        public NormalPlatform(Vector2 pos, int blockNumber)
         {
-            screenPosition = pos;
-            spriteSize = size;
+            gamePosition = pos + new Vector2((1000 * blockNumber),0);
+            spriteSize = new Vector2(100,40);
             sprite = SpriteCollection.normalPlatform;
         }
     }
