@@ -31,6 +31,7 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D plasmaGhost;
         public static Texture2D rogue;
         public static Texture2D warrior;
+        public static Texture2D warrior1;
         public static Texture2D ziggy;
 
         //Projectiles
@@ -63,7 +64,8 @@ namespace EksamensProjekt20.MapNManager
             hunter = content.Load<Texture2D>("hunter");
             impastor = content.Load<Texture2D>("impastor");
             rogue = content.Load<Texture2D>("rogue");
-            warrior = content.Load<Texture2D>("warrior");
+            warrior = content.Load<Texture2D>("warrior"); //Venstre
+            warrior1 = content.Load<Texture2D>("Warrior1");//Højre
             ziggy = content.Load<Texture2D>("ziggy");
 
             arrow = content.Load<Texture2D>("arrow");

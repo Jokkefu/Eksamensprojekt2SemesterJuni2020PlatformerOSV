@@ -15,9 +15,9 @@ namespace EksamensProjekt20.Spells
         }
         public override void Spellcast(Character source)
         {
-            if (source.health <= 1/2)
+            if (source.maxHealth <= 1/2)
             {
-                source.movementSpeed *= 1.20f;
+                source.MovementSpeed *= 1.20f;
             }
         }
     }

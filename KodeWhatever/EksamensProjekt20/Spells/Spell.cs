@@ -16,7 +16,7 @@ namespace EksamensProjekt20.Spells
         protected bool channeling;
         protected Character source;
 
-        public virtual void Spellcast()
+        public virtual void Spellcast(Character source)
         {
             channelDelay = channelDuration;
             channeling = false;
@@ -27,7 +27,7 @@ namespace EksamensProjekt20.Spells
             {
                 if (channelDelay <= 0)
                 {
-                    Spellcast();
+                    Spellcast(source);
                 }
                 else channelDelay -= gameTime.ElapsedGameTime.TotalSeconds;
             }
