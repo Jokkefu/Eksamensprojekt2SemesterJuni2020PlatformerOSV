@@ -58,6 +58,7 @@ namespace EksamensProjekt20.MapNManager
             archibald = content.Load<Texture2D>("archibald");
             blob = content.Load<Texture2D>("blob");
             damnedSoul = content.Load<Texture2D>("damnedSoul");
+            plasmaGhost = content.Load<Texture2D>("plasmaGhost");
             doodles = content.Load<Texture2D>("doodles");
             doomer = content.Load<Texture2D>("doomer");
             hunter = content.Load<Texture2D>("hunter");

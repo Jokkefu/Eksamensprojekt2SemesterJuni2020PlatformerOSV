@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.MapNManager;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,7 +72,17 @@ namespace EksamensProjekt20
             }
 
         }
-
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            spriteRect = new Rectangle((int)screenPosition.X + (int)gamePosition.X, (int)screenPosition.Y + (int)gamePosition.Y, (int)spriteSize.X, (int)spriteSize.Y);
+            if (spriteRect.Right > 0 && spriteRect.Left < Game1.screenSize.X)
+            {
+                if (spriteRect.Bottom < Game1.screenSize.Y && spriteRect.Top > 0)
+                {
+                    spriteBatch.Draw(sprite, spriteRect, Color.White);
+                }
+            }
+        }
         public void Movement()
         {
             gamePosition += velocity * movementSpeed;
