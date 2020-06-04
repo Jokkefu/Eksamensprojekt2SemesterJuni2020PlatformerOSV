@@ -11,7 +11,8 @@ namespace EksamensProjekt20.Characters
     {
         public Warrior()
         {
-            sprite = SpriteCollection.hunter;
+
+
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EksamensProjekt20.MapNManager;
+using EksamensProjekt20.Characters;
 
 namespace EksamensProjekt20
 {
@@ -14,6 +17,13 @@ namespace EksamensProjekt20
         protected Vector2 screenPosition;
         protected Vector2 spriteSize;
         public Rectangle spriteRect;
+        public bool lookingRight;
+        protected AnimationController animation;
+        public ScreenObject()
+        {
+            animation = new AnimationController();
+            
+        }
 
         public virtual void Update(GameTime gameTime)
         {
@@ -31,5 +41,7 @@ namespace EksamensProjekt20
             }
         }
 
+
+        
     }
 }

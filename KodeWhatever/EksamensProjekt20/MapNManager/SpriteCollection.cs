@@ -30,7 +30,7 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D impastor;
         public static Texture2D plasmaGhost;
         public static Texture2D rogue;
-        public static Texture2D warrior;
+        public static Texture2D[] warrior = new Texture2D[2];
         public static Texture2D ziggy;
 
         //Projectiles
@@ -46,13 +46,13 @@ namespace EksamensProjekt20.MapNManager
         }
         public static void LoadContent(ContentManager content)
         {
-            normalPlatform = content.Load<Texture2D>("normalPlatform");
-            slowingPlatform = content.Load<Texture2D>("slowingPlatform");
-            fallingPlatform = content.Load<Texture2D>("fallingPlatform");
-            climbablePlatform = content.Load<Texture2D>("climbablePlatform");
-            triggerPlatform = content.Load<Texture2D>("triggerPlatform");
-            startPlatform = content.Load<Texture2D>("startPlatform");
-            endPlatform = content.Load<Texture2D>("endPlatform");
+            normalPlatform = content.Load<Texture2D>("platform texture 1");
+            slowingPlatform = content.Load<Texture2D>("platform texture 2");
+            fallingPlatform = content.Load<Texture2D>("platform texture 3");
+            climbablePlatform = content.Load<Texture2D>("platform texture 4");
+            triggerPlatform = content.Load<Texture2D>("platform texture 5");
+            startPlatform = content.Load<Texture2D>("platform texture 6");
+            endPlatform = content.Load<Texture2D>("platform texture 6");
             background1 = content.Load<Texture2D>("background1");
 
             archibald = content.Load<Texture2D>("archibald");
@@ -64,9 +64,12 @@ namespace EksamensProjekt20.MapNManager
             hunter = content.Load<Texture2D>("hunter");
             impastor = content.Load<Texture2D>("impastor");
             rogue = content.Load<Texture2D>("rogue");
-            warrior = content.Load<Texture2D>("warrior");
             ziggy = content.Load<Texture2D>("ziggy");
 
+            #region WarriorArray
+            warrior[1] = content.Load<Texture2D>("warrior");//Venstre
+            warrior[2] = content.Load<Texture2D>("warrior1");//Højre
+            #endregion
             arrow = content.Load<Texture2D>("arrow");
         }
     }
