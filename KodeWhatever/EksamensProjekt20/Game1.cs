@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using System;
 
 //1Master
 namespace EksamensProjekt20
@@ -18,6 +20,7 @@ namespace EksamensProjekt20
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Song song;
 
 
         private State currentState;
@@ -66,8 +69,18 @@ namespace EksamensProjekt20
 
             currentState = new MenuState(this, graphics.GraphicsDevice, Content);
 
+            this.song = Content.Load<Song>("Fight_mp3");
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
 
             // TODO: use this.Content to load your game content here
+        }
+
+        private void MediaPlayer_MediaStateChanged(object sender, EventArgs e)
+        {
+            MediaPlayer.Volume -= 0.3f;
+            MediaPlayer.Play(song);
         }
 
         /// <summary>
