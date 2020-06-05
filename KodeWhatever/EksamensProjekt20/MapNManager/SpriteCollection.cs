@@ -53,8 +53,8 @@ namespace EksamensProjekt20.MapNManager
             triggerPlatform = content.Load<Texture2D>("platform texture 5");
             startPlatform = content.Load<Texture2D>("platform texture 6");
             endPlatform = content.Load<Texture2D>("platform texture 6");
-            background1 = content.Load<Texture2D>("background1");
-
+            //background1 = content.Load<Texture2D>("background1");
+            /*
             archibald = content.Load<Texture2D>("archibald");
             blob = content.Load<Texture2D>("blob");
             damnedSoul = content.Load<Texture2D>("damnedSoul");
@@ -68,10 +68,11 @@ namespace EksamensProjekt20.MapNManager
 
 
             arrow = content.Load<Texture2D>("arrow");
+            */
 
             #region WarriorArray
-            warrior[1] = content.Load<Texture2D>("warrior");//Venstre
-            warrior[2] = content.Load<Texture2D>("warrior1");//Højre
+            warrior[0] = content.Load<Texture2D>("warrior");//Venstre
+            warrior[1] = content.Load<Texture2D>("warrior1");//Højre
             #endregion
 
             

@@ -1,4 +1,5 @@
 ﻿using EksamensProjekt20.Characters;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace EksamensProjekt20.MapNManager
         protected Player playerCharacter;
         public int stageNumber;
         public int runKills;
-        
+        private StageFactory stageFactory = new StageFactory();
 
         public void EndRun()
         {
@@ -22,12 +23,15 @@ namespace EksamensProjekt20.MapNManager
         }
         public void NextStage()
         {
-            stageNumber++;
+            //stageNumber++;
+            currentStage = stageFactory.GenerateStage(stageNumber);
+            playerCharacter.gamePosition = new Vector2(40, 100);
         }
         public void StartGame()
         {
             playerCharacter = new Warrior();
             stageNumber = 1;
+            currentStage = stageFactory.GenerateStage(stageNumber);
         }
         public void OutOfBoundsCheck()
         {

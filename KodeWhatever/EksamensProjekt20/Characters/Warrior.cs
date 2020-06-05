@@ -23,6 +23,7 @@ namespace EksamensProjekt20.Characters
             primaryAttack = new SwordSlash(this);
             secondaryAttack = new Rage(this);
             attackSpeed = 1;
+            secondaryCD = 10;
             StartThread();
         }
 

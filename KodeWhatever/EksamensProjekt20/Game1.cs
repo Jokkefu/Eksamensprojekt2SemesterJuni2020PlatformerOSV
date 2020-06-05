@@ -51,6 +51,8 @@ namespace EksamensProjekt20
         {
             // TODO: Add your initialization logic here
             IsMouseVisible = true;
+            gm = new GameManager();
+
             inputHandler = new InputHandler();
             base.Initialize();
         }
@@ -69,7 +71,7 @@ namespace EksamensProjekt20
             MediaPlayer.IsRepeating = true;
             MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //SpriteCollection.LoadContent(Content);
+            SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -97,7 +99,10 @@ namespace EksamensProjekt20
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            if(Game1.gameTime == null)
+            {
+                Game1.gameTime = gameTime;
+            }
             // TODO: Add your update logic here
             if (nextState != null)
             {
