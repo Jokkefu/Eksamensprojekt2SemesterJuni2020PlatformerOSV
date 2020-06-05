@@ -9,7 +9,7 @@ namespace EksamensProjekt20.MapNManager
     class EndPlatform : StageBlock
     {
 
-        public EndPlatform() : base()
+        public EndPlatform()
         {
             
         }

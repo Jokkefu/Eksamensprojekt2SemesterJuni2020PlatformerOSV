@@ -8,7 +8,7 @@ namespace EksamensProjekt20.MapNManager
 {
     class StartPlatform : StageBlock
     {
-        public StartPlatform() : base()
+        public StartPlatform()
         {
 
         }
