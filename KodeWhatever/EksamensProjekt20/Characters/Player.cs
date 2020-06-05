@@ -12,7 +12,8 @@ namespace EksamensProjekt20.Characters
     class Player : Character
     {
         protected SecondaryAttack secondaryAttack;
-
+        protected double secondaryDelay;
+        protected float secondaryCD;
         public Player()
         {
 
@@ -38,6 +39,17 @@ namespace EksamensProjekt20.Characters
                     animation.Walking(false);
                 }
             }
+        }
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+        }
+
+        public virtual void SecAttack()
+        {
+            secondaryAttack.Attack();
+            secondaryDelay = secondaryCD;
         }
     }
 }

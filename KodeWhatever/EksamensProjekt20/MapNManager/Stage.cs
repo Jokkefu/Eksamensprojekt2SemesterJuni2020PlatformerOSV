@@ -11,7 +11,7 @@ namespace EksamensProjekt20.MapNManager
 {
     class Stage
     {
-        public Vector2 stageVector;
+        public static Vector2 stageVector;
         public StartPlatform startPlatform;
         public EndPlatform endPlatform;
         public List<StageBlock> stageSetup = new List<StageBlock>();

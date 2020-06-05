@@ -74,7 +74,7 @@ namespace EksamensProjekt20
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            screenPosition = gamePosition - (spriteSize / 2);
+            screenPosition = gamePosition + Stage.stageVector - (spriteSize / 2);
             base.Draw(spriteBatch);
         }
         public void Movement()

@@ -38,7 +38,7 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
+            gm = new GameManager();
             inputHandler = new InputHandler();
             base.Initialize();
         }
@@ -50,9 +50,8 @@ namespace EksamensProjekt20
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //SpriteCollection.LoadContent(Content);
+            SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -74,9 +73,11 @@ namespace EksamensProjekt20
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            if(Game1.gameTime == null)
+            {
+                Game1.gameTime = gameTime;
+            }
             // TODO: Add your update logic here
-            
             base.Update(gameTime);
         }
 
