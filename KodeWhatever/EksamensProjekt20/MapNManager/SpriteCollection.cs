@@ -11,13 +11,13 @@ namespace EksamensProjekt20.MapNManager
     class SpriteCollection
     {
         //Platforms & Stage
-        public static Texture2D normalPlatform;
-        public static Texture2D slowingPlatform;
-        public static Texture2D fallingPlatform;
-        public static Texture2D climbablePlatform;
-        public static Texture2D triggerPlatform;
-        public static Texture2D startPlatform;
-        public static Texture2D endPlatform;
+        public static Texture2D[] normalPlatform = new Texture2D[1];
+        public static Texture2D[] slowingPlatform = new Texture2D[1];
+        public static Texture2D[] fallingPlatform = new Texture2D[1];
+        public static Texture2D[] climbablePlatform = new Texture2D[1];
+        public static Texture2D[] triggerPlatform = new Texture2D[1];
+        public static Texture2D[] startPlatform = new Texture2D[1];
+        public static Texture2D[] endPlatform = new Texture2D[1];
         public static Texture2D background1;
 
         //Character
@@ -46,13 +46,13 @@ namespace EksamensProjekt20.MapNManager
         }
         public static void LoadContent(ContentManager content)
         {
-            normalPlatform = content.Load<Texture2D>("platform texture 1");
-            slowingPlatform = content.Load<Texture2D>("platform texture 2");
-            fallingPlatform = content.Load<Texture2D>("platform texture 3");
-            climbablePlatform = content.Load<Texture2D>("platform texture 4");
-            triggerPlatform = content.Load<Texture2D>("platform texture 5");
-            startPlatform = content.Load<Texture2D>("platform texture 6");
-            endPlatform = content.Load<Texture2D>("platform texture 6");
+            normalPlatform[0] = content.Load<Texture2D>("platform texture 1");
+            slowingPlatform[0] = content.Load<Texture2D>("platform texture 2");
+            fallingPlatform[0] = content.Load<Texture2D>("platform texture 3");
+            climbablePlatform[0] = content.Load<Texture2D>("platform texture 4");
+            triggerPlatform[0] = content.Load<Texture2D>("platform texture 5");
+            startPlatform[0] = content.Load<Texture2D>("platform texture 6");
+            endPlatform[0] = content.Load<Texture2D>("platform texture 6");
             //background1 = content.Load<Texture2D>("background1");
             /*
             archibald = content.Load<Texture2D>("archibald");

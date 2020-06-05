@@ -19,8 +19,11 @@ namespace EksamensProjekt20
         SpriteBatch spriteBatch;
         private InputHandler inputHandler;
         public static Vector2 screenSize;
+        private bool fullScreen = false;
         public static GameTime gameTime;
         GameManager gm;
+        private bool gameStarted = false;
+
 
         public Game1()
         {
@@ -37,6 +40,9 @@ namespace EksamensProjekt20
         /// </summary>
         protected override void Initialize()
         {
+
+            screenSize = new Vector2(1920,1080);
+            ApplyGraphics();
             // TODO: Add your initialization logic here
             gm = new GameManager();
             inputHandler = new InputHandler();
@@ -71,12 +77,14 @@ namespace EksamensProjekt20
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            if(Game1.gameTime == null)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
+            Game1.gameTime = gameTime;
+            if (gameStarted == false && Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
-                Game1.gameTime = gameTime;
+                gameStarted = true;
+                gm.StartGame();
             }
+            gm.Update(gameTime);
             // TODO: Add your update logic here
             base.Update(gameTime);
         }
@@ -88,10 +96,19 @@ namespace EksamensProjekt20
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spriteBatch.Begin();
+            if(gameStarted) gm.Draw(spriteBatch);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
+            spriteBatch.End();
+        }
+        private void ApplyGraphics()
+        {
+            graphics.PreferredBackBufferWidth = (int)screenSize.X;
+            graphics.PreferredBackBufferHeight = (int)screenSize.Y;
+            graphics.IsFullScreen = fullScreen;
+            graphics.ApplyChanges();
         }
     }
 }

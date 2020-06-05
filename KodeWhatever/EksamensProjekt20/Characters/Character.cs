@@ -37,13 +37,14 @@ namespace EksamensProjekt20.Characters
         
         public void StartThread()
         {
+            alive = true;
             thread = new Thread(ThreadMethod);
             thread.IsBackground = true;
             thread.Start();
         }
         protected void ThreadMethod()
         {
-            Update(Game1.gameTime);
+            while(alive) Update(Game1.gameTime);
         }
         public virtual void Attack()
         {
@@ -74,7 +75,7 @@ namespace EksamensProjekt20.Characters
         }
         public virtual void Death()
         {
-            thread.Abort();
+            alive = false;
         }
         public override void Update(GameTime gameTime)
         {

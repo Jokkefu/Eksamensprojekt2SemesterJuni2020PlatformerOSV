@@ -22,6 +22,7 @@ namespace EksamensProjekt20
         }
         public Texture2D GetSprite()
         {
+            if (currentSprite == null) currentSprite = spriteArray[0];
             return currentSprite;
         }
         public void SetSprite(int spriteIndex)
@@ -32,11 +33,11 @@ namespace EksamensProjekt20
         {
             if (!walkingRight)
             {
-                currentSprite = spriteArray[1];
+                currentSprite = spriteArray[0];
             }
             else
             {
-                currentSprite = spriteArray[2];
+                currentSprite = spriteArray[1];
             }
         }
 

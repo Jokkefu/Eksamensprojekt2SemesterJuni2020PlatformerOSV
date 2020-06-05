@@ -1,5 +1,7 @@
 ﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.CommandPattern;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace EksamensProjekt20.MapNManager
         public int stageNumber;
         public int runKills;
         private StageFactory stageFactory = new StageFactory();
+        private InputHandler inputHandler = new InputHandler();
 
         public void EndRun()
         {
@@ -36,6 +39,16 @@ namespace EksamensProjekt20.MapNManager
         public void OutOfBoundsCheck()
         {
 
+        }
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            currentStage.Draw(spriteBatch);
+            playerCharacter.Draw(spriteBatch);
+        }
+        public void Update(GameTime gameTime)
+        {
+            inputHandler.Execute(playerCharacter);
+            //currentStage.Update(gameTime);
         }
     }
 }
