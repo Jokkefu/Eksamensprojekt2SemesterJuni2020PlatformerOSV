@@ -2,6 +2,7 @@
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
 using EksamensProjekt20.MapNManager;
+using EksamensProjekt20.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -21,6 +22,7 @@ namespace EksamensProjekt20
         public static Vector2 screenSize;
         public static GameTime gameTime;
         GameManager gm;
+        private HealthBar healthBar;
 
         public Game1()
         {
@@ -52,7 +54,7 @@ namespace EksamensProjekt20
             // Create a new SpriteBatch, which can be used to draw textures.
             
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            //SpriteCollection.LoadContent(Content);
+            SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -75,6 +77,7 @@ namespace EksamensProjekt20
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+
             // TODO: Add your update logic here
             
             base.Update(gameTime);
@@ -87,6 +90,9 @@ namespace EksamensProjekt20
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            spriteBatch.Begin();
+            spriteBatch.End();
 
             // TODO: Add your drawing code here
 

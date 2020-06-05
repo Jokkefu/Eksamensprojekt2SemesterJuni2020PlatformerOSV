@@ -32,11 +32,11 @@ namespace EksamensProjekt20
         {
             if (!walkingRight)
             {
-                currentSprite = spriteArray[1];
+                currentSprite = spriteArray[0];
             }
             else
             {
-                currentSprite = spriteArray[2];
+                currentSprite = spriteArray[1];
             }
         }
 

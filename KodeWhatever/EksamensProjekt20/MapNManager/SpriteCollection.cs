@@ -32,6 +32,8 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D rogue;
         public static Texture2D[] warrior = new Texture2D[2];
         public static Texture2D ziggy;
+        public static Texture2D lifebar;
+        public static Texture2D container;
 
         //Projectiles
         public static Texture2D arrow;
@@ -53,25 +55,27 @@ namespace EksamensProjekt20.MapNManager
             triggerPlatform = content.Load<Texture2D>("platform texture 5");
             startPlatform = content.Load<Texture2D>("platform texture 6");
             endPlatform = content.Load<Texture2D>("platform texture 6");
-            background1 = content.Load<Texture2D>("background1");
+            //background1 = content.Load<Texture2D>("background1");
 
-            archibald = content.Load<Texture2D>("archibald");
-            blob = content.Load<Texture2D>("blob");
-            damnedSoul = content.Load<Texture2D>("damnedSoul");
-            plasmaGhost = content.Load<Texture2D>("plasmaGhost");
-            doodles = content.Load<Texture2D>("doodles");
-            doomer = content.Load<Texture2D>("doomer");
-            hunter = content.Load<Texture2D>("hunter");
-            impastor = content.Load<Texture2D>("impastor");
-            rogue = content.Load<Texture2D>("rogue");
-            ziggy = content.Load<Texture2D>("ziggy");
+            //archibald = content.Load<Texture2D>("archibald");
+            //blob = content.Load<Texture2D>("blob");
+            //damnedSoul = content.Load<Texture2D>("damnedSoul");
+            //plasmaGhost = content.Load<Texture2D>("plasmaGhost");
+            //doodles = content.Load<Texture2D>("doodles");
+            //doomer = content.Load<Texture2D>("doomer");
+            //hunter = content.Load<Texture2D>("hunter");
+            //impastor = content.Load<Texture2D>("impastor");
+            //rogue = content.Load<Texture2D>("rogue");
+            //ziggy = content.Load<Texture2D>("ziggy");
+            lifebar = content.Load<Texture2D>("healthBar");
+            container = content.Load<Texture2D>("healthGauge");
 
 
-            arrow = content.Load<Texture2D>("arrow");
+            //arrow = content.Load<Texture2D>("arrow");
 
             #region WarriorArray
-            warrior[1] = content.Load<Texture2D>("warrior");//Venstre
-            warrior[2] = content.Load<Texture2D>("warrior1");//Højre
+            warrior[0] = content.Load<Texture2D>("warrior");//Venstre
+            warrior[1] = content.Load<Texture2D>("warrior1");//Højre
             #endregion
 
             
