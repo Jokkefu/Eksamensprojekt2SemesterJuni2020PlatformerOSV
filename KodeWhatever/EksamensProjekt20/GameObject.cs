@@ -21,7 +21,7 @@ namespace EksamensProjekt20
         public override void Update(GameTime gameTime)
         {
             Gravity(gameTime);
-            Movement();
+            Movement(gameTime);
             base.Update(gameTime);
         }
 
@@ -78,9 +78,9 @@ namespace EksamensProjekt20
             screenPosition = gamePosition + Stage.stageVector - (spriteSize / 2);
             base.Draw(spriteBatch);
         }
-        public void Movement()
+        public void Movement(GameTime gameTime)
         {
-            gamePosition += velocity * movementSpeed * (float)Game1.gameTime.ElapsedGameTime.TotalSeconds;
+            gamePosition += velocity * movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
 }

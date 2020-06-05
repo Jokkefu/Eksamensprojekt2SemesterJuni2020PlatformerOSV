@@ -18,6 +18,7 @@ namespace EksamensProjekt20.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+
         }
         public override void PostUpdate(GameTime gameTime)
         {
