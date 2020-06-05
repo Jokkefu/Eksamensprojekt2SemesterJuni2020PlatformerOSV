@@ -1,11 +1,13 @@
-
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
 using EksamensProjekt20.MapNManager;
+using EksamensProjekt20.States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using System;
 
 //1Master
 namespace EksamensProjekt20
@@ -21,6 +23,16 @@ namespace EksamensProjekt20
         public static Vector2 screenSize;
         public static GameTime gameTime;
         GameManager gm;
+        Song song;
+        private State currentState;
+        private State nextState;
+
+        public void ChangeState(State state)
+        {
+            nextState = state;
+        }
+
+
 
         public Game1()
         {
@@ -38,7 +50,7 @@ namespace EksamensProjekt20
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            
+            IsMouseVisible = true;
             inputHandler = new InputHandler();
             base.Initialize();
         }
@@ -50,10 +62,21 @@ namespace EksamensProjekt20
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            
+            currentState = new MenuState(this, graphics.GraphicsDevice, Content);
+
+            this.song = Content.Load<Song>("Fight_mp3");
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
             spriteBatch = new SpriteBatch(GraphicsDevice);
             //SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
+        }
+
+        private void MediaPlayer_MediaStateChanged(object sender, EventArgs e)
+        {
+            MediaPlayer.Volume -= 0.1f;
+            MediaPlayer.Play(song);
         }
 
         /// <summary>
@@ -76,7 +99,19 @@ namespace EksamensProjekt20
                 Exit();
 
             // TODO: Add your update logic here
-            
+            if (nextState != null)
+            {
+                currentState = nextState;
+
+                nextState = null;
+            }
+
+
+            currentState.Update(gameTime);
+
+            currentState.PostUpdate(gameTime);
+
+
             base.Update(gameTime);
         }
 
@@ -88,6 +123,7 @@ namespace EksamensProjekt20
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            currentState.Draw(gameTime, spriteBatch);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

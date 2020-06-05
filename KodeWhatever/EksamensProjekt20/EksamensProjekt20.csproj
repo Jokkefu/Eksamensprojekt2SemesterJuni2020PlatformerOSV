@@ -61,6 +61,8 @@
     <Compile Include="CommandPattern\PrimaryAttackCommand.cs" />
     <Compile Include="CommandPattern\SecondaryAttackCommand.cs" />
     <Compile Include="CommandPattern\SpellCommand.cs" />
+    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\Components.cs" />
     <Compile Include="MapNManager\ClimbablePlatform.cs" />
     <Compile Include="MapNManager\Database.cs" />
     <Compile Include="Characters\Doodles.cs" />
@@ -148,6 +150,11 @@
     <Compile Include="Spells\TrollWarfare.cs" />
     <Compile Include="Spells\VenomousStrike.cs" />
     <Compile Include="Spells\WomboCombo.cs" />
+    <Compile Include="StatePattern\Attack.cs" />
+    <Compile Include="StatePattern\IEnemyState.cs" />
+    <Compile Include="State\GameState.cs" />
+    <Compile Include="State\MenuState.cs" />
+    <Compile Include="State\State.cs" />
     <Compile Include="UI\ButtonEffect.cs" />
     <Compile Include="UI\UIButton.cs" />
     <Compile Include="UI\UIElement.cs" />
