@@ -12,7 +12,7 @@ namespace EksamensProjekt20.Characters
     {
         public DamnedSoul(Vector2 position, Vector2 lazyShit) : base(position)
         {
-            sprite = SpriteCollection.damnedSoul;
+            currentSprite = SpriteCollection.damnedSoul;
         }
     }
 }

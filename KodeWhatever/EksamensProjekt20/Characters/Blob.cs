@@ -12,7 +12,7 @@ namespace EksamensProjekt20.Characters
     {
         public Blob(Vector2 position, Vector2 lazyShit) : base(position)
         {
-            sprite = SpriteCollection.blob;
+            currentSprite = SpriteCollection.blob;
         }
     }
 }

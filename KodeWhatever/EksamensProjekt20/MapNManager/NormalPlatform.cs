@@ -14,7 +14,7 @@ namespace EksamensProjekt20.MapNManager
         {
             gamePosition = pos + new Vector2((1000 * blockNumber),0);
             spriteSize = new Vector2(100,40);
-            sprite = SpriteCollection.normalPlatform;
+            currentSprite = SpriteCollection.normalPlatform;
         }
     }
 }

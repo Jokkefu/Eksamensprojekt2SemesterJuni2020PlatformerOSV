@@ -14,7 +14,7 @@ namespace EksamensProjekt20.Characters
     {
         public Warrior()
         {
-            
+            animation.spriteArray = SpriteCollection.warrior;
             spriteSize = new Vector2(40, 100);
             gamePosition = new Vector2(40, 400); 
             maxHealth = 100;
@@ -25,5 +25,6 @@ namespace EksamensProjekt20.Characters
             attackSpeed = 1;
             StartThread();
         }
+
     }
 }

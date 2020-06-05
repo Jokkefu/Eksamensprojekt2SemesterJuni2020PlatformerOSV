@@ -30,7 +30,7 @@ namespace EksamensProjekt20
             if (other.tag == "Terrain")
             {
                 //Bottom Player Collision
-                if (t.gamePosition.Y - t.sprite.Height / 2 < this.gamePosition.Y + this.sprite.Height / 2 && t.gamePosition.Y - t.sprite.Height / 3 > this.gamePosition.Y + this.sprite.Height / 2 && t.gamePosition.X - t.sprite.Width / 3 * 1.40 < this.gamePosition.X + this.sprite.Width / 2 && t.gamePosition.X + t.sprite.Width / 3 * 1.40 > this.gamePosition.X - this.sprite.Width / 2)
+                if (t.gamePosition.Y - t.currentSprite.Height / 2 < this.gamePosition.Y + this.currentSprite.Height / 2 && t.gamePosition.Y - t.currentSprite.Height / 3 > this.gamePosition.Y + this.currentSprite.Height / 2 && t.gamePosition.X - t.currentSprite.Width / 3 * 1.40 < this.gamePosition.X + this.currentSprite.Width / 2 && t.gamePosition.X + t.currentSprite.Width / 3 * 1.40 > this.gamePosition.X - this.currentSprite.Width / 2)
                 {
                     int height = spriteRect.Bottom - other.spriteRect.Top;
                     gamePosition.Y -= height;
@@ -39,18 +39,18 @@ namespace EksamensProjekt20
 
                 }
                 //Top Player Collision
-                if (t.gamePosition.Y + t.sprite.Height / 2 > this.gamePosition.Y - this.sprite.Height / 2 && t.gamePosition.X - t.sprite.Width / 3 * 1.40 < this.gamePosition.X + this.sprite.Width / 2 && t.gamePosition.X + t.sprite.Width / 3 * 1.40 > this.gamePosition.X - this.sprite.Width / 2 && isGrounded == false)
+                if (t.gamePosition.Y + t.currentSprite.Height / 2 > this.gamePosition.Y - this.currentSprite.Height / 2 && t.gamePosition.X - t.currentSprite.Width / 3 * 1.40 < this.gamePosition.X + this.currentSprite.Width / 2 && t.gamePosition.X + t.currentSprite.Width / 3 * 1.40 > this.gamePosition.X - this.currentSprite.Width / 2 && isGrounded == false)
                 {
                     velocity = new Vector2(velocity.X, velocity.Y - velocity.Y * 2);
                 }
                 //Right Player Collision
-                if (t.gamePosition.X - this.sprite.Width / 2 >= this.gamePosition.X + this.sprite.Width / 2 && t.gamePosition.X > this.gamePosition.X + sprite.Width / 2 && t.gamePosition.Y + t.sprite.Height / 3 > this.gamePosition.Y - this.sprite.Height / 2 && isGrounded == false)
+                if (t.gamePosition.X - this.currentSprite.Width / 2 >= this.gamePosition.X + this.currentSprite.Width / 2 && t.gamePosition.X > this.gamePosition.X + currentSprite.Width / 2 && t.gamePosition.Y + t.currentSprite.Height / 3 > this.gamePosition.Y - this.currentSprite.Height / 2 && isGrounded == false)
                 {
                     int width = spriteRect.Right - other.spriteRect.Left;
                     gamePosition.X -= width;
                 }
                 //Left Player Collision
-                if (t.gamePosition.X + this.sprite.Width / 2 <= this.gamePosition.X - this.sprite.Width / 2 && t.gamePosition.X < this.gamePosition.X - sprite.Width / 2 && t.gamePosition.Y + t.sprite.Height / 3 > this.gamePosition.Y - this.sprite.Height / 2 && isGrounded == false)
+                if (t.gamePosition.X + this.currentSprite.Width / 2 <= this.gamePosition.X - this.currentSprite.Width / 2 && t.gamePosition.X < this.gamePosition.X - currentSprite.Width / 2 && t.gamePosition.Y + t.currentSprite.Height / 3 > this.gamePosition.Y - this.currentSprite.Height / 2 && isGrounded == false)
                 {
                     int width = spriteRect.Left - other.spriteRect.Right;
                     gamePosition.X -= width;

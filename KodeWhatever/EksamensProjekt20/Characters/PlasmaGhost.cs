@@ -12,7 +12,7 @@ namespace EksamensProjekt20.Characters
     {
         public PlasmaGhost(Vector2 position, Vector2 lazyShit) : base(position)
         {
-            sprite = SpriteCollection.plasmaGhost;
+            currentSprite = SpriteCollection.plasmaGhost;
         }
     }
 }

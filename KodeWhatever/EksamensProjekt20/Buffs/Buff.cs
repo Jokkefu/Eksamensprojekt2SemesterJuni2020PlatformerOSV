@@ -34,7 +34,7 @@ namespace EksamensProjekt20.Buffs
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            if (sprite != null)
+            if (currentSprite != null)
             {
                 base.Draw(spriteBatch);
             }
