@@ -26,7 +26,18 @@ namespace EksamensProjekt20.Characters
         public void Move(Vector2 velocity)
         {
             this.velocity += velocity;
-        }
 
+            if (velocity.Y == 0)
+            {
+                if (velocity.X >= 0)
+                {
+                    animation.Walking(true);
+                }
+                else
+                {
+                    animation.Walking(false);
+                }
+            }
+        }
     }
 }

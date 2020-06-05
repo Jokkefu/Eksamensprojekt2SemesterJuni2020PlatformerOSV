@@ -66,11 +66,15 @@ namespace EksamensProjekt20.MapNManager
             rogue = content.Load<Texture2D>("rogue");
             ziggy = content.Load<Texture2D>("ziggy");
 
+
+            arrow = content.Load<Texture2D>("arrow");
+
             #region WarriorArray
             warrior[1] = content.Load<Texture2D>("warrior");//Venstre
             warrior[2] = content.Load<Texture2D>("warrior1");//Højre
             #endregion
-            arrow = content.Load<Texture2D>("arrow");
+
+            
         }
     }
 }

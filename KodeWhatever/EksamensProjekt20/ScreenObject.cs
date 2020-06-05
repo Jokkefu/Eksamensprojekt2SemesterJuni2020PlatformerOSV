@@ -13,7 +13,7 @@ namespace EksamensProjekt20
 {
     class ScreenObject
     {
-        protected Texture2D sprite;
+        protected Texture2D currentSprite;
         protected Vector2 screenPosition;
         protected Vector2 spriteSize;
         public Rectangle spriteRect;
@@ -22,7 +22,6 @@ namespace EksamensProjekt20
         public ScreenObject()
         {
             animation = new AnimationController();
-            
         }
 
         public virtual void Update(GameTime gameTime)
@@ -36,7 +35,7 @@ namespace EksamensProjekt20
             {
                 if (spriteRect.Bottom < Game1.screenSize.Y && spriteRect.Top > 0)
                 {
-                    spriteBatch.Draw(sprite, spriteRect, Color.White);
+                    spriteBatch.Draw(animation.GetSprite(), spriteRect, Color.White);
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace EksamensProjekt20.Characters
     {
         public Ziggy(Vector2 position, Vector2 lazyShit) : base(position)
         {
-            sprite = SpriteCollection.ziggy;
+            currentSprite = SpriteCollection.ziggy;
         }
     }
 }

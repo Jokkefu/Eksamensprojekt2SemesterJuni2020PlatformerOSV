@@ -11,13 +11,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace EksamensProjekt20
 {
-    class AnimationController : Character
+    class AnimationController
     {
-        protected Vector2 mousePos;
         public Texture2D[] spriteArray;
         private Texture2D currentSprite;
 
-        public AnimationController(Texture2D[] warrior[2])
+        public AnimationController()
         {
             
         }
@@ -29,5 +28,17 @@ namespace EksamensProjekt20
         {
             currentSprite = spriteArray[spriteIndex];
         }
+        public void Walking(bool walkingRight)
+        {
+            if (!walkingRight)
+            {
+                currentSprite = spriteArray[1];
+            }
+            else
+            {
+                currentSprite = spriteArray[2];
+            }
+        }
+
     }
 }

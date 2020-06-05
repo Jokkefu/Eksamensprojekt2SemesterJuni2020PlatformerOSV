@@ -12,7 +12,7 @@ namespace EksamensProjekt20.Characters
     {
         public Archibald(Vector2 position, Vector2 lazyShit) : base(position)
         {
-            sprite = SpriteCollection.archibald;
+            currentSprite = SpriteCollection.archibald;
         }
     }
 }

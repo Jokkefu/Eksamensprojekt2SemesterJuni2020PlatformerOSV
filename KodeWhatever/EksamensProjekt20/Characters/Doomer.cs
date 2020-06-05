@@ -11,7 +11,7 @@ namespace EksamensProjekt20.Characters
     {
         public Doomer()
         {
-            sprite = SpriteCollection.doomer;
+            currentSprite = SpriteCollection.doomer;
         }
     }
 }

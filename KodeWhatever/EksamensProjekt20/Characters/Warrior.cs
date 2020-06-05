@@ -1,4 +1,4 @@
-﻿wusing EksamensProjekt20.MapNManager;
+﻿using EksamensProjekt20.MapNManager;
 using EksamensProjekt20.PrimaryAttacks;
 using EksamensProjekt20.SecondaryAttacks;
 using System;
@@ -14,7 +14,7 @@ namespace EksamensProjekt20.Characters
     {
         public Warrior()
         {
-            sprite = SpriteCollection.warrior;
+            animation.spriteArray = SpriteCollection.warrior;
             spriteSize = new Vector2(40, 100);
             gamePosition = new Vector2(40, 400); 
             maxHealth = 100;
@@ -25,5 +25,6 @@ namespace EksamensProjekt20.Characters
             attackSpeed = 1;
             StartThread();
         }
+
     }
 }
