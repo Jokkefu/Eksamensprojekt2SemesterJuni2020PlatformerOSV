@@ -70,12 +70,10 @@ namespace EksamensProjekt20.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
 
             foreach (var component in components)
                 component.Draw(gameTime, spriteBatch);
 
-            spriteBatch.End();
         }
         public override void PostUpdate(GameTime gameTime)
         {
