@@ -14,7 +14,7 @@ namespace EksamensProjekt20.MapNManager
         protected Player playerCharacter;
         public int stageNumber;
         public int runKills;
-
+        
 
         public void EndRun()
         {

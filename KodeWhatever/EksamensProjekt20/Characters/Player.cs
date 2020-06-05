@@ -11,17 +11,22 @@ namespace EksamensProjekt20.Characters
 {
     class Player : Character
     {
+        protected SecondaryAttack secondaryAttack;
+
         public Player()
         {
 
             
         }
+        public override void Death()
+        {
 
+            base.Death();
+        }
         public void Move(Vector2 velocity)
         {
             this.velocity += velocity;
         }
 
-        protected SecondaryAttack secondaryAttack;
     }
 }

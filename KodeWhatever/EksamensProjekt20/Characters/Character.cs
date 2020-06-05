@@ -13,22 +13,29 @@ namespace EksamensProjekt20.Characters
 {
     class Character : GameObject
     {
-        protected PrimaryAttack primaryAttack;
-        protected Spell[] spells = new Spell[0];
-        //protected List<Item> items = new List<Item>();
-        private List<Buff> buffs = new List<Buff>();
-        private List<Buff> buffRemovals = new List<Buff>();
-        
+        protected Thread thread;
+
         public float currentHealth;
         public float maxHealth;
         protected float healthRegen;
+        protected bool alive;
+        public int damage;
+
+        protected PrimaryAttack primaryAttack;
         protected int maxAmmo;
         public int ammo;
-        public int damage;
-        protected bool alive;
-        protected Thread thread;
+        protected double attackDelay;
+        protected float attackSpeed;
 
-        public virtual void StartThread()
+        protected Spell[] spells = new Spell[0];
+        
+        private List<Buff> buffs = new List<Buff>();
+        private List<Buff> buffRemovals = new List<Buff>();
+        
+
+
+        
+        public void StartThread()
         {
             thread = new Thread(ThreadMethod);
             thread.IsBackground = true;
@@ -40,20 +47,30 @@ namespace EksamensProjekt20.Characters
         }
         public virtual void Attack()
         {
-
+            primaryAttack.Attack();
+            attackDelay = attackSpeed;
         }
         
         public virtual void Spell()
         {
-
+            if (spells.Length >= 1)
+            {
+                spells[0].PrimeSpell(this);
+            }
         }
         public virtual void Spell1()
         {
-
+            if (spells.Length >= 2)
+            {
+                spells[1].PrimeSpell(this);
+            }
         }
         public virtual void Spell2()
         {
-
+            if (spells.Length == 3)
+            {
+                spells[2].PrimeSpell(this);
+            }
         }
         public virtual void Death()
         {

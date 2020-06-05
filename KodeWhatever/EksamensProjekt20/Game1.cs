@@ -20,7 +20,7 @@ namespace EksamensProjekt20
         private InputHandler inputHandler;
         public static Vector2 screenSize;
         public static GameTime gameTime;
-        
+        GameManager gm;
 
         public Game1()
         {

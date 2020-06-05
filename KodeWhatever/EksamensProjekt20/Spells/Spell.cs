@@ -10,7 +10,7 @@ namespace EksamensProjekt20.Spells
 {
     class Spell
     {
-        protected double channelDelay;
+        public double channelDelay;
         protected float channelDuration;
         protected bool channeling;
         protected Character source;
@@ -35,6 +35,7 @@ namespace EksamensProjekt20.Spells
         {
             source = sourceChar;
             channeling = true;
+
         }
     }
 }
