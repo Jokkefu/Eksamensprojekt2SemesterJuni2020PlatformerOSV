@@ -49,7 +49,7 @@ namespace EksamensProjekt20
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            SpriteCollection.LoadContent(Content);
+            //SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
