@@ -14,7 +14,7 @@ namespace EksamensProjekt20
     class ScreenObject
     {
         protected Texture2D currentSprite;
-        protected Vector2 screenPosition;
+        public Vector2 screenPosition;
         protected Vector2 spriteSize;
         public Rectangle spriteRect;
         public bool lookingRight;

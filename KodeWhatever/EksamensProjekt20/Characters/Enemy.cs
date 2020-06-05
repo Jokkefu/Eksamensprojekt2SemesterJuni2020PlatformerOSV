@@ -9,6 +9,7 @@ namespace EksamensProjekt20.Characters
 {
     class Enemy : Character
     {
+
         public Enemy(Vector2 position)
         {
             screenPosition = position;
