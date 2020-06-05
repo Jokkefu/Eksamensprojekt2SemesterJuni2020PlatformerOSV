@@ -11,6 +11,8 @@ namespace EksamensProjekt20.Characters
     class Enemy : Character
     {
         private IEnemyState currentState;
+		
+		
         public Enemy(Vector2 position)
         {
             screenPosition = position;
