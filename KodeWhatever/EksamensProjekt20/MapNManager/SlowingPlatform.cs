@@ -14,7 +14,7 @@ namespace EksamensProjekt20.MapNManager
         {
             screenPosition = pos;
             spriteSize = size;
-            currentSprite = SpriteCollection.slowingPlatform;
+            animation.spriteArray = SpriteCollection.slowingPlatform;
         }
     }
 }

@@ -20,6 +20,7 @@ namespace EksamensProjekt20
 
         public override void Update(GameTime gameTime)
         {
+            Gravity(gameTime);
             Movement();
             base.Update(gameTime);
         }
@@ -79,7 +80,7 @@ namespace EksamensProjekt20
         }
         public void Movement()
         {
-            gamePosition += velocity * movementSpeed;
+            gamePosition += velocity * movementSpeed * (float)Game1.gameTime.ElapsedGameTime.TotalSeconds;
         }
     }
 }

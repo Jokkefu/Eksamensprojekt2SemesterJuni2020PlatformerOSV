@@ -33,7 +33,7 @@ namespace EksamensProjekt20.MapNManager
         public void Draw(SpriteBatch spriteBatch)
         {
             mapRect = new Rectangle((int)stageVector.X, (int)stageVector.X, 7000, 2000);
-            spriteBatch.Draw(mapSprite, mapRect, Color.White);
+            //spriteBatch.Draw(mapSprite, mapRect, Color.White);
             foreach(StageBlock block in stageSetup)
             {
                 block.Draw(spriteBatch);
