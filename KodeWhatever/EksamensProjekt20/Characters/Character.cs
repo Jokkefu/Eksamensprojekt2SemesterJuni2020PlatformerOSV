@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using EksamensProjekt20.StatePattern;
 
 namespace EksamensProjekt20.Characters
 {
