@@ -40,7 +40,8 @@ namespace EksamensProjekt20.MapNManager
         //Sound
         public static Song song;
 
-
+        //Fonts
+        public static SpriteFont font;
 
         public ContentCollection()
         {
@@ -80,6 +81,7 @@ namespace EksamensProjekt20.MapNManager
 
             song = content.Load<Song>("Fight_mp3");
 
+            font = content.Load<SpriteFont>("font");
         }
     }
 }

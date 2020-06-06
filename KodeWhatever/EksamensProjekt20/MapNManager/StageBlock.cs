@@ -11,6 +11,7 @@ namespace EksamensProjekt20.MapNManager
     class StageBlock
     {
         public List<GameObject> terrainSetup = new List<GameObject>();
+
         public StageBlock()
         {
             
