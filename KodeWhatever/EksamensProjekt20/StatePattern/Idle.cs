@@ -10,7 +10,6 @@ namespace EksamensProjekt20.StatePattern
 {
     class Idle : IEnemyState
     {
-        private Vector2 velocity;
 
         private float cooldown;
 
@@ -41,7 +40,7 @@ namespace EksamensProjekt20.StatePattern
 
         public void Exit()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

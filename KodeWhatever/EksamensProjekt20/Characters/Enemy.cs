@@ -25,11 +25,7 @@ namespace EksamensProjekt20.Characters
         }
         public void ChangeState(IEnemyState newEnemyState)
         {
-            if (currentState != null)
-            {
-                currentState.Exit();
-            }
-
+            currentState = newEnemyState;
             currentState.Enter(this);
         }
     }
