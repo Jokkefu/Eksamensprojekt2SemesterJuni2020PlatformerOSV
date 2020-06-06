@@ -14,7 +14,7 @@ namespace EksamensProjekt20.Characters
     {
         public Warrior()
         {
-            animation.spriteArray = SpriteCollection.warrior;
+            animation.spriteArray = ContentCollection.warrior;
             spriteSize = new Vector2(40, 100);
             gamePosition = new Vector2(40, 400);
             movementSpeed = 10f;

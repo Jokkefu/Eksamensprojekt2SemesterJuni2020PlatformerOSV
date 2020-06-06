@@ -10,9 +10,10 @@ namespace EksamensProjekt20.Characters
 {
     class Archibald : Enemy
     {
-        public Archibald(Vector2 position, Vector2 lazyShit) : base(position)
+        public Archibald(Vector2 position, int block) : base(position, block)
         {
-            currentSprite = SpriteCollection.archibald;
+            animation.spriteArray = ContentCollection.archibald;
+            
         }
     }
 }

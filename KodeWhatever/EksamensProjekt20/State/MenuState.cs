@@ -21,7 +21,7 @@ namespace EksamensProjekt20.States
 
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 200),
+                Position = new Vector2(700, 150),
                 Text = "New Game",
             };
 
@@ -29,7 +29,7 @@ namespace EksamensProjekt20.States
 
             var LoadGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 250),
+                Position = new Vector2(700, 400),
                 Text = "Load Game",
             };
 
@@ -37,7 +37,7 @@ namespace EksamensProjekt20.States
 
             var QuitGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 300),
+                Position = new Vector2(700, 650),
                 Text = "Quit Game",
             };
 
@@ -65,7 +65,7 @@ namespace EksamensProjekt20.States
 
         private void NewGameButton_Click(object sender, EventArgs e)
         {
-            game1.ChangeState(new GameState(game1, graphicsDevice1, content1));
+            game1.ChangeScene(1);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

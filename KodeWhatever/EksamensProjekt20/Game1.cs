@@ -24,14 +24,9 @@ namespace EksamensProjekt20
         private bool fullScreen = false;
         public static GameTime gameTime;
         GameManager gm;
+        private int scene;
         Song song;
-        private State currentState;
-        private State nextState;
-
-        public void ChangeState(State state)
-        {
-            nextState = state;
-        }
+        private State menuState;
 
         private bool gameStarted = false;
 
@@ -69,14 +64,12 @@ namespace EksamensProjekt20
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
-            currentState = new MenuState(this, graphics.GraphicsDevice, Content);
-
-            this.song = Content.Load<Song>("Fight_mp3");
+            menuState = new MenuState(this, graphics.GraphicsDevice, Content);
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            ContentCollection.LoadContent(Content);
+            song = ContentCollection.song;
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
-            MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChanged;
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            SpriteCollection.LoadContent(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -104,26 +97,21 @@ namespace EksamensProjekt20
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
             Game1.gameTime = gameTime;
-            if (gameStarted == false && Keyboard.GetState().IsKeyDown(Keys.Enter))
+            switch (scene)
             {
-                gameStarted = true;
-                gm.StartGame();
+                case 0:
+                    menuState.Update(gameTime);
+                    break;
+                case 1:
+                    if (gameStarted == false)
+                    {
+                        gameStarted = true;
+                        gm.StartGame();
+                    }
+                    gm.Update(gameTime);
+                    break;
             }
-            gm.Update(gameTime);
             // TODO: Add your update logic here
-            if (nextState != null)
-            {
-                currentState = nextState;
-
-                nextState = null;
-            }
-
-
-            currentState.Update(gameTime);
-
-            currentState.PostUpdate(gameTime);
-
-
             base.Update(gameTime);
         }
 
@@ -135,9 +123,16 @@ namespace EksamensProjekt20
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 			spriteBatch.Begin();
-            currentState.Draw(gameTime, spriteBatch);
+            switch (scene)
+            {
+                case 0:
+                    menuState.Draw(gameTime, spriteBatch);
+                    break;
+                case 1:
+                    if(gm.currentStage!=null) gm.Draw(spriteBatch);
+                    break;
+            }
             
-            if(gameStarted) gm.Draw(spriteBatch);
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
@@ -149,6 +144,10 @@ namespace EksamensProjekt20
             graphics.PreferredBackBufferHeight = (int)screenSize.Y;
             graphics.IsFullScreen = fullScreen;
             graphics.ApplyChanges();
+        }
+        public void ChangeScene(int newScene)
+        {
+            scene = newScene;
         }
     }
 }

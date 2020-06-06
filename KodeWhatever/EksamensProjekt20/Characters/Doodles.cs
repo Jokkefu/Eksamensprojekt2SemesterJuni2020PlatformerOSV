@@ -10,9 +10,9 @@ namespace EksamensProjekt20.Characters
 {
     class Doodles : Enemy
     {
-        public Doodles(Vector2 position, Vector2 lazyShit) : base(position)
+        public Doodles(Vector2 position, int block) : base(position, block)
         {
-            currentSprite = SpriteCollection.damnedSoul;
+            currentSprite = ContentCollection.damnedSoul;
         }
     }
 }

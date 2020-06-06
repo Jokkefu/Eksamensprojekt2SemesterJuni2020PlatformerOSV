@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.MapNManager
 {
-    class SpriteCollection
+    class ContentCollection
     {
         //Platforms & Stage
         public static Texture2D[] normalPlatform = new Texture2D[1];
@@ -21,7 +22,7 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D background1;
 
         //Character
-        public static Texture2D archibald;
+        public static Texture2D[] archibald = new Texture2D[1];
         public static Texture2D blob;
         public static Texture2D damnedSoul;
         public static Texture2D doodles;
@@ -36,11 +37,12 @@ namespace EksamensProjekt20.MapNManager
         //Projectiles
         public static Texture2D arrow;
 
+        //Sound
+        public static Song song;
 
 
 
-
-        public SpriteCollection()
+        public ContentCollection()
         {
 
         }
@@ -54,8 +56,9 @@ namespace EksamensProjekt20.MapNManager
             startPlatform[0] = content.Load<Texture2D>("platform texture 6");
             endPlatform[0] = content.Load<Texture2D>("platform texture 6");
             //background1 = content.Load<Texture2D>("background1");
+            
+            archibald[0] = content.Load<Texture2D>("archibald");
             /*
-            archibald = content.Load<Texture2D>("archibald");
             blob = content.Load<Texture2D>("blob");
             damnedSoul = content.Load<Texture2D>("damnedSoul");
             plasmaGhost = content.Load<Texture2D>("plasmaGhost");
@@ -71,11 +74,12 @@ namespace EksamensProjekt20.MapNManager
             */
 
             #region WarriorArray
-            warrior[0] = content.Load<Texture2D>("warrior");//Venstre
-            warrior[1] = content.Load<Texture2D>("warrior1");//Højre
+            warrior[0] = content.Load<Texture2D>("Warrior");//Venstre
+            warrior[1] = content.Load<Texture2D>("Warrior1");//Højre
             #endregion
 
-            
+            song = content.Load<Song>("Fight_mp3");
+
         }
     }
 }

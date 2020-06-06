@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using EksamensProjekt20.Characters;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,32 @@ namespace EksamensProjekt20.MapNManager
             tempStage.stageSetup = tempBlockList;
             return tempStage;
         }
-        public List<TerrainPiece> GenerateTerrain(int random, int blockNumber)
+        public List<GameObject> GenerateTerrain(int random, int blockNumber)
         {
-            List<TerrainPiece> tempList = new List<TerrainPiece>();
+            List<GameObject> tempList = new List<GameObject>();
             switch (random)
             {
                 case 1:
-                    tempList.Add(new NormalPlatform(new Vector2(202, 542), blockNumber));
-                    tempList.Add(new NormalPlatform(new Vector2(294, 543), blockNumber));
-                    tempList.Add(new NormalPlatform(new Vector2(387, 542), blockNumber));
+                    tempList.Add(new Archibald(new Vector2(636, 372), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(18, 471), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(111, 471), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(193, 447), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(275, 422), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(358, 452), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(434, 484), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(527, 482), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(614, 482), blockNumber));
+                    break;
+                case 2:
+                    tempList.Add(new Archibald(new Vector2(636, 372), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(18, 471), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(111, 471), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(193, 447), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(275, 422), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(358, 452), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(434, 484), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(527, 482), blockNumber));
+                    tempList.Add(new NormalPlatform(new Vector2(614, 482), blockNumber));
                     break;
             }
             return tempList;

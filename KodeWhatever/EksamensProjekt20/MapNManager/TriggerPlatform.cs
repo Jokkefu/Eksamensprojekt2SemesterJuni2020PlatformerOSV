@@ -14,7 +14,7 @@ namespace EksamensProjekt20.MapNManager
         {
             screenPosition = pos;
             spriteSize = size;
-            animation.spriteArray = SpriteCollection.triggerPlatform;
+            animation.spriteArray = ContentCollection.triggerPlatform;
         }
     }
 }

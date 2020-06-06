@@ -10,9 +10,9 @@ namespace EksamensProjekt20.Characters
     class Enemy : Character
     {
 
-        public Enemy(Vector2 position)
+        public Enemy(Vector2 position, int block)
         {
-            screenPosition = position;
+            gamePosition = new Vector2(position.X + (block*1000), position.Y);
             spriteSize = new Vector2(20, 50);
         }
     }
