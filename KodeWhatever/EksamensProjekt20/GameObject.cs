@@ -114,7 +114,11 @@ namespace EksamensProjekt20
         }
         public void Movement(GameTime gameTime)
         {
+<<<<<<< HEAD
             gamePosition += velocity * movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds /12000;
+=======
+            gamePosition += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+>>>>>>> 1cf97db13029e2c9110157482bb47af0a1048d6d
         }
     }
 }

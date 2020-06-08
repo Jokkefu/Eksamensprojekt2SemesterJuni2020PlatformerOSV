@@ -23,11 +23,12 @@ namespace EksamensProjekt20
         public static Vector2 screenSize;
         private bool fullScreen = false;
         public static GameTime gameTime;
+        private SpriteFont font;
         GameManager gm;
         private int scene;
         Song song;
         private State menuState;
-
+        bool stageChange;
         private bool gameStarted = false;
 
 
@@ -67,6 +68,7 @@ namespace EksamensProjekt20
             menuState = new MenuState(this, graphics.GraphicsDevice, Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ContentCollection.LoadContent(Content);
+            font = ContentCollection.font;
             song = ContentCollection.song;
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
@@ -103,6 +105,11 @@ namespace EksamensProjekt20
                     menuState.Update(gameTime);
                     break;
                 case 1:
+                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) && stageChange==false)
+                    {
+                        gm.NextStage();
+                        stageChange = true;
+                    }
                     if (gameStarted == false)
                     {
                         gameStarted = true;
@@ -132,9 +139,8 @@ namespace EksamensProjekt20
                     if(gm.currentStage!=null) gm.Draw(spriteBatch);
                     break;
             }
-            
+            spriteBatch.DrawString(font, gameTime.ElapsedGameTime.TotalSeconds.ToString(), new Vector2(10, 10), Color.Black);
             // TODO: Add your drawing code here
-
             base.Draw(gameTime);
             spriteBatch.End();
         }
