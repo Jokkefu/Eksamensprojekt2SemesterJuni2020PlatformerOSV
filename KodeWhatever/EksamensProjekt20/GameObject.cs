@@ -16,7 +16,7 @@ namespace EksamensProjekt20
     {
 
         public string tag;
-        public bool isGrounded;
+        public bool isGrounded = false;
         public Vector2 velocity;
         public Vector2 gamePosition;
         public float movementSpeed;
@@ -87,10 +87,13 @@ namespace EksamensProjekt20
             }
 
         }
-        private void Jump()
+        public void Jump()
         {
-            isGrounded = false;
-            velocity = new Vector2(velocity.X, -2);
+            if (isGrounded == true)
+            {
+                velocity = new Vector2(velocity.X, -2);
+                isGrounded = false;
+            }
         }
 
         public void Gravity(GameTime gametime)
@@ -98,7 +101,7 @@ namespace EksamensProjekt20
 
             if (isGrounded == false)
             {
-                velocity += new Vector2(0, (float)0.00001 * (float)gametime.ElapsedGameTime.TotalSeconds);
+                velocity += new Vector2(0, 0.001f) * (float)gametime.ElapsedGameTime.TotalSeconds;
             }
             else if (isGrounded == true)
             {
@@ -114,11 +117,9 @@ namespace EksamensProjekt20
         }
         public void Movement(GameTime gameTime)
         {
-<<<<<<< HEAD
-            gamePosition += velocity * movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds /12000;
-=======
-            gamePosition += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
->>>>>>> 1cf97db13029e2c9110157482bb47af0a1048d6d
+            gamePosition.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
+
+            //gamePosition.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
         }
     }
 }
