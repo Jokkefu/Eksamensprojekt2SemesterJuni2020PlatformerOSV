@@ -20,6 +20,7 @@ namespace EksamensProjekt20.MapNManager
         private StageFactory stageFactory = new StageFactory();
         private InputHandler inputHandler = new InputHandler();
         private static List<Projectile> projectiles = new List<Projectile>();
+        private static List<Projectile> rProjectiles = new List<Projectile>();
 
         public void EndRun()
         {
@@ -78,6 +79,11 @@ namespace EksamensProjekt20.MapNManager
         public static void AddProjectile(Projectile projectile)
         {
             projectiles.Add(projectile);
+        }
+
+        public static void RemoveProjectile(Projectile projectile)
+        {
+            rProjectiles.Add(projectile);
         }
     }
 }

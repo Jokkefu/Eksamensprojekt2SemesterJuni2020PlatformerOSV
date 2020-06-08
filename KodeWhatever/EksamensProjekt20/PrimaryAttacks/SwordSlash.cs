@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.MapNManager;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,10 @@ namespace EksamensProjekt20.PrimaryAttacks
         }
         public override void Attack()
         {
-            GameManager.AddProjectile(projectile = new SwordSlashProjectile(basePower+unit.damage));
+            if (unit.lookingRight)
+            {
+                GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(10,0)));
+            }
             base.Attack();
         }
         public override void HoldAttack()
