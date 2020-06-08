@@ -12,7 +12,7 @@ namespace EksamensProjekt20.SecondaryAttacks
         protected Character unit;
         protected int basePower;
         protected float baseSpeed;
-        protected Projectile projectile = new Projectile();
+        protected Projectile projectile;
 
         public virtual void Attack()
         {
