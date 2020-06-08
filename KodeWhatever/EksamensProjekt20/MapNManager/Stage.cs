@@ -23,7 +23,7 @@ namespace EksamensProjekt20.MapNManager
             switch (stageTheme)
             {
                 case 1:
-                    mapSprite = SpriteCollection.background1;
+                    mapSprite = ContentCollection.background1;
                     break;
                 
             }

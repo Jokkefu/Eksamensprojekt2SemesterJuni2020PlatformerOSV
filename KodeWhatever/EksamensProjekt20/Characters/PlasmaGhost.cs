@@ -10,9 +10,9 @@ namespace EksamensProjekt20.Characters
 {
     class PlasmaGhost : Enemy
     {
-        public PlasmaGhost(Vector2 position, Vector2 lazyShit) : base(position)
+        public PlasmaGhost(Vector2 position, int block) : base(position, block)
         {
-            currentSprite = SpriteCollection.plasmaGhost;
+            currentSprite = ContentCollection.plasmaGhost;
         }
     }
 }

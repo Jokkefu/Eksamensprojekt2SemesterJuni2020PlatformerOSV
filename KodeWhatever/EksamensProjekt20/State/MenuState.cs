@@ -65,7 +65,7 @@ namespace EksamensProjekt20.States
 
         private void NewGameButton_Click(object sender, EventArgs e)
         {
-            game1.ChangeState(new GameState(game1, graphicsDevice1, content1));
+            game1.ChangeScene(1);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

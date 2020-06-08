@@ -80,7 +80,7 @@
     <Compile Include="Characters\Player.cs" />
     <Compile Include="MapNManager\NormalPlatform.cs" />
     <Compile Include="MapNManager\SlowingPlatform.cs" />
-    <Compile Include="MapNManager\SpriteCollection.cs" />
+    <Compile Include="MapNManager\ContentCollection.cs" />
     <Compile Include="MapNManager\StageFactory.cs" />
     <Compile Include="MapNManager\StartPlatform.cs" />
     <Compile Include="MapNManager\TriggerPlatform.cs" />
@@ -156,6 +156,7 @@
     <Compile Include="State\GameState.cs" />
     <Compile Include="State\MenuState.cs" />
     <Compile Include="State\State.cs" />
+    <Compile Include="SwordSlashProjectile.cs" />
     <Compile Include="UI\ButtonEffect.cs" />
     <Compile Include="UI\UIButton.cs" />
     <Compile Include="UI\UIElement.cs" />

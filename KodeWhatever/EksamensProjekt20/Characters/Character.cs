@@ -43,6 +43,7 @@ namespace EksamensProjekt20.Characters
             thread.IsBackground = true;
             thread.Start();
         }
+
         protected void ThreadMethod()
         {
             while(alive) Update(Game1.gameTime);

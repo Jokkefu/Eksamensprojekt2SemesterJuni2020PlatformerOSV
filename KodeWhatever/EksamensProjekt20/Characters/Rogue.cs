@@ -11,7 +11,7 @@ namespace EksamensProjekt20.Characters
     {
         public Rogue()
         {
-            currentSprite = SpriteCollection.hunter;
+            currentSprite = ContentCollection.hunter;
         }
     }
 }

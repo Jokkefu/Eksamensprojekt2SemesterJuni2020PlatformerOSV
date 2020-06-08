@@ -10,16 +10,17 @@ namespace EksamensProjekt20.MapNManager
 {
     class StageBlock
     {
-        public List<TerrainPiece> terrainSetup = new List<TerrainPiece>();
+        public List<GameObject> terrainSetup = new List<GameObject>();
+
         public StageBlock()
         {
             
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            foreach(TerrainPiece terrain in terrainSetup)
+            foreach(GameObject gO in terrainSetup)
             {
-                terrain.Draw(spriteBatch);
+                gO.Draw(spriteBatch);
             }
         }
     }

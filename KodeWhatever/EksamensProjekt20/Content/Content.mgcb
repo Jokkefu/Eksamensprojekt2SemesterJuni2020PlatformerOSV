@@ -13,6 +13,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin archibald.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:archibald.png
+
 #begin Controls/button.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -42,6 +54,13 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:Fight_mp3.mp3
+
+#begin font.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:font.spritefont
 
 #begin Fonts/Font.spritefont
 /importer:FontDescriptionImporter

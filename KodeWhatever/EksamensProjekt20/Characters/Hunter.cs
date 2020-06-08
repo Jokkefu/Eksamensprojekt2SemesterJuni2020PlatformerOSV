@@ -11,7 +11,7 @@ namespace EksamensProjekt20.Characters
     {
         public Hunter()
         {
-            currentSprite = SpriteCollection.hunter;
+            currentSprite = ContentCollection.hunter;
         }
     }
 }

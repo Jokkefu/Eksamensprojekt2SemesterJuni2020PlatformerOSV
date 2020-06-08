@@ -10,9 +10,9 @@ namespace EksamensProjekt20.Characters
 {
     class Blob : Enemy
     {
-        public Blob(Vector2 position, Vector2 lazyShit) : base(position)
+        public Blob(Vector2 position, int block) : base(position, block)
         {
-            currentSprite = SpriteCollection.blob;
+            currentSprite = ContentCollection.blob;
         }
     }
 }
