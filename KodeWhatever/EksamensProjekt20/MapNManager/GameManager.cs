@@ -28,7 +28,7 @@ namespace EksamensProjekt20.MapNManager
         {
             //stageNumber++;
             currentStage = stageFactory.GenerateStage(stageNumber);
-            playerCharacter.gamePosition = new Vector2(40, 100);
+            playerCharacter.gamePosition = new Vector2(40, 50);
         }
         public void StartGame()
         {
@@ -47,6 +47,21 @@ namespace EksamensProjekt20.MapNManager
         }
         public void Update(GameTime gameTime)
         {
+            foreach (StageBlock stageBlock in currentStage.stageSetup)
+            {
+                foreach (GameObject gameObject in stageBlock.terrainSetup)
+                {
+                    playerCharacter.GroundCollisionDetection(gameObject);
+                    foreach (GameObject go in stageBlock.terrainSetup)
+                    {
+                        if (gameObject != go)
+                        {
+                            gameObject.GroundCollisionDetection(go);
+                        }
+                            
+                    }
+                }
+            }
             inputHandler.Execute(playerCharacter);
             //currentStage.Update(gameTime);
         }

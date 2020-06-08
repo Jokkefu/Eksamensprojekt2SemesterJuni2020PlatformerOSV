@@ -30,37 +30,41 @@ namespace EksamensProjekt20
 
         public void GroundCollisionDetection(GameObject other)
         {
-            TerrainPiece t = (TerrainPiece)other;
+            GameObject t = other;
 
-            //Har hvad vi kollidere med Tag Terrain
-            //FIX COLLISION CALCULATIONS t.spriteRect.Top/Bottom/Left/Right
-            if (other.tag == "Terrain")
+            //t = terrain | this = player/enemy
+            if (other.tag == "Terrain" && this.tag != "Terrain")
             {
-                //Bottom Player Collision
-                if (t.gamePosition.Y - t.currentSprite.Height / 2 < this.gamePosition.Y + this.currentSprite.Height / 2 && t.gamePosition.Y - t.currentSprite.Height / 3 > this.gamePosition.Y + this.currentSprite.Height / 2 && t.gamePosition.X - t.currentSprite.Width / 3 * 1.40 < this.gamePosition.X + this.currentSprite.Width / 2 && t.gamePosition.X + t.currentSprite.Width / 3 * 1.40 > this.gamePosition.X - this.currentSprite.Width / 2)
-                {
+
+                //Bottom Player Collision //(this.spriteRect.Top + this.velocity.Y < t.spriteRect.Bottom && this.spriteRect.Bottom > t.spriteRect.Bottom && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right)
+                if (this.spriteRect.Bottom + this.velocity.Y > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Top && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right /*&& isGrounded == false*/)
+                { 
                     int height = spriteRect.Bottom - other.spriteRect.Top;
                     gamePosition.Y -= height;
 
                     isGrounded = true;
 
                 }
-                //Top Player Collision
-                if (t.gamePosition.Y + t.currentSprite.Height / 2 > this.gamePosition.Y - this.currentSprite.Height / 2 && t.gamePosition.X - t.currentSprite.Width / 3 * 1.40 < this.gamePosition.X + this.currentSprite.Width / 2 && t.gamePosition.X + t.currentSprite.Width / 3 * 1.40 > this.gamePosition.X - this.currentSprite.Width / 2 && isGrounded == false)
+                //Top Player Collision //(this.spriteRect.Bottom + this.velocity.Y > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Top && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right /*&& isGrounded == false*/)
+                if (this.spriteRect.Top + this.velocity.Y < t.spriteRect.Bottom && this.spriteRect.Bottom > t.spriteRect.Bottom && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right)
                 {
                     velocity = new Vector2(velocity.X, velocity.Y - velocity.Y * 2);
                 }
                 //Right Player Collision
-                if (t.gamePosition.X - this.currentSprite.Width / 2 >= this.gamePosition.X + this.currentSprite.Width / 2 && t.gamePosition.X > this.gamePosition.X + currentSprite.Width / 2 && t.gamePosition.Y + t.currentSprite.Height / 3 > this.gamePosition.Y - this.currentSprite.Height / 2 && isGrounded == false)
+                if (this.spriteRect.Left + this.velocity.X < t.spriteRect.Right && this.spriteRect.Right > t.spriteRect.Right && this.spriteRect.Bottom > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Bottom /*&& isGrounded == false*/)
+                {
+                    int width = spriteRect.Left - other.spriteRect.Right;
+                    gamePosition.X -= width;
+                }
+                //Left Player Collision
+                if (this.spriteRect.Right + this.velocity.X > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Left && this.spriteRect.Bottom > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Bottom /*&&                                              isGrounded == false*/)
                 {
                     int width = spriteRect.Right - other.spriteRect.Left;
                     gamePosition.X -= width;
                 }
-                //Left Player Collision
-                if (t.gamePosition.X + this.currentSprite.Width / 2 <= this.gamePosition.X - this.currentSprite.Width / 2 && t.gamePosition.X < this.gamePosition.X - currentSprite.Width / 2 && t.gamePosition.Y + t.currentSprite.Height / 3 > this.gamePosition.Y - this.currentSprite.Height / 2 && isGrounded == false)
+                else
                 {
-                    int width = spriteRect.Left - other.spriteRect.Right;
-                    gamePosition.X -= width;
+                    isGrounded = false;
                 }
             }
         }
@@ -91,9 +95,15 @@ namespace EksamensProjekt20
 
         public void Gravity(GameTime gametime)
         {
+
             if (isGrounded == false)
             {
-                velocity += new Vector2(0, 2 * (float)gametime.ElapsedGameTime.TotalSeconds);
+                velocity += new Vector2(0, (float)0.00001 * (float)gametime.ElapsedGameTime.TotalSeconds);
+            }
+            else if (isGrounded == true)
+            {
+                velocity.Y = velocity.Y - velocity.Y-0.00001f;
+
             }
 
         }
@@ -104,7 +114,7 @@ namespace EksamensProjekt20
         }
         public void Movement(GameTime gameTime)
         {
-            gamePosition += velocity * movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            gamePosition += velocity * movementSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds /12000;
         }
     }
 }
