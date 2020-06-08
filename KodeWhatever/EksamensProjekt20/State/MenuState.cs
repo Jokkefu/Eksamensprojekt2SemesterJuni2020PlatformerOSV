@@ -16,7 +16,7 @@ namespace EksamensProjekt20.States
 
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
-            var buttonTexture = content1.Load<Texture2D>("Controls/button");
+            var buttonTexture = content1.Load<Texture2D>("Controls/Knap");
             var buttonFont = content1.Load<SpriteFont>("Fonts/Font");
 
             var newGameButton = new Button(buttonTexture, buttonFont)
