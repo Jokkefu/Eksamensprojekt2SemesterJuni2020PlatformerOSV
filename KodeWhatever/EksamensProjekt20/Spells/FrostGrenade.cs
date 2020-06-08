@@ -8,7 +8,6 @@ namespace EksamensProjekt20.Spells
 {
     class FrostGrenade : Spell
     {
-        private Projectile projectile = new Projectile();
 
         public FrostGrenade()
         {
