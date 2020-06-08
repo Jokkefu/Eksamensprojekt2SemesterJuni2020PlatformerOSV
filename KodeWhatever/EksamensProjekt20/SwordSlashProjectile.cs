@@ -18,10 +18,15 @@ namespace EksamensProjekt20
             timed = true;
             duration = 1;
         }
-        public override void OnHit()
+        protected override void CharacterHit(Character other)
         {
+            other.TakeDamage(damage);
+            base.CharacterHit(other);
+        }
 
-            base.OnHit();
+        protected override void TerrainHit(TerrainPiece other)
+        {
+            base.TerrainHit(other);
         }
     }
 }

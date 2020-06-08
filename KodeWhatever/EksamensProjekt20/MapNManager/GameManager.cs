@@ -16,7 +16,7 @@ namespace EksamensProjekt20.MapNManager
         public Stage currentStage;
         protected Player playerCharacter;
         public int stageNumber;
-        public int runKills;
+        private static int runKillSum;
         private StageFactory stageFactory = new StageFactory();
         private InputHandler inputHandler = new InputHandler();
         private static List<Projectile> projectiles = new List<Projectile>();
@@ -84,6 +84,10 @@ namespace EksamensProjekt20.MapNManager
         public static void RemoveProjectile(Projectile projectile)
         {
             rProjectiles.Add(projectile);
+        }
+        public static void AddKill()
+        {
+            runKillSum++;
         }
     }
 }

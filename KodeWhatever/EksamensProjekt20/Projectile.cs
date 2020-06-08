@@ -24,9 +24,16 @@ namespace EksamensProjekt20
             gamePosition = origin;
             velocity = heading;
         }
-        public virtual void OnHit()
+        public virtual void OnHit(GameObject other)
         {
-            
+            if (other.tag == "Terrain")
+            {
+                TerrainHit((TerrainPiece)other);
+            }
+            else if (other.tag == "Character")
+            {
+                CharacterHit((Character)other);
+            }
         }
         protected void EndProjectile()
         {
@@ -44,6 +51,14 @@ namespace EksamensProjekt20
             }
 
             base.Update(gameTime);
+        }
+        protected virtual void TerrainHit(TerrainPiece other)
+        {
+
+        }
+        protected virtual void CharacterHit(Character other)
+        {
+
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EksamensProjekt20.StatePattern;
+using EksamensProjekt20.MapNManager;
 
 namespace EksamensProjekt20.Characters
 {
@@ -27,6 +28,12 @@ namespace EksamensProjekt20.Characters
         {
             currentState = newEnemyState;
             currentState.Enter(this);
+        }
+        public override void Death()
+        {
+            GameManager.AddKill();
+            base.Death();
+
         }
     }
 }

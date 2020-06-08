@@ -39,8 +39,10 @@ namespace EksamensProjekt20.Characters
         public void StartThread()
         {
             alive = true;
-            thread = new Thread(ThreadMethod);
-            thread.IsBackground = true;
+            thread = new Thread(ThreadMethod)
+            {
+                IsBackground = true
+            };
             thread.Start();
         }
 
@@ -111,6 +113,9 @@ namespace EksamensProjekt20.Characters
         {
             buffRemovals.Add(buff);
         }
-
+        public void TakeDamage(float damageTaken)
+        {
+            currentHealth -= damageTaken;
+        }
     }
 }
