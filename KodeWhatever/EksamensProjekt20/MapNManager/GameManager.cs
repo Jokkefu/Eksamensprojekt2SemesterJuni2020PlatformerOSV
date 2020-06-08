@@ -19,6 +19,7 @@ namespace EksamensProjekt20.MapNManager
         public int runKills;
         private StageFactory stageFactory = new StageFactory();
         private InputHandler inputHandler = new InputHandler();
+        private static List<Projectile> projectiles = new List<Projectile>();
 
         public void EndRun()
         {
@@ -44,11 +45,24 @@ namespace EksamensProjekt20.MapNManager
         {
             currentStage.Draw(spriteBatch);
             playerCharacter.Draw(spriteBatch);
+            foreach(Projectile proj in projectiles)
+            {
+                proj.Draw(spriteBatch);
+            }
         }
         public void Update(GameTime gameTime)
         {
             inputHandler.Execute(playerCharacter);
+            foreach (Projectile proj in projectiles)
+            {
+                proj.Update(gameTime);
+            }
             //currentStage.Update(gameTime);
+        }
+
+        public static void AddProjectile(Projectile projectile)
+        {
+            projectiles.Add(projectile);
         }
     }
 }
