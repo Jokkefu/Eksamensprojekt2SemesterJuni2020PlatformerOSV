@@ -8,7 +8,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EksamensProjekt20
+namespace EksamensProjekt20.Projectiles
 {
     class SpitProjectile : Projectile
     {
