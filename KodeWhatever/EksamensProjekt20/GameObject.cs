@@ -90,14 +90,7 @@ namespace EksamensProjekt20
             }
 
         }
-        public void Jump()
-        {
-            if (isGrounded == true)
-            {
-                velocity = new Vector2(velocity.X, -2);
-                isGrounded = false;
-            }
-        }
+        
 
         public void Gravity(float deltaTime)
         {

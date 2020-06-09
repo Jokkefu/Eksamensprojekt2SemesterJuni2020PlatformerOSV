@@ -157,6 +157,9 @@
     <Compile Include="State\GameState.cs" />
     <Compile Include="State\MenuState.cs" />
     <Compile Include="State\State.cs" />
+    <Compile Include="Projectiles\SpitProjectile.cs" />
+    <Compile Include="Projectiles\SwipeProjectile.cs" />
+    <Compile Include="Projectiles\ThunderSlamProjectile.cs" />
     <Compile Include="Projectiles\SwordSlashProjectile.cs" />
     <Compile Include="UI\ButtonEffect.cs" />
     <Compile Include="UI\UIButton.cs" />
