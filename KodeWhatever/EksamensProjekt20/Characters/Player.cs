@@ -51,5 +51,9 @@ namespace EksamensProjekt20.Characters
             secondaryAttack.Attack();
             secondaryDelay = secondaryCD;
         }
+        public void Jump(Vector2 velocity)
+        {
+            this.velocity = new Vector2(velocity.X, velocity.Y);
+        }
     }
 }

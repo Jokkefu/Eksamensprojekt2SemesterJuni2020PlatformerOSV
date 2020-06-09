@@ -150,13 +150,16 @@
     <Compile Include="Spells\TrollWarfare.cs" />
     <Compile Include="Spells\VenomousStrike.cs" />
     <Compile Include="Spells\WomboCombo.cs" />
+    <Compile Include="SpitProjectile.cs" />
     <Compile Include="StatePattern\Attack.cs" />
     <Compile Include="StatePattern\Idle.cs" />
     <Compile Include="StatePattern\IEnemyState.cs" />
     <Compile Include="State\GameState.cs" />
     <Compile Include="State\MenuState.cs" />
     <Compile Include="State\State.cs" />
+    <Compile Include="SwipeProjectile.cs" />
     <Compile Include="SwordSlashProjectile.cs" />
+    <Compile Include="ThunderSlamProjectile.cs" />
     <Compile Include="UI\ButtonEffect.cs" />
     <Compile Include="UI\UIButton.cs" />
     <Compile Include="UI\UIElement.cs" />

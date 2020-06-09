@@ -16,7 +16,7 @@ namespace EksamensProjekt20.MapNManager
         public Stage currentStage;
         protected Player playerCharacter;
         public int stageNumber;
-        private static int runKillSum;
+        public static int runKillSum;
         private StageFactory stageFactory = new StageFactory();
         private InputHandler inputHandler = new InputHandler();
         private static List<Projectile> projectiles = new List<Projectile>();

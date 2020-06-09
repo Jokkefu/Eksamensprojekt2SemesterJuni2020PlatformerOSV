@@ -1,4 +1,6 @@
 ﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.MapNManager;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,14 @@ namespace EksamensProjekt20.PrimaryAttacks
         }
         public override void Attack()
         {
+            if (unit.lookingRight)
+            {
+                GameManager.AddProjectile(new SwipeProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(5, 0)));
+            }
+            else
+            {
+                GameManager.AddProjectile(new SwipeProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(-5, 0)));
+            }
             base.Attack();
         }
 

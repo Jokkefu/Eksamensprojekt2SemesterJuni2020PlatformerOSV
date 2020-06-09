@@ -117,5 +117,6 @@ namespace EksamensProjekt20.Characters
         {
             currentHealth -= damageTaken;
         }
+        
     }
 }
