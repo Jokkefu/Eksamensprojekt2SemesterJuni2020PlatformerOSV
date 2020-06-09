@@ -58,7 +58,7 @@ namespace EksamensProjekt20.Characters
                 stopwatch.Start();
                 Update(deltaTime);
                 stopwatch.Stop();
-                deltaTime = stopwatch.Elapsed.TotalSeconds;
+                deltaTime = stopwatch.Elapsed.TotalSeconds*8f;
             }
         }
         public virtual void Attack()
