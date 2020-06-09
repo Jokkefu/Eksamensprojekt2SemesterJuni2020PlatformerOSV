@@ -21,6 +21,7 @@ namespace EksamensProjekt20
         public Vector2 gamePosition;
         public float movementSpeed;
 
+
         public override void Update(GameTime gameTime)
         {
             Gravity(gameTime);

@@ -14,6 +14,10 @@ namespace EksamensProjekt20.SecondaryAttacks
         protected float baseSpeed;
         protected Projectile projectile;
 
+        public SecondaryAttack()
+        {
+
+        }
         public virtual void Attack()
         {
 

@@ -9,12 +9,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using EksamensProjekt20.StatePattern;
+using DiagnosticsUtils;
 
 namespace EksamensProjekt20.Characters
 {
     class Character : GameObject
     {
         protected Thread thread;
+        protected ExecutionStopwatch stopwatch = new ExecutionStopwatch();
+        protected float deltaTime;
 
         public float currentHealth;
         public float maxHealth;
@@ -38,17 +41,25 @@ namespace EksamensProjekt20.Characters
         
         public void StartThread()
         {
+
             alive = true;
             thread = new Thread(ThreadMethod)
             {
                 IsBackground = true
             };
             thread.Start();
+
         }
 
         protected void ThreadMethod()
         {
-            while(alive) Update(Game1.gameTime);
+            while(alive)
+            {
+                stopwatch.Start();
+                Update(Game1.gameTime);
+                stopwatch.Stop();
+                deltaTime = (float)stopwatch.Elapsed.TotalSeconds;
+            }
         }
         public virtual void Attack()
         {
@@ -87,22 +98,21 @@ namespace EksamensProjekt20.Characters
             {
                 Death();
             }
-            if ((currentHealth + (healthRegen * gameTime.ElapsedGameTime.TotalSeconds)) >= maxHealth)
+            if ((currentHealth + (healthRegen * deltaTime)) >= maxHealth)
             {
                 currentHealth = maxHealth;
             }
-            else currentHealth += healthRegen * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            else currentHealth += healthRegen * deltaTime;
             foreach (Buff buff in buffs)
             {
                 buff.Update(gameTime);
             }
-            base.Update(gameTime);
             foreach(Buff buff in buffRemovals)
             {
                 buffs.Remove(buff);
-                
             }
             buffRemovals = new List<Buff>();
+            if (attackDelay > 0) attackDelay -= deltaTime;
             base.Update(gameTime);
         }
         public void AddBuff(Buff buff)
