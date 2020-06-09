@@ -56,7 +56,7 @@ namespace EksamensProjekt20.Characters
             while(alive)
             {
                 stopwatch.Start();
-                Update(Game1.gameTime);
+                Update(deltaTime);
                 stopwatch.Stop();
                 deltaTime = (float)stopwatch.Elapsed.TotalSeconds;
             }
@@ -92,7 +92,7 @@ namespace EksamensProjekt20.Characters
         {
             alive = false;
         }
-        public override void Update(GameTime gameTime)
+        public override void Update(float deltaTime)
         {
             if (currentHealth <= 0)
             {
@@ -105,7 +105,7 @@ namespace EksamensProjekt20.Characters
             else currentHealth += healthRegen * deltaTime;
             foreach (Buff buff in buffs)
             {
-                buff.Update(gameTime);
+                buff.Update(deltaTime);
             }
             foreach(Buff buff in buffRemovals)
             {
@@ -113,7 +113,7 @@ namespace EksamensProjekt20.Characters
             }
             buffRemovals = new List<Buff>();
             if (attackDelay > 0) attackDelay -= deltaTime;
-            base.Update(gameTime);
+            base.Update(deltaTime);
         }
         public void AddBuff(Buff buff)
         {

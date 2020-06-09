@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EksamensProjekt20.MapNManager;
 using EksamensProjekt20.Characters;
+using DiagnosticsUtils;
 
 namespace EksamensProjekt20
 {
@@ -24,7 +25,7 @@ namespace EksamensProjekt20
             animation = new AnimationController();
         }
 
-        public virtual void Update(GameTime gameTime)
+        public virtual void Update(float deltaTime)
         {
 
         }

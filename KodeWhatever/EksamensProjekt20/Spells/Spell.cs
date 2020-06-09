@@ -17,7 +17,6 @@ namespace EksamensProjekt20.Spells
 
         public virtual void Spellcast()
         {
-            channelDelay = channelDuration;
             channeling = false;
         }
         public virtual void Update(GameTime gameTime)
@@ -33,9 +32,9 @@ namespace EksamensProjekt20.Spells
         }
         public virtual void PrimeSpell(Character sourceChar)
         {
+            channelDelay = channelDuration;
             source = sourceChar;
             channeling = true;
-
         }
     }
 }

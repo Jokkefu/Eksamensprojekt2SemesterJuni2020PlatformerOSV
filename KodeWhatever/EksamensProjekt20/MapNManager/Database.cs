@@ -43,7 +43,7 @@ namespace EksamensProjekt20.MapNManager
             //cmd = new SQLiteCommand("INSERT INTO Player (CharacterKills) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand($"INSERT INTO Player (RunKills) VALUES ({gm.runKills})", connection);
+            cmd = new SQLiteCommand($"INSERT INTO Player (RunKills) VALUES ({GameManager.runKillSum})", connection);
             cmd.ExecuteNonQuery();
 
             //cmd = new SQLiteCommand("INSERT INTO Player (Ranking) VALUES (placeholder)", connection);

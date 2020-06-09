@@ -1,4 +1,5 @@
-﻿using EksamensProjekt20.Characters;
+﻿using DiagnosticsUtils;
+using EksamensProjekt20.Characters;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -39,16 +40,16 @@ namespace EksamensProjekt20.Buffs
                 base.Draw(spriteBatch);
             }
         }
-        public override void Update(GameTime gameTime)
+        public override void Update(float deltaTime)
         {
-            base.Update(gameTime);
+            base.Update(deltaTime);
             if (duration <= 0)
             {
                 RemoveEffect();
             }
             else
             {
-                duration -= gameTime.ElapsedGameTime.TotalSeconds;
+                duration -= deltaTime;
             }
         }
     }

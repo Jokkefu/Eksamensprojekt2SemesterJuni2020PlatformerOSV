@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
+using EksamensProjekt20.Projectiles;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -16,7 +17,7 @@ namespace EksamensProjekt20.MapNManager
         public Stage currentStage;
         protected Player playerCharacter;
         public int stageNumber;
-        private static int runKillSum;
+        public static int runKillSum;
         private StageFactory stageFactory = new StageFactory();
         private InputHandler inputHandler = new InputHandler();
         private static List<Projectile> projectiles = new List<Projectile>();
@@ -51,7 +52,7 @@ namespace EksamensProjekt20.MapNManager
                 proj.Draw(spriteBatch);
             }
         }
-        public void Update(GameTime gameTime)
+        public void Update(float deltaTime)
         {
             foreach (StageBlock stageBlock in currentStage.stageSetup)
             {
@@ -71,7 +72,7 @@ namespace EksamensProjekt20.MapNManager
             inputHandler.Execute(playerCharacter);
             foreach (Projectile proj in projectiles)
             {
-                proj.Update(gameTime);
+                proj.Update(deltaTime);
             }
             //currentStage.Update(gameTime);
         }

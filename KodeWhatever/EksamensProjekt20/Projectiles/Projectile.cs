@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EksamensProjekt20
+namespace EksamensProjekt20.Projectiles
 {
     class Projectile : GameObject
     {
@@ -39,7 +39,7 @@ namespace EksamensProjekt20
         {
             GameManager.RemoveProjectile(this);
         }
-        public override void Update(GameTime gameTime)
+        public override void Update(float deltaTime)
         {
             if (timed)
             {
@@ -47,10 +47,10 @@ namespace EksamensProjekt20
                 {
                     EndProjectile();
                 }
-                else duration -= gameTime.ElapsedGameTime.TotalSeconds;
+                else duration -= deltaTime;
             }
 
-            base.Update(gameTime);
+            base.Update(deltaTime);
         }
         protected virtual void TerrainHit(TerrainPiece other)
         {

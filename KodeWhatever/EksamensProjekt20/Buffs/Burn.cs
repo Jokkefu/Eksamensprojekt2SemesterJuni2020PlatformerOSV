@@ -20,16 +20,16 @@ namespace EksamensProjekt20.Buffs
             buffTarget.currentHealth -= efficiency;
             base.ApplyEffect();
         }
-        public override void Update(GameTime gameTime)
+        public override void Update(float deltaTime)
         {
-            base.Update(gameTime);
+            base.Update(deltaTime);
             if (toTick <= 0)
             {
                 ApplyEffect();
             }
             else
             {
-                toTick -= gameTime.ElapsedGameTime.TotalSeconds;
+                toTick -= deltaTime;
             }
         }
     }
