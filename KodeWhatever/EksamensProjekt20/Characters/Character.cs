@@ -17,7 +17,7 @@ namespace EksamensProjekt20.Characters
     {
         protected Thread thread;
         protected ExecutionStopwatch stopwatch = new ExecutionStopwatch();
-        protected float deltaTime;
+        protected double deltaTime;
 
         public float currentHealth;
         public float maxHealth;
@@ -58,7 +58,7 @@ namespace EksamensProjekt20.Characters
                 stopwatch.Start();
                 Update(deltaTime);
                 stopwatch.Stop();
-                deltaTime = (float)stopwatch.Elapsed.TotalSeconds;
+                deltaTime = stopwatch.Elapsed.TotalSeconds*8f;
             }
         }
         public virtual void Attack()
@@ -92,7 +92,7 @@ namespace EksamensProjekt20.Characters
         {
             alive = false;
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             if (currentHealth <= 0)
             {
@@ -102,7 +102,7 @@ namespace EksamensProjekt20.Characters
             {
                 currentHealth = maxHealth;
             }
-            else currentHealth += healthRegen * deltaTime;
+            else currentHealth += (float)(healthRegen * deltaTime);
             foreach (Buff buff in buffs)
             {
                 buff.Update(deltaTime);

@@ -20,7 +20,7 @@ namespace EksamensProjekt20.Characters
             spriteSize = new Vector2(20, 50);
             ChangeState(new Idle());
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
             currentState.Execute();
