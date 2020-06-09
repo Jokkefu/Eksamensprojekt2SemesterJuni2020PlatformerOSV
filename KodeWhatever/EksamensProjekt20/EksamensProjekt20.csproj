@@ -63,6 +63,7 @@
     <Compile Include="CommandPattern\SpellCommand.cs" />
     <Compile Include="Controls\Button.cs" />
     <Compile Include="Controls\Components.cs" />
+    <Compile Include="ExecutionStopwatch.cs" />
     <Compile Include="MapNManager\ClimbablePlatform.cs" />
     <Compile Include="MapNManager\Database.cs" />
     <Compile Include="Characters\Doodles.cs" />
@@ -99,7 +100,7 @@
     <Compile Include="PrimaryAttacks\Timber.cs" />
     <Compile Include="PrimaryAttacks\Transformation.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Projectile.cs" />
+    <Compile Include="Projectiles\Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Characters\Rogue.cs" />
     <Compile Include="Buffs\SavingGrace.cs" />
@@ -150,16 +151,16 @@
     <Compile Include="Spells\TrollWarfare.cs" />
     <Compile Include="Spells\VenomousStrike.cs" />
     <Compile Include="Spells\WomboCombo.cs" />
-    <Compile Include="SpitProjectile.cs" />
     <Compile Include="StatePattern\Attack.cs" />
     <Compile Include="StatePattern\Idle.cs" />
     <Compile Include="StatePattern\IEnemyState.cs" />
     <Compile Include="State\GameState.cs" />
     <Compile Include="State\MenuState.cs" />
     <Compile Include="State\State.cs" />
-    <Compile Include="SwipeProjectile.cs" />
-    <Compile Include="SwordSlashProjectile.cs" />
-    <Compile Include="ThunderSlamProjectile.cs" />
+    <Compile Include="Projectiles\SpitProjectile.cs" />
+    <Compile Include="Projectiles\SwipeProjectile.cs" />
+    <Compile Include="Projectiles\ThunderSlamProjectile.cs" />
+    <Compile Include="Projectiles\SwordSlashProjectile.cs" />
     <Compile Include="UI\ButtonEffect.cs" />
     <Compile Include="UI\UIButton.cs" />
     <Compile Include="UI\UIElement.cs" />

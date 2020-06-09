@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EksamensProjekt20.StatePattern;
 using EksamensProjekt20.MapNManager;
+using DiagnosticsUtils;
 
 namespace EksamensProjekt20.Characters
 {
@@ -19,9 +20,9 @@ namespace EksamensProjekt20.Characters
             spriteSize = new Vector2(20, 50);
             ChangeState(new Idle());
         }
-        public override void Update(GameTime gameTime)
+        public override void Update(float deltaTime)
         {
-            base.Update(gameTime);
+            base.Update(deltaTime);
             currentState.Execute();
         }
         public void ChangeState(IEnemyState newEnemyState)

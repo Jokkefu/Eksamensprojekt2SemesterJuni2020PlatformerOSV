@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using EksamensProjekt20.Characters;
 using EksamensProjekt20.Buffs;
 using System.Runtime.CompilerServices;
+using DiagnosticsUtils;
 
 namespace EksamensProjekt20
 {
@@ -21,11 +22,12 @@ namespace EksamensProjekt20
         public Vector2 gamePosition;
         public float movementSpeed;
 
-        public override void Update(GameTime gameTime)
+
+        public override void Update(float deltaTime)
         {
-            Gravity(gameTime);
-            Movement(gameTime);
-            base.Update(gameTime);
+            Gravity(deltaTime);
+            Movement(deltaTime);
+            base.Update(deltaTime);
         }
 
         public void GroundCollisionDetection(GameObject other)
@@ -89,12 +91,12 @@ namespace EksamensProjekt20
         }
         
 
-        public void Gravity(GameTime gametime)
+        public void Gravity(float deltaTime)
         {
 
             if (isGrounded == false)
             {
-                velocity += new Vector2(0, 0.001f) * (float)gametime.ElapsedGameTime.TotalSeconds;
+                velocity += new Vector2(0, 1) * deltaTime;
             }
             else if (isGrounded == true)
             {
@@ -108,9 +110,9 @@ namespace EksamensProjekt20
             screenPosition = gamePosition + Stage.stageVector - (spriteSize / 2);
             base.Draw(spriteBatch);
         }
-        public void Movement(GameTime gameTime)
+        public void Movement(float deltaTime)
         {
-            gamePosition.X += velocity.X * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
+            gamePosition.X += velocity.X * deltaTime;
 
             //gamePosition.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
         }

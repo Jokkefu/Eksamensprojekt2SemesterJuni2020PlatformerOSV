@@ -12,9 +12,11 @@ namespace EksamensProjekt20.SecondaryAttacks
         public Rage(Character character)
         {
             unit = character;
+            basePower = 10;
         }
         public override void Attack()
         {
+            unit.currentHealth += basePower;
             base.Attack();
         }
         public override void HoldAttack()

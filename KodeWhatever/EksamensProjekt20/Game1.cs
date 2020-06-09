@@ -115,7 +115,7 @@ namespace EksamensProjekt20
                         gameStarted = true;
                         gm.StartGame();
                     }
-                    gm.Update(gameTime);
+                    gm.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                     break;
             }
             // TODO: Add your update logic here

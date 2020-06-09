@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.MapNManager;
+using EksamensProjekt20.Projectiles;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;

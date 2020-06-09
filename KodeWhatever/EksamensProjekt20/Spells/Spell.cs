@@ -35,7 +35,6 @@ namespace EksamensProjekt20.Spells
             channelDelay = channelDuration;
             source = sourceChar;
             channeling = true;
-
         }
     }
 }
