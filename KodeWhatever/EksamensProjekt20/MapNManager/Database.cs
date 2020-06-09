@@ -28,14 +28,13 @@ namespace EksamensProjekt20.MapNManager
 
             cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Game (CurrentStage integer PRIMARY KEY, userID integer, FOREIGN KEY (userID) REFERENCES player (userID));", connection);
             cmd.ExecuteNonQuery();
-
-
-
-            cmd = new SQLiteCommand($"INSERT INTO Player (CurrentStageID) VALUES ({gm.stageNumber})", connection);
-            cmd.ExecuteNonQuery();
-
-            cmd = new SQLiteCommand("INSERT INTO Player (Highscore) VALUES (MAX(CurrentStageID) FROM Leaderboard)", connection);
-            cmd.ExecuteNonQuery();
+          
+            connection.Close();
+        }
+        public void InsertData()
+        {
+            var connection = new SQLiteConnection("Data Source=oom.db; Version=3;New=True");
+            connection.Open();
 
             //cmd = new SQLiteCommand("INSERT INTO Player (TotalKills) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
@@ -43,23 +42,37 @@ namespace EksamensProjekt20.MapNManager
             //cmd = new SQLiteCommand("INSERT INTO Player (CharacterKills) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand($"INSERT INTO Player (RunKills) VALUES ({GameManager.runKillSum})", connection);
-            cmd.ExecuteNonQuery();
-
             //cmd = new SQLiteCommand("INSERT INTO Player (Ranking) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
 
             //cmd = new SQLiteCommand("INSERT INTO Leaderboard (Ranking) VALUES ()", connection);
             //cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand($"INSERT INTO Leaderboard (CurrentStageID) VALUES ({gm.stageNumber})", connection);
-            cmd.ExecuteNonQuery();
-
             //cmd = new SQLiteCommand("INSERT INTO Game (CurrentStage) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
 
+            var cmd = new SQLiteCommand($"INSERT INTO Player (CurrentStageID) VALUES ({gm.stageNumber})", connection);
+            cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("SELECT * FROM Leaderboard ORDER BY CurrentStageID DESC", connection);
+            cmd = new SQLiteCommand("INSERT INTO Player (Highscore) VALUES (MAX(CurrentStageID) FROM Leaderboard)", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand($"INSERT INTO Player (RunKills) VALUES ({GameManager.runKillSum})", connection);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SQLiteCommand($"INSERT INTO Leaderboard (CurrentStageID) VALUES ({gm.stageNumber})", connection);
+            cmd.ExecuteNonQuery();
+
+
+
+            connection.Close();
+        }
+        public void ShowLeaderBoard()
+        {
+            var connection = new SQLiteConnection("Data Source=oom.db; Version=3;New=True");
+            connection.Open();
+
+            var cmd = new SQLiteCommand("SELECT * FROM Leaderboard ORDER BY CurrentStageID DESC", connection);
             var dataset = cmd.ExecuteReader();
 
             cmd = new SQLiteCommand("SELECT (RunKills) FROM Player", connection);
@@ -70,16 +83,7 @@ namespace EksamensProjekt20.MapNManager
                 var CurrentStageID = dataset.GetInt32(0);
             }
 
-          
             connection.Close();
-        }
-        public void InsertData()
-        {
-         
-        }
-        public void ShowLeaderBoard()
-        {
-
         }
 
     }
