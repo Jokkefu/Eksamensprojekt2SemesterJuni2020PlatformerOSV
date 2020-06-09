@@ -23,7 +23,7 @@ namespace EksamensProjekt20.Buffs
             else buffTarget.currentHealth += efficiency;
             base.ApplyEffect();
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
             if (toTick <= 0)

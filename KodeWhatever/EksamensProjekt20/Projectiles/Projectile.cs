@@ -39,7 +39,7 @@ namespace EksamensProjekt20.Projectiles
         {
             GameManager.RemoveProjectile(this);
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             if (timed)
             {

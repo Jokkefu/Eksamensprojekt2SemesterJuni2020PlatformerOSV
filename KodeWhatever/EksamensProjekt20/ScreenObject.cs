@@ -25,7 +25,7 @@ namespace EksamensProjekt20
             animation = new AnimationController();
         }
 
-        public virtual void Update(float deltaTime)
+        public virtual void Update(double deltaTime)
         {
 
         }

@@ -24,7 +24,7 @@ namespace EksamensProjekt20
         public float movementSpeed;
 
 
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             Gravity(deltaTime);
             Movement(deltaTime);
@@ -92,12 +92,12 @@ namespace EksamensProjekt20
         }
         
 
-        public void Gravity(float deltaTime)
+        public void Gravity(double deltaTime)
         {
 
             if (isGrounded == false)
             {
-                velocity += new Vector2(0, 1) * deltaTime;
+                velocity += new Vector2(0, (float)(10 * deltaTime));
             }
             else if (isGrounded == true)
             {
@@ -111,9 +111,9 @@ namespace EksamensProjekt20
             screenPosition = gamePosition + Stage.stageVector - (spriteSize / 2);
             base.Draw(spriteBatch);
         }
-        public void Movement(float deltaTime)
+        public void Movement(double deltaTime)
         {
-            gamePosition += moveVector * movementSpeed * deltaTime + velocity * deltaTime;
+            gamePosition += new Vector2((float)(moveVector.X * movementSpeed * deltaTime + velocity.X * deltaTime), (float)( moveVector.Y * movementSpeed * deltaTime + velocity.Y * deltaTime));
             //gamePosition.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
         }
     }

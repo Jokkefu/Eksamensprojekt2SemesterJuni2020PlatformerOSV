@@ -40,7 +40,7 @@ namespace EksamensProjekt20.Buffs
                 base.Draw(spriteBatch);
             }
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
             if (duration <= 0)

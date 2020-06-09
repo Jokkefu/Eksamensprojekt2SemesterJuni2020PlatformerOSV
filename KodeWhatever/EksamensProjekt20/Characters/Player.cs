@@ -30,7 +30,7 @@ namespace EksamensProjekt20.Characters
             else moveVector = new Vector2(0, 0);
             
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
         }
