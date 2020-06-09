@@ -72,7 +72,7 @@ namespace EksamensProjekt20
             ContentCollection.LoadContent(Content);
             font = ContentCollection.font;
             song = ContentCollection.song;
-            MediaPlayer.Play(song);
+            //MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
             // TODO: use this.Content to load your game content here
         }
@@ -107,15 +107,11 @@ namespace EksamensProjekt20
                     menuState.Update(gameTime);
                     break;
                 case 1:
-                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) && stageChange==false)
-                    {
-                        gm.NextStage();
-                        stageChange = true;
-                    }
                     if (gameStarted == false)
                     {
-                        gameStarted = true;
                         gm.StartGame();
+                        gameStarted = true;
+                        
                     }
                     gm.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                     break;
@@ -141,13 +137,16 @@ namespace EksamensProjekt20
                     menuState.Draw(gameTime, spriteBatch);
                     break;
                 case 1:
-                    if(gm.currentStage!=null) gm.Draw(spriteBatch);
+                    if (GameManager.currentStage != null)
+                    {
+                        gm.Draw(spriteBatch);
+                        spriteBatch.DrawString(font, gm.playerCharacter.gamePosition.ToString(), new Vector2(10, 10), Color.Black);
+                    }
                     break;
                 case 2:
                     leaderboardState.Draw(gameTime, spriteBatch);
                     break;
             }
-            spriteBatch.DrawString(font, gameTime.ElapsedGameTime.TotalSeconds.ToString(), new Vector2(10, 10), Color.Black);
             // TODO: Add your drawing code here
             base.Draw(gameTime);
             spriteBatch.End();

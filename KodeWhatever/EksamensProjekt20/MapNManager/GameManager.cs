@@ -14,8 +14,8 @@ namespace EksamensProjekt20.MapNManager
     class GameManager
     {
         private Database database;
-        public Stage currentStage;
-        protected Player playerCharacter;
+        public static Stage currentStage;
+        public Player playerCharacter;
         public int stageNumber;
         public static int runKillSum;
         private StageFactory stageFactory = new StageFactory();
@@ -25,7 +25,7 @@ namespace EksamensProjekt20.MapNManager
 
         public void EndRun()
         {
-
+            database.InsertData();
         }
         public void NextStage()
         {
@@ -54,27 +54,17 @@ namespace EksamensProjekt20.MapNManager
         }
         public void Update(float deltaTime)
         {
-            foreach (StageBlock stageBlock in currentStage.stageSetup)
-            {
-                foreach (GameObject gameObject in stageBlock.terrainSetup)
-                {
-                    playerCharacter.GroundCollisionDetection(gameObject);
-                    foreach (GameObject go in stageBlock.terrainSetup)
-                    {
-                        if (gameObject != go)
-                        {
-                            gameObject.GroundCollisionDetection(go);
-                        }
-                            
-                    }
-                }
-            }
             inputHandler.Execute(playerCharacter);
             foreach (Projectile proj in projectiles)
             {
                 proj.Update(deltaTime);
             }
             //currentStage.Update(gameTime);
+            foreach(Projectile projectile in rProjectiles)
+            {
+                projectiles.Remove(projectile);
+            }
+            rProjectiles = new List<Projectile>();
         }
 
         public static void AddProjectile(Projectile projectile)
@@ -89,6 +79,23 @@ namespace EksamensProjekt20.MapNManager
         public static void AddKill()
         {
             runKillSum++;
+        }
+        public static void CollisionCheck(GameObject originalObject)
+        {
+            if (currentStage != null)
+            {
+                foreach (StageBlock stageBlock in currentStage.stageSetup)
+                {
+                    foreach (GameObject gameObject in stageBlock.terrainSetup)
+                    {
+                        originalObject.GroundCollisionDetection(gameObject);
+                    }
+                }
+            }
+        }
+        public void DatabaseSetup()
+        {
+            database = new Database(this);
         }
     }
 }

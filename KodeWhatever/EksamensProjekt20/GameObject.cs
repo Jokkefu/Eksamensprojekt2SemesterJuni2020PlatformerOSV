@@ -19,52 +19,59 @@ namespace EksamensProjekt20
         public string tag;
         public bool isGrounded = false;
         public Vector2 velocity;
+        public Vector2 moveVector;
         public Vector2 gamePosition;
+        private Vector2 actualVelocity;
         public float movementSpeed;
+        private GameObject standingOn;
 
 
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             Gravity(deltaTime);
             Movement(deltaTime);
+            GameManager.CollisionCheck(this);
             base.Update(deltaTime);
         }
 
         public void GroundCollisionDetection(GameObject other)
         {
-            GameObject t = other;
+            
 
             //t = terrain | this = player/enemy
-            if (other.tag == "Terrain" && this.tag != "Terrain")
+            if (other.tag == "Terrain" && tag != "Terrain")
             {
 
                 //Bottom Player Collision //(this.spriteRect.Top + this.velocity.Y < t.spriteRect.Bottom && this.spriteRect.Bottom > t.spriteRect.Bottom && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right)
-                if (this.spriteRect.Bottom + this.velocity.Y > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Top && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right /*&& isGrounded == false*/)
-                { 
-                    int height = spriteRect.Bottom - other.spriteRect.Top;
-                    gamePosition.Y -= height;
-
+                if (this.spriteRect.Bottom + actualVelocity.Y > other.spriteRect.Top && this.spriteRect.Top < other.spriteRect.Top && this.spriteRect.Right > other.spriteRect.Left && this.spriteRect.Left < other.spriteRect.Right /*&& isGrounded == false*/)
+                {
+                    gamePosition.Y = other.gamePosition.Y - (spriteRect.Height + other.spriteRect.Height) / 2;
+                    if (velocity.Y < 0) velocity.Y = 0;
                     isGrounded = true;
-
+                    standingOn = other;
                 }
                 //Top Player Collision //(this.spriteRect.Bottom + this.velocity.Y > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Top && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right /*&& isGrounded == false*/)
-                if (this.spriteRect.Top + this.velocity.Y < t.spriteRect.Bottom && this.spriteRect.Bottom > t.spriteRect.Bottom && this.spriteRect.Right > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Right)
+                if (this.spriteRect.Top + actualVelocity.Y < other.spriteRect.Bottom && this.spriteRect.Bottom > other.spriteRect.Bottom && this.spriteRect.Right > other.spriteRect.Left && this.spriteRect.Left < other.spriteRect.Right)
                 {
-                    velocity = new Vector2(velocity.X, velocity.Y - velocity.Y * 2);
+                    if (velocity.Y > 0) velocity.Y = 0;
                 }
                 //Right Player Collision
-                if (this.spriteRect.Left + this.velocity.X < t.spriteRect.Right && this.spriteRect.Right > t.spriteRect.Right && this.spriteRect.Bottom > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Bottom /*&& isGrounded == false*/)
+                if (this.spriteRect.Left + actualVelocity.X < other.spriteRect.Right && this.spriteRect.Right > other.spriteRect.Right && this.spriteRect.Bottom > other.spriteRect.Top && this.spriteRect.Top < other.spriteRect.Bottom /*&& isGrounded == false*/)
                 {
-                    int width = spriteRect.Left - other.spriteRect.Right;
-                    gamePosition.X -= width;
+                    gamePosition.X = other.gamePosition.X + (spriteRect.Width + other.spriteRect.Width) / 2;
+                    velocity.X = 0;
                 }
                 //Left Player Collision
-                if (this.spriteRect.Right + this.velocity.X > t.spriteRect.Left && this.spriteRect.Left < t.spriteRect.Left && this.spriteRect.Bottom > t.spriteRect.Top && this.spriteRect.Top < t.spriteRect.Bottom /*&&                                              isGrounded == false*/)
+                if (spriteRect.Right + actualVelocity.X > other.spriteRect.Left && spriteRect.Left < other.spriteRect.Left && this.spriteRect.Bottom > other.spriteRect.Top && this.spriteRect.Top < other.spriteRect.Bottom /*&&                                              isGrounded == false*/)
                 {
-                    int width = spriteRect.Right - other.spriteRect.Left;
-                    gamePosition.X -= width;
+                    gamePosition.X = other.gamePosition.X - (spriteRect.Width + other.spriteRect.Width) / 2;
+                    velocity.X = 0;
                 }
-                else
+                
+            }
+            if (isGrounded)
+            {
+                if(standingOn.spriteRect.Left>spriteRect.Right || standingOn.spriteRect.Right < spriteRect.Left)
                 {
                     isGrounded = false;
                 }
@@ -79,7 +86,7 @@ namespace EksamensProjekt20
                 // Y+ = NED
                 // X- = Venstre
                 // X+ = Højre
-                //c er den charecter vi kollidere med
+                //c er den character vi kolliderer med
 
 
                 if (/*TOP*/c.spriteRect.Top >= this.spriteRect.Top &&/*BOTTOM*/ c.spriteRect.Bottom <= this.spriteRect.Bottom &&/*RIGHT*/ c.spriteRect.Right <= this.spriteRect.Right &&/*LEFT*/ c.spriteRect.Left >= this.spriteRect.Left) 
@@ -91,30 +98,28 @@ namespace EksamensProjekt20
         }
         
 
-        public void Gravity(float deltaTime)
+        public void Gravity(double deltaTime)
         {
-
             if (isGrounded == false)
             {
-                velocity += new Vector2(0, 1) * deltaTime;
+                velocity += new Vector2(0, (float)(50 * deltaTime));
             }
             else if (isGrounded == true)
             {
-                velocity.Y = velocity.Y - velocity.Y-0.00001f;
+                velocity.Y = 0;
 
             }
-
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             screenPosition = gamePosition + Stage.stageVector - (spriteSize / 2);
             base.Draw(spriteBatch);
         }
-        public void Movement(float deltaTime)
+        public void Movement(double deltaTime)
         {
-            gamePosition.X += velocity.X * deltaTime;
-
-            //gamePosition.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
+            actualVelocity = new Vector2((float)(moveVector.X * movementSpeed * deltaTime + velocity.X * deltaTime), (float)(moveVector.Y * movementSpeed * deltaTime + velocity.Y * deltaTime));
+            gamePosition += actualVelocity;
+            
         }
     }
 }

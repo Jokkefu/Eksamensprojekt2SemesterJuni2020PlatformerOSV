@@ -1,4 +1,5 @@
-﻿using EksamensProjekt20.SecondaryAttacks;
+﻿using EksamensProjekt20.MapNManager;
+using EksamensProjekt20.SecondaryAttacks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -26,23 +27,17 @@ namespace EksamensProjekt20.Characters
         }
         public void Move(Vector2 velocity)
         {
-            this.velocity += velocity;
-
-            if (velocity.Y == 0)
-            {
-                if (velocity.X >= 0)
-                {
-                    animation.Walking(true);
-                }
-                else
-                {
-                    animation.Walking(false);
-                }
-            }
+            moveVector = velocity;
         }
-        public override void Update(float deltaTime)
+        public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
+        }
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            base.Draw(spriteBatch);
+            spriteBatch.DrawString(ContentCollection.font, isGrounded.ToString(), new Vector2(10, 30), Color.Black);
+            spriteBatch.DrawString(ContentCollection.font, velocity.ToString(), new Vector2(10, 45), Color.Black);
         }
 
         public virtual void SecAttack()
@@ -52,7 +47,11 @@ namespace EksamensProjekt20.Characters
         }
         public void Jump(Vector2 velocity)
         {
-            this.velocity = new Vector2(velocity.X, velocity.Y);
+            if(isGrounded)
+            {
+                this.velocity.Y = velocity.Y;
+                isGrounded = false;
+            }
         }
     }
 }

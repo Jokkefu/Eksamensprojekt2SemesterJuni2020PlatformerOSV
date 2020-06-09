@@ -1,4 +1,5 @@
 ﻿using EksamensProjekt20.MapNManager;
+using EksamensProjekt20.PrimaryAttacks;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,14 @@ namespace EksamensProjekt20.Characters
         public Blob(Vector2 position, int block) : base(position, block)
         {
             currentSprite = ContentCollection.blob;
+            spriteSize = new Vector2(50, 40);
+            movementSpeed = 10f;
+            maxHealth = 100;
+            currentHealth = maxHealth;
+            healthRegen = 1;
+            primaryAttack = new Spit(this);
+            attackSpeed = 1;
+            StartThread();
         }
     }
 }
