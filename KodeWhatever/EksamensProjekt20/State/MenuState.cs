@@ -13,11 +13,13 @@ namespace EksamensProjekt20.States
     public class MenuState : State
     {
         private List<Components> components;
+        private Texture2D menuBackground;
 
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             var buttonTexture = content1.Load<Texture2D>("Controls/Knap");
             var buttonFont = content1.Load<SpriteFont>("Fonts/Font");
+            menuBackground = content1.Load<Texture2D>("MenuBackground");
 
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
@@ -70,9 +72,10 @@ namespace EksamensProjekt20.States
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
+            spriteBatch.Draw(menuBackground, new Rectangle(0, 0, 1920, 1080), Color.White);
             foreach (var component in components)
                 component.Draw(gameTime, spriteBatch);
-
+            
             
         }
         public override void PostUpdate(GameTime gameTime)
