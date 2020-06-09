@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EksamensProjekt20
+namespace EksamensProjekt20.Projectiles
 {
     class SwipeProjectile : Projectile
     {

@@ -28,6 +28,7 @@ namespace EksamensProjekt20
         private int scene;
         Song song;
         private State menuState;
+        private State leaderboardState;
         bool stageChange;
         private bool gameStarted = false;
 
@@ -66,6 +67,7 @@ namespace EksamensProjekt20
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             menuState = new MenuState(this, graphics.GraphicsDevice, Content);
+            leaderboardState = new LeaderboardState(this, graphics.GraphicsDevice, Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             ContentCollection.LoadContent(Content);
             font = ContentCollection.font;
@@ -117,6 +119,9 @@ namespace EksamensProjekt20
                     }
                     gm.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
                     break;
+                case 2:
+                    leaderboardState.Update(gameTime);
+                    break;
             }
             // TODO: Add your update logic here
             base.Update(gameTime);
@@ -137,6 +142,9 @@ namespace EksamensProjekt20
                     break;
                 case 1:
                     if(gm.currentStage!=null) gm.Draw(spriteBatch);
+                    break;
+                case 2:
+                    leaderboardState.Draw(gameTime, spriteBatch);
                     break;
             }
             spriteBatch.DrawString(font, gameTime.ElapsedGameTime.TotalSeconds.ToString(), new Vector2(10, 10), Color.Black);

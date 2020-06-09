@@ -27,27 +27,27 @@ namespace EksamensProjekt20.States
 
             newGameButton.Click += NewGameButton_Click;
 
-            var LoadGameButton = new Button(buttonTexture, buttonFont)
+            var leaderboardButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(700, 400),
-                Text = "Load Game",
+                Text = "Leaderboard",
             };
 
-            LoadGameButton.Click += LoadGameButton_Click;
+            leaderboardButton.Click += LeaderboardButton_Click;
 
-            var QuitGameButton = new Button(buttonTexture, buttonFont)
+            var quitGameButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(700, 650),
                 Text = "Quit Game",
             };
 
-            QuitGameButton.Click += QuitGameButton_Click;
+            quitGameButton.Click += QuitGameButton_Click;
 
             components = new List<Components>()
             {
                 newGameButton,
-                LoadGameButton,
-                QuitGameButton,
+                leaderboardButton,
+                quitGameButton,
             };
 
 
@@ -58,9 +58,9 @@ namespace EksamensProjekt20.States
             game1.Exit();
         }
 
-        private void LoadGameButton_Click(object sender, EventArgs e)
+        private void LeaderboardButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            game1.ChangeScene(2);
         }
 
         private void NewGameButton_Click(object sender, EventArgs e)

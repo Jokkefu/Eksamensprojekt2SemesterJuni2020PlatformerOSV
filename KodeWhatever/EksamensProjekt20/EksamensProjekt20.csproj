@@ -155,6 +155,7 @@
     <Compile Include="StatePattern\Idle.cs" />
     <Compile Include="StatePattern\IEnemyState.cs" />
     <Compile Include="State\GameState.cs" />
+    <Compile Include="State\LeaderboardState.cs" />
     <Compile Include="State\MenuState.cs" />
     <Compile Include="State\State.cs" />
     <Compile Include="Projectiles\SpitProjectile.cs" />
