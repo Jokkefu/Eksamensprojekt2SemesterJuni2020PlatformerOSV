@@ -19,6 +19,7 @@ namespace EksamensProjekt20
         public string tag;
         public bool isGrounded = false;
         public Vector2 velocity;
+        public Vector2 moveVector;
         public Vector2 gamePosition;
         public float movementSpeed;
 
@@ -79,7 +80,7 @@ namespace EksamensProjekt20
                 // Y+ = NED
                 // X- = Venstre
                 // X+ = Højre
-                //c er den charecter vi kollidere med
+                //c er den character vi kolliderer med
 
 
                 if (/*TOP*/c.spriteRect.Top >= this.spriteRect.Top &&/*BOTTOM*/ c.spriteRect.Bottom <= this.spriteRect.Bottom &&/*RIGHT*/ c.spriteRect.Right <= this.spriteRect.Right &&/*LEFT*/ c.spriteRect.Left >= this.spriteRect.Left) 
@@ -107,7 +108,7 @@ namespace EksamensProjekt20
             }
             else if (isGrounded == true)
             {
-                velocity.Y = velocity.Y - velocity.Y-0.00001f;
+                velocity.Y = 0;
 
             }
 
@@ -119,8 +120,7 @@ namespace EksamensProjekt20
         }
         public void Movement(float deltaTime)
         {
-            gamePosition.X += velocity.X * deltaTime;
-
+            gamePosition += moveVector * movementSpeed * deltaTime + velocity * deltaTime;
             //gamePosition.Y += velocity.Y * (float)gameTime.ElapsedGameTime.TotalSeconds / 10000;
         }
     }

@@ -90,5 +90,10 @@ namespace EksamensProjekt20.MapNManager
         {
             runKillSum++;
         }
+
+        public void DatabaseSetup()
+        {
+            database = new Database(this);
+        }
     }
 }

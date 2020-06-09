@@ -105,11 +105,6 @@ namespace EksamensProjekt20
                     menuState.Update(gameTime);
                     break;
                 case 1:
-                    if (Keyboard.GetState().IsKeyDown(Keys.Enter) && stageChange==false)
-                    {
-                        gm.NextStage();
-                        stageChange = true;
-                    }
                     if (gameStarted == false)
                     {
                         gameStarted = true;

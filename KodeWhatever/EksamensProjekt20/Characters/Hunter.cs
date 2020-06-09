@@ -12,6 +12,7 @@ namespace EksamensProjekt20.Characters
         public Hunter()
         {
             currentSprite = ContentCollection.hunter;
+            movementSpeed = 10;
         }
     }
 }
