@@ -27,7 +27,7 @@ namespace EksamensProjekt20.MapNManager
 
         //Character
         public static Texture2D[] archibald = new Texture2D[1];
-        public static Texture2D blob;
+        public static Texture2D[] blob = new Texture2D[5];
         public static Texture2D damnedSoul;
         public static Texture2D doodles;
         public static Texture2D doomer;
@@ -66,9 +66,11 @@ namespace EksamensProjekt20.MapNManager
 
             //background1 = content.Load<Texture2D>("background1");
 
+            //Enemy
             archibald[0] = content.Load<Texture2D>("archibald");
+            blob[0] = content.Load<Texture2D>("Blob");
+
             /*
-            blob = content.Load<Texture2D>("blob");
             damnedSoul = content.Load<Texture2D>("damnedSoul");
             plasmaGhost = content.Load<Texture2D>("plasmaGhost");
             doodles = content.Load<Texture2D>("doodles");
