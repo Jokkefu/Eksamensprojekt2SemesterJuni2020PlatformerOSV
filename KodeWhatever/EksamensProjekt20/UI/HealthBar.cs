@@ -11,7 +11,6 @@ namespace EksamensProjekt20.UI
     class HealthBar
     {
         private Texture2D container, lifeBar;
-        private Vector2 position;
         private Enemy character;
         private Rectangle containerRect;
         private Rectangle lifebarRect;
@@ -19,10 +18,9 @@ namespace EksamensProjekt20.UI
 
         public HealthBar(Enemy enemyinstance)
         {
-            position = new Vector2(100, 100);
             character = enemyinstance;
-            container = SpriteCollection.container;
-            lifeBar = SpriteCollection.lifebar;
+            container = ContentCollection.container;
+            lifeBar = ContentCollection.lifebar;
         }
 
         public void Update(GameTime gameTime)
@@ -31,11 +29,13 @@ namespace EksamensProjekt20.UI
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            lifebarRect = new Rectangle((int)position.X, (int)position.Y, (int)(200 * character.currentHealth / character.maxHealth), 30);
-            containerRect = new Rectangle((int)position.X, (int)position.Y, 200, 30);
+            containerRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, 200, 30);
+            lifebarRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, (int)(200 * character.currentHealth / character.maxHealth), 30);
+            
 
-            spriteBatch.Draw(lifeBar, lifebarRect, Color.White);
             spriteBatch.Draw(container, containerRect, Color.White);
+            spriteBatch.Draw(lifeBar, lifebarRect, Color.White);
+            
         }
     }
 }

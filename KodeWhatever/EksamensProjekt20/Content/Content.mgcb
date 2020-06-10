@@ -79,7 +79,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:healtBar.png
+/build:healtBar.png;healthBar.png
 
 #begin healtGauge.png
 /importer:TextureImporter
@@ -91,7 +91,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:healtGauge.png
+/build:healtGauge.png;healthGauge.png
 
 #begin Knap.png
 /importer:TextureImporter
