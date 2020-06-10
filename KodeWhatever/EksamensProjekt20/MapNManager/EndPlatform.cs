@@ -15,11 +15,11 @@ namespace EksamensProjekt20.MapNManager
             List<TerrainPiece> tempList = new List<TerrainPiece>();
 
 
-            tempList.Add(new NormalPlatform(new Vector2(539, 509), 8));
-            tempList.Add(new NormalPlatform(new Vector2(639, 509), 8));
-            tempList.Add(new NormalPlatform(new Vector2(739, 509), 8));
-            tempList.Add(new NormalPlatform(new Vector2(838, 479), 8));
-            tempList.Add(new TriggerPlatform(new Vector2(938, 447), 8));
+            tempList.Add(new NormalPlatform(new Vector2(539, 509), 8, false));
+            tempList.Add(new NormalPlatform(new Vector2(639, 509), 8, false));
+            tempList.Add(new NormalPlatform(new Vector2(739, 509), 8, false));
+            tempList.Add(new NormalPlatform(new Vector2(838, 479), 8, false));
+            tempList.Add(new TriggerPlatform(new Vector2(938, 447), 8, false));
 
         }
     }
