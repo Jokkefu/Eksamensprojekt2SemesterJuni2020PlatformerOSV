@@ -163,6 +163,7 @@
     <Compile Include="Projectiles\ThunderSlamProjectile.cs" />
     <Compile Include="Projectiles\SwordSlashProjectile.cs" />
     <Compile Include="UI\ButtonEffect.cs" />
+    <Compile Include="UI\HealthBar.cs" />
     <Compile Include="UI\UIButton.cs" />
     <Compile Include="UI\UIElement.cs" />
     <Compile Include="UI\UIStatic.cs" />
