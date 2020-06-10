@@ -65,6 +65,7 @@ namespace EksamensProjekt20.MapNManager
                 projectiles.Remove(projectile);
             }
             rProjectiles = new List<Projectile>();
+            currentStage.UpdatePosition(playerCharacter);
         }
 
         public static void AddProjectile(Projectile projectile)
@@ -90,6 +91,17 @@ namespace EksamensProjekt20.MapNManager
                     {
                         originalObject.GroundCollisionDetection(gameObject);
                     }
+                }
+            }
+        }
+        private void StartUnits(int currentBlock)
+        {
+            foreach(GameObject gO in currentStage.stageSetup[currentBlock].terrainSetup)
+            {
+                if(gO.tag == "Character")
+                {
+                    Character temp = (Character)gO;
+                    temp.StartThread();
                 }
             }
         }

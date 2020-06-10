@@ -36,8 +36,6 @@ namespace EksamensProjekt20
 
         public void GroundCollisionDetection(GameObject other)
         {
-            
-
             //t = terrain | this = player/enemy
             if (other.tag == "Terrain" && tag != "Terrain")
             {
@@ -67,7 +65,6 @@ namespace EksamensProjekt20
                     gamePosition.X = other.gamePosition.X - (spriteRect.Width + other.spriteRect.Width) / 2;
                     velocity.X = 0;
                 }
-                
             }
             if (isGrounded)
             {

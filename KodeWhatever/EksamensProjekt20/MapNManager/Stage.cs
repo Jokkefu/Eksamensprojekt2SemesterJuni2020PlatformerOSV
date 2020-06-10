@@ -29,7 +29,11 @@ namespace EksamensProjekt20.MapNManager
             }
             stageVector = new Vector2(0, 0);
         }
-        
+        public void UpdatePosition(Player pc)
+        {
+            stageVector = new Vector2(-pc.gamePosition.X + (Game1.screenSize.X/2), 0);
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             mapRect = new Rectangle((int)stageVector.X, (int)stageVector.X, 7000, 2000);

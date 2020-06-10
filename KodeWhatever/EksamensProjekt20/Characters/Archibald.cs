@@ -22,7 +22,6 @@ namespace EksamensProjekt20.Characters
             healthRegen = 1;
             primaryAttack = new Swipe(this);
             attackSpeed = 2;
-            StartThread();
             
         }
     }
