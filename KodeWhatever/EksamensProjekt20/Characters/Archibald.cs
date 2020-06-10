@@ -16,13 +16,13 @@ namespace EksamensProjekt20.Characters
         {
             animation.spriteArray = ContentCollection.archibald;
             spriteSize = new Vector2(40, 100);
-            movementSpeed = 100f;
+            movementSpeed = 20f;
             maxHealth = 150;
             currentHealth = maxHealth;
             healthRegen = 1;
             primaryAttack = new Swipe(this);
             attackSpeed = 2;
-            
+            tag = "Enemy";
         }
     }
 }

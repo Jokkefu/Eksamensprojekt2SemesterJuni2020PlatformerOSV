@@ -39,6 +39,8 @@ namespace EksamensProjekt20.MapNManager
             playerCharacter = new Warrior();
             stageNumber = 1;
             currentStage = stageFactory.GenerateStage(stageNumber);
+            currentStage.StartUnits(0);
+            currentStage.StartUnits(1);
         }
         public void OutOfBoundsCheck()
         {
