@@ -12,15 +12,15 @@ namespace EksamensProjekt20.CommandPattern
     class InputHandler
     {
         private Dictionary<Keys, ICommand> keybinds = new Dictionary<Keys, ICommand>();
-        private Dictionary<MouseState, ICommand> mousebinds = new Dictionary<MouseState, ICommand>();
+        private Dictionary<ButtonState, ICommand> mousebinds = new Dictionary<ButtonState, ICommand>();
 
         public InputHandler()
         {
             keybinds.Add(Keys.D, new MoveCommand(new Vector2(1, 0)));
             keybinds.Add(Keys.A, new MoveCommand(new Vector2(-1, 0)));
             keybinds.Add(Keys.W, new JumpCommand(new Vector2(0, -80)));
-            //keybinds.Add(Keys.J, new PrimaryAttackCommand);
-            //keybinds.Add(Keys.K, new SecondaryAttackCommand);
+            mousebinds.Add(Mouse.GetState().LeftButton, new PrimaryAttackCommand());
+            mousebinds.Add(Mouse.GetState().RightButton, new SecondaryAttackCommand());
 
         }
 
