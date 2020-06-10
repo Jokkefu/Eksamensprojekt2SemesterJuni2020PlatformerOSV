@@ -13,7 +13,7 @@ namespace EksamensProjekt20.Characters
     {
         public Blob(Vector2 position, int block) : base(position, block)
         {
-            currentSprite = ContentCollection.blob;
+            currentSprite = ContentCollection.blob[0];
             spriteSize = new Vector2(50, 40);
             movementSpeed = 10f;
             maxHealth = 100;
