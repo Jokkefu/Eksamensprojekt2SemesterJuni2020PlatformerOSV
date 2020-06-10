@@ -10,10 +10,10 @@ namespace EksamensProjekt20.MapNManager
 {
     class TriggerPlatform : TerrainPiece
     {
-        public TriggerPlatform(Vector2 pos, Vector2 size)
+        public TriggerPlatform(Vector2 pos, int block)
         {
             screenPosition = pos;
-            spriteSize = size;
+            spriteSize = new Vector2(100, 40);
             animation.spriteArray = ContentCollection.triggerPlatform;
         }
     }
