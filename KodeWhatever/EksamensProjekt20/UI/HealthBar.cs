@@ -29,8 +29,8 @@ namespace EksamensProjekt20.UI
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            containerRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, 200, 30);
-            lifebarRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, (int)(200 * character.currentHealth / character.maxHealth), 30);
+            containerRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, 40, 15);
+            lifebarRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, (int)(40 * character.currentHealth / character.maxHealth), 15);
             
 
             spriteBatch.Draw(container, containerRect, Color.White);
