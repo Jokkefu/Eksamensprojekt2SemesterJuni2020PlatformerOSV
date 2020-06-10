@@ -20,7 +20,6 @@ namespace EksamensProjekt20.MapNManager
             tempList.Add(new NormalPlatform(new Vector2(156, 349), 0, false));
             tempList.Add(new NormalPlatform(new Vector2(156, 251), 0, false));
             tempList.Add(new NormalPlatform(new Vector2(156, 152), 0, false));
-
         }
     }
 }
