@@ -10,6 +10,7 @@ namespace EksamensProjekt20.StatePattern
 {
     class Idle : IEnemyState
     {
+        private Vector2 velocity;
 
         private float cooldown;
 
@@ -21,7 +22,7 @@ namespace EksamensProjekt20.StatePattern
         public void Enter(Enemy enemy)
         {
             this.enemy = enemy;
-            enemy.movementSpeed = 50;
+            velocity = new Vector2(1, 0);
             elapsed = 0;
             cooldown = 3;
 
@@ -29,11 +30,12 @@ namespace EksamensProjekt20.StatePattern
 
         public void Execute()
         {
-            //ChangeState
+            enemy.moveVector = velocity;
             elapsed += (float)Game1.gameTime.ElapsedGameTime.TotalSeconds;
 
             if (elapsed >= cooldown)
             {
+                //ChangeState
                 enemy.ChangeState(new Attack());
             }
         }
