@@ -31,6 +31,7 @@ namespace EksamensProjekt20.MapNManager
         {
             //stageNumber++;
             currentStage = stageFactory.GenerateStage(stageNumber);
+            currentStage.StartUnits(0);
             playerCharacter.gamePosition = new Vector2(40, 0);
         }
         public void StartGame()
@@ -59,12 +60,12 @@ namespace EksamensProjekt20.MapNManager
             {
                 proj.Update(deltaTime);
             }
-            //currentStage.Update(gameTime);
             foreach(Projectile projectile in rProjectiles)
             {
                 projectiles.Remove(projectile);
             }
             rProjectiles = new List<Projectile>();
+            currentStage.Update(playerCharacter);
         }
 
         public static void AddProjectile(Projectile projectile)
@@ -93,6 +94,7 @@ namespace EksamensProjekt20.MapNManager
                 }
             }
         }
+        
         public void DatabaseSetup()
         {
             database = new Database(this);

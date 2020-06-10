@@ -21,7 +21,6 @@ namespace EksamensProjekt20.Characters
             healthRegen = 1;
             primaryAttack = new Spit(this);
             attackSpeed = 1;
-            StartThread();
         }
     }
 }

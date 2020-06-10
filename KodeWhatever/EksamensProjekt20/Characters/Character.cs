@@ -41,7 +41,6 @@ namespace EksamensProjekt20.Characters
         
         public void StartThread()
         {
-
             alive = true;
             thread = new Thread(ThreadMethod)
             {
