@@ -27,8 +27,9 @@ namespace EksamensProjekt20.StatePattern
 
         }
 
-        public void Execute()
+        public void Execute(double deltatime)
         {
+            //if ()
             //ChangeState
         }
 
