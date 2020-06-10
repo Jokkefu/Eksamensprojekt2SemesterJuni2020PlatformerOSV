@@ -31,6 +31,7 @@ namespace EksamensProjekt20.MapNManager
         {
             //stageNumber++;
             currentStage = stageFactory.GenerateStage(stageNumber);
+            currentStage.StartUnits(0);
             playerCharacter.gamePosition = new Vector2(40, 0);
         }
         public void StartGame()

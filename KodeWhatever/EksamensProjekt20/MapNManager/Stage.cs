@@ -30,23 +30,23 @@ namespace EksamensProjekt20.MapNManager
                 
             }
             stageVector = new Vector2(0, 0);
-            StartUnits(0);
+            
         }
         public void Update(Player pc)
         {
             stageVector = new Vector2(-pc.gamePosition.X + (Game1.screenSize.X/2), 0);
             int temp = 0;
-            if (stageVector.X >= 1000) temp++;
-            if (stageVector.X >= 2000) temp++;
-            if (stageVector.X >= 3000) temp++;
-            if (stageVector.X >= 4000) temp++;
-            if (stageVector.X >= 5000) temp++;
-            if (stageVector.X >= 6000) temp++;
-            if (stageVector.X >= 7000) temp++;
+            if (pc.gamePosition.X >= 1000) temp++;
+            if (pc.gamePosition.X >= 2000) temp++;
+            if (pc.gamePosition.X >= 3000) temp++;
+            if (pc.gamePosition.X >= 4000) temp++;
+            if (pc.gamePosition.X >= 5000) temp++;
+            if (pc.gamePosition.X >= 6000) temp++;
+            if (pc.gamePosition.X >= 7000) temp++;
             currentBlock = temp;
             if (previousBlock < currentBlock)
             {
-                StartUnits(currentBlock);
+                StartUnits(currentBlock+1);
             }
             previousBlock = currentBlock;
         }
@@ -60,14 +60,17 @@ namespace EksamensProjekt20.MapNManager
                 block.Draw(spriteBatch);
             }
         }
-        private void StartUnits(int currentBlock)
+        public void StartUnits(int currentBlock)
         {
-            foreach (GameObject gO in stageSetup[currentBlock].terrainSetup)
+            if (currentBlock <= 7)
             {
-                if (gO.tag == "Character")
+                foreach (GameObject gO in stageSetup[currentBlock].terrainSetup)
                 {
-                    Character temp = (Character)gO;
-                    temp.StartThread();
+                    if (gO.tag == "Character")
+                    {
+                        Character temp = (Character)gO;
+                        temp.StartThread();
+                    }
                 }
             }
         }
