@@ -43,8 +43,8 @@ namespace EksamensProjekt20.Characters
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            healthBar.Draw(spriteBatch);
             base.Draw(spriteBatch);
+            healthBar.Draw(spriteBatch);
         }
     }
 }

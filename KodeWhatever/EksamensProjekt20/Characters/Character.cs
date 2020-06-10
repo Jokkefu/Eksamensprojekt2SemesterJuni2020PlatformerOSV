@@ -126,6 +126,13 @@ namespace EksamensProjekt20.Characters
         {
             currentHealth -= damageTaken;
         }
-        
+        public void Jump(Vector2 velocity)
+        {
+            if (isGrounded)
+            {
+                this.velocity.Y = velocity.Y;
+                isGrounded = false;
+            }
+        }
     }
 }

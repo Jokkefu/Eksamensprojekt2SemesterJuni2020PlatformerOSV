@@ -10,9 +10,10 @@ namespace EksamensProjekt20.MapNManager
 {
     class TriggerPlatform : TerrainPiece
     {
-        public TriggerPlatform(Vector2 pos, int block)
+
+        public TriggerPlatform(Vector2 pos, int blockNumber, bool rotated)
         {
-            screenPosition = pos;
+            gamePosition = pos + new Vector2((1000 * blockNumber) + 500, 0);
             spriteSize = new Vector2(100, 40);
             animation.spriteArray = ContentCollection.triggerPlatform;
         }

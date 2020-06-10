@@ -17,10 +17,10 @@ namespace EksamensProjekt20.Projectiles
             duration = 0.5f;
 
         }
-        protected override void CharacterHit(Character other)
+        protected override void EnemyHit(Character other)
         {
             other.TakeDamage(damage);
-            base.CharacterHit(other);
+            base.EnemyHit(other);
         }
         protected override void TerrainHit(TerrainPiece other)
         {

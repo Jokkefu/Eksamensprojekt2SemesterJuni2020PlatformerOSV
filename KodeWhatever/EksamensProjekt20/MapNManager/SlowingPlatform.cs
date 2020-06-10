@@ -13,16 +13,11 @@ namespace EksamensProjekt20.MapNManager
     class SlowingPlatform : TerrainPiece
     {
         private Player player;
-        public SlowingPlatform(Vector2 pos, Vector2 size)
+        public SlowingPlatform(Vector2 pos, int blockNumber, bool rotated)
         {
-            screenPosition = pos;
-            spriteSize = size;
+            gamePosition = pos + new Vector2((1000 * blockNumber) + 500, 0);
+            spriteSize = new Vector2(100, 40);
             animation.spriteArray = ContentCollection.slowingPlatform;
-            
-            if (player.isGrounded == true)
-            {
-                player.AddBuff(new SpeedBuff(-50, 1, player));
-            }
         }
     }
 }
