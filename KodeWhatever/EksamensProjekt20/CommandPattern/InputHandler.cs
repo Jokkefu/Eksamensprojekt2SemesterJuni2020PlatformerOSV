@@ -12,6 +12,7 @@ namespace EksamensProjekt20.CommandPattern
     class InputHandler
     {
         private Dictionary<Keys, ICommand> keybinds = new Dictionary<Keys, ICommand>();
+        private Dictionary<MouseState, ICommand> mousebinds = new Dictionary<MouseState, ICommand>();
 
         public InputHandler()
         {
@@ -26,7 +27,7 @@ namespace EksamensProjekt20.CommandPattern
         public void Execute(Player player)
         {
             KeyboardState keyState = Keyboard.GetState();
-            bool pressing = false;
+            bool pressing = false ;
             foreach (Keys key in keybinds.Keys)
             {
                 
