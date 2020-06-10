@@ -26,7 +26,7 @@ namespace EksamensProjekt20.CommandPattern
         public void Execute(Player player)
         {
             KeyboardState keyState = Keyboard.GetState();
-            bool pressing = false ;
+            bool pressing = false;
             foreach (Keys key in keybinds.Keys)
             {
                 

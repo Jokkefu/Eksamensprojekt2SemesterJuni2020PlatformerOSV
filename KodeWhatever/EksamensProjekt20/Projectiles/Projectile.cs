@@ -30,9 +30,9 @@ namespace EksamensProjekt20.Projectiles
             {
                 TerrainHit((TerrainPiece)other);
             }
-            else if (other.tag == "Character")
+            else if (other.tag == "Enemy")
             {
-                CharacterHit((Character)other);
+                EnemyHit((Character)other);
             }
         }
         protected void EndProjectile()
@@ -56,7 +56,7 @@ namespace EksamensProjekt20.Projectiles
         {
 
         }
-        protected virtual void CharacterHit(Character other)
+        protected virtual void EnemyHit(Character other)
         {
 
         }

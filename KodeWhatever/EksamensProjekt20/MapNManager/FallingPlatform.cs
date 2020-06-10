@@ -11,10 +11,10 @@ namespace EksamensProjekt20.MapNManager
     class FallingPlatform : TerrainPiece
     {
         private double delay;
-        public FallingPlatform(Vector2 pos, Vector2 size)
+        public FallingPlatform(Vector2 pos, int blockNumber, bool rotated)
         {
-            screenPosition = pos;
-            spriteSize = size;
+            gamePosition = pos + new Vector2((1000 * blockNumber) + 500, 0);
+            spriteSize = new Vector2(100, 40);
             animation.spriteArray = ContentCollection.fallingPlatform;
         }
     }

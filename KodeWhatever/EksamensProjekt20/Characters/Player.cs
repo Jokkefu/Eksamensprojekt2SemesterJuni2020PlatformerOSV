@@ -45,13 +45,6 @@ namespace EksamensProjekt20.Characters
             secondaryAttack.Attack();
             secondaryDelay = secondaryCD;
         }
-        public void Jump(Vector2 velocity)
-        {
-            if(isGrounded)
-            {
-                this.velocity.Y = velocity.Y;
-                isGrounded = false;
-            }
-        }
+        
     }
 }

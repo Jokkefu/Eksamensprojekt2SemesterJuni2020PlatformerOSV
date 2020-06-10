@@ -18,10 +18,10 @@ namespace EksamensProjekt20.Projectiles
             duration = 1;
             knockUp = new Vector2(0, 20);
         }
-        protected override void CharacterHit(Character other)
+        protected override void EnemyHit(Character other)
         {
             other.TakeDamage(damage);
-            base.CharacterHit(other);
+            base.EnemyHit(other);
             other.velocity = knockUp;
         }
         protected override void TerrainHit(TerrainPiece other)
