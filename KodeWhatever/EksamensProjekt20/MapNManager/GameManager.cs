@@ -59,13 +59,12 @@ namespace EksamensProjekt20.MapNManager
             {
                 proj.Update(deltaTime);
             }
-            //currentStage.Update(gameTime);
             foreach(Projectile projectile in rProjectiles)
             {
                 projectiles.Remove(projectile);
             }
             rProjectiles = new List<Projectile>();
-            currentStage.UpdatePosition(playerCharacter);
+            currentStage.Update(playerCharacter);
         }
 
         public static void AddProjectile(Projectile projectile)
@@ -94,17 +93,7 @@ namespace EksamensProjekt20.MapNManager
                 }
             }
         }
-        private void StartUnits(int currentBlock)
-        {
-            foreach(GameObject gO in currentStage.stageSetup[currentBlock].terrainSetup)
-            {
-                if(gO.tag == "Character")
-                {
-                    Character temp = (Character)gO;
-                    temp.StartThread();
-                }
-            }
-        }
+        
         public void DatabaseSetup()
         {
             database = new Database(this);
