@@ -66,7 +66,7 @@ namespace EksamensProjekt20.MapNManager
             {
                 foreach (GameObject gO in stageSetup[currentBlock].terrainSetup)
                 {
-                    if (gO.tag == "Character")
+                    if (gO.tag == "Enemy")
                     {
                         Character temp = (Character)gO;
                         temp.StartThread();

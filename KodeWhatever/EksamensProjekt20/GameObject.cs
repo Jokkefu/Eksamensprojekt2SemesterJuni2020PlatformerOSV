@@ -28,6 +28,10 @@ namespace EksamensProjekt20
 
         public override void Update(double deltaTime)
         {
+            if(tag == "Enemy")
+            {
+                tag = "Enemy";
+            }
             Gravity(deltaTime);
             Movement(deltaTime);
             GameManager.CollisionCheck(this);
