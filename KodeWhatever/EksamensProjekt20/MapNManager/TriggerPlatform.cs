@@ -10,6 +10,7 @@ namespace EksamensProjekt20.MapNManager
 {
     class TriggerPlatform : TerrainPiece
     {
+
         public TriggerPlatform(Vector2 pos, int blockNumber, bool rotated)
         {
             gamePosition = pos + new Vector2((1000 * blockNumber) + 500, 0);

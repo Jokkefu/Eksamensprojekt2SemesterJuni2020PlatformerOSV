@@ -11,7 +11,7 @@ namespace EksamensProjekt20.StatePattern
     {
         void Enter(Enemy enemy);
         void Exit();
-        void Execute();
+        void Execute(double deltatime);
 
 
     }

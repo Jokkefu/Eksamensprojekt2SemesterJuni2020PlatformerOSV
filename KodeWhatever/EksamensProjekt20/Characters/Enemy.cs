@@ -28,7 +28,7 @@ namespace EksamensProjekt20.Characters
         public override void Update(double deltaTime)
         {
             base.Update(deltaTime);
-            currentState.Execute();
+            currentState.Execute(deltaTime);
         }
         public void ChangeState(IEnemyState newEnemyState)
         {
