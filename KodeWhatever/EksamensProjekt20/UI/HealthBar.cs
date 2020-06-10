@@ -21,8 +21,8 @@ namespace EksamensProjekt20.UI
         {
             position = new Vector2(100, 100);
             character = enemyinstance;
-            container = SpriteCollection.container;
-            lifeBar = SpriteCollection.lifebar;
+            //container = SpriteCollection.container;
+            //lifeBar = SpriteCollection.lifebar;
         }
 
         public void Update(GameTime gameTime)

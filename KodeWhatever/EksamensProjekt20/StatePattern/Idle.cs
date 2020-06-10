@@ -18,25 +18,38 @@ namespace EksamensProjekt20.StatePattern
 
         private Enemy enemy;
 
+        double currenttime = Game1.gameTime.ElapsedGameTime.TotalSeconds;
+        double turntime = 0;
+        bool timetoturn = false;
 
         public void Enter(Enemy enemy)
         {
             this.enemy = enemy;
-            velocity = new Vector2(1, 0);
-            elapsed = 0;
-            cooldown = 3;
+            //velocity = new Vector2(0.001f, 0);
 
         }
 
-        public void Execute()
+        public void Execute(double deltatime)
         {
-            enemy.moveVector = velocity;
-            elapsed += (float)Game1.gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (elapsed >= cooldown)
+            currenttime += deltatime;
+
+            if (currenttime > turntime)
             {
-                //ChangeState
-                enemy.ChangeState(new Attack());
+                if (timetoturn == true)
+                {
+                    velocity = new Vector2 (0.5f, 0);
+                    turntime = currenttime + 20;
+                    enemy.moveVector = velocity;
+                    timetoturn = false;
+                }
+                else if (timetoturn == false)
+                {
+                    velocity = new Vector2 (-0.5f, 0);
+                    turntime = currenttime + 20;
+                    enemy.moveVector = velocity;
+                    timetoturn = true;
+                }
             }
         }
 
