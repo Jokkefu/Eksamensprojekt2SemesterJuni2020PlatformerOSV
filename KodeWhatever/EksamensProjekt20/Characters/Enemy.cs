@@ -20,7 +20,7 @@ namespace EksamensProjekt20.Characters
 
         public Enemy(Vector2 position, int block)        
         {
-            gamePosition = new Vector2(position.X + (block*1000), position.Y);
+            gamePosition = new Vector2(position.X + (block*1000) + 500, position.Y);
             spriteSize = new Vector2(20, 50);
             ChangeState(new Idle());
             healthBar = new HealthBar(this);
