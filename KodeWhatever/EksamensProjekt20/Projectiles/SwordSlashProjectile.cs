@@ -17,6 +17,8 @@ namespace EksamensProjekt20.Projectiles
         {
             timed = true;
             duration = 1;
+            spriteSize = new Vector2(50, 100);
+            animation.spriteArray = ContentCollection.projectile;
         }
         protected override void EnemyHit(Character other)
         {

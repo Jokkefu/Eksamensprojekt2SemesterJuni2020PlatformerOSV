@@ -20,9 +20,9 @@ namespace EksamensProjekt20.PrimaryAttacks
         {
             if (unit.lookingRight)
             {
-                GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(10,0)));
+                GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(50,0)));
             }
-            else GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(-10, 0)));
+            else GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(-50, 0)));
             base.Attack();
         }
         public override void HoldAttack()

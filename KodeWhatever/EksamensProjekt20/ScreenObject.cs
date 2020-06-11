@@ -16,7 +16,7 @@ namespace EksamensProjekt20
     {
         protected Texture2D currentSprite;
         public Vector2 screenPosition;
-        protected Vector2 spriteSize;
+        public Vector2 spriteSize;
         public Rectangle spriteRect;
         public bool lookingRight;
         protected AnimationController animation;

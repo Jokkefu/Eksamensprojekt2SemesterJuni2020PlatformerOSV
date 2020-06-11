@@ -79,8 +79,15 @@ namespace EksamensProjekt20.MapNManager
         {
             rProjectiles.Add(projectile);
         }
-        public static void AddKill()
+        public static void AddKill(Enemy unit)
         {
+            foreach(StageBlock sB in currentStage.stageSetup)
+            {
+                foreach(GameObject gO in sB.terrainSetup)
+                {
+
+                }
+            }
             runKillSum++;
         }
         public static void CollisionCheck(GameObject originalObject)

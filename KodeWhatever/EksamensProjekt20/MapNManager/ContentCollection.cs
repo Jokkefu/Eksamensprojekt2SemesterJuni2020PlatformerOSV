@@ -43,6 +43,7 @@ namespace EksamensProjekt20.MapNManager
 
         //Projectiles
         public static Texture2D arrow;
+        public static Texture2D[] projectile = new Texture2D[1];
 
         //Sound
         public static Song song;
@@ -96,6 +97,7 @@ namespace EksamensProjekt20.MapNManager
 
             arrow = content.Load<Texture2D>("arrow");
             */
+            projectile[0] = content.Load<Texture2D>("ProjectileTest");
 
             #region WarriorArray
             warrior[0] = content.Load<Texture2D>("Warrior");//Venstre

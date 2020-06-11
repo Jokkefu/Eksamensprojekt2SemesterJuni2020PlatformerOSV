@@ -51,7 +51,7 @@ namespace EksamensProjekt20.Characters
         }
         public override void Death()
         {
-            GameManager.AddKill();
+            GameManager.AddKill(this);
             base.Death();
 
         }
