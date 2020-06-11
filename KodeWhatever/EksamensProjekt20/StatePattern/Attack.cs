@@ -1,4 +1,5 @@
 ﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.CommandPattern;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -23,18 +24,18 @@ namespace EksamensProjekt20.StatePattern
 
         public void Execute(double deltatime)
         {
-                if ( true == true)
+                if (Game1.gm.playerCharacter.gamePosition.X > enemy.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X < enemy.gamePosition.X + 800)
                 {
-                    velocity = new Vector2(0.5f, 0);
+                    enemy.Jump(new Vector2 (0, -130));
+                    velocity = new Vector2(3, 0);
                     enemy.moveVector = velocity;
-                }/*
-                if ()
+                }
+                if (Game1.gm.playerCharacter.gamePosition.X < enemy.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X > enemy.gamePosition.X - 800)
                 {
-                    velocity = new Vector2(-0.5f, 0);
-                    turntime = currenttime + 20;
+                    enemy.Jump(new Vector2(0, -130));
+                    velocity = new Vector2(-3, 0);   
                     enemy.moveVector = velocity;
-                    timetoturn = true;
-                }*/
+                }
             
         }
 

@@ -1,4 +1,4 @@
-﻿using EksamensProjekt20.Characters;
+﻿    using EksamensProjekt20.Characters;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -25,7 +25,7 @@ namespace EksamensProjekt20.MapNManager
             for(int i = 0; i < 8; i++)
             {
                 StageBlock tempBlock = new StageBlock();
-                tempBlock.terrainSetup = GenerateTerrain(random.Next(1,2), i);
+                tempBlock.terrainSetup = GenerateTerrain(random.Next(1,3), i);
                 tempBlockList.Add(tempBlock);
             }
             tempStage.stageSetup = tempBlockList;
@@ -54,7 +54,22 @@ namespace EksamensProjekt20.MapNManager
                     break;
 
                 case 2:
-                    
+                    tempList.Add(new NormalPlatform(new Vector2(58, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(157, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(252, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(352, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(451, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(549, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(647, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(747, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(839, 613), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(804, 582), blockNumber, true));
+                    tempList.Add(new NormalPlatform(new Vector2(155, 568), blockNumber, true));
+                    tempList.Add(new Archibald(new Vector2(501, 534), blockNumber));
+                    tempList.Add(new Blob(new Vector2(295, 532), blockNumber));
+                    tempList.Add(new Blob(new Vector2(694, 532), blockNumber));
+
+
                     break;
             }
             return tempList;
