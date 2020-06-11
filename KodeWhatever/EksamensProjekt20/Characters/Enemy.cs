@@ -35,13 +35,9 @@ namespace EksamensProjekt20.Characters
         public void ChangeStateTrigger(double deltaTime)
         {
             //Aggro range
-            if (Game1.gm.playerCharacter.gamePosition.X > this.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X < this.gamePosition.X + 100 || Game1.gm.playerCharacter.gamePosition.X < this.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X > this.gamePosition.X - 100)
+            if (Game1.gm.playerCharacter.gamePosition.X > this.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X < this.gamePosition.X + 700 || Game1.gm.playerCharacter.gamePosition.X < this.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X > this.gamePosition.X - 700)
             {
                 ChangeState(new Attack());
-            }
-            else
-            {
-                ChangeState(new Idle());
             }
         }
         public void ChangeState(IEnemyState newEnemyState)
