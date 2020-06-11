@@ -14,6 +14,7 @@ namespace EksamensProjekt20.States
         protected ContentManager content1;
         protected GraphicsDevice graphicsDevice1;
         protected Game1 game1;
+        protected Texture2D menuBackground;
 
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
 

@@ -64,11 +64,11 @@ namespace EksamensProjekt20
         /// </summary>
         protected override void LoadContent()
         {
+            ContentCollection.LoadContent(Content);
             // Create a new SpriteBatch, which can be used to draw textures.
             menuState = new MenuState(this, graphics.GraphicsDevice, Content);
             leaderboardState = new LeaderboardState(this, graphics.GraphicsDevice, Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            ContentCollection.LoadContent(Content);
             font = ContentCollection.font;
             song = ContentCollection.song;
             //MediaPlayer.Play(song);

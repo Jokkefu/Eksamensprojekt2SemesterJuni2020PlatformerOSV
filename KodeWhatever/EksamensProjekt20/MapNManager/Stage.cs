@@ -35,22 +35,22 @@ namespace EksamensProjekt20.MapNManager
         {
             if (pc.gamePosition.X >= 960)
             {
-                if (pc.gamePosition.X <= 7500)
+                if (pc.gamePosition.X <= 8000)
                 {
                     stageVector = new Vector2(-pc.gamePosition.X + 960, 0);
                 }
-                else stageVector = new Vector2(-800, 0);
+                else stageVector = new Vector2(-7040, 0);
             }
             else stageVector = new Vector2(0, 0);
 
             int temp = 0;
-            if (pc.gamePosition.X >= 500) temp++;
-            if (pc.gamePosition.X >= 1500) temp++;
-            if (pc.gamePosition.X >= 2500) temp++;
-            if (pc.gamePosition.X >= 3500) temp++;
-            if (pc.gamePosition.X >= 4500) temp++;
-            if (pc.gamePosition.X >= 5500) temp++;
-            if (pc.gamePosition.X >= 6500) temp++;
+            if (pc.gamePosition.X >= 1000) temp++;
+            if (pc.gamePosition.X >= 2000) temp++;
+            if (pc.gamePosition.X >= 3000) temp++;
+            if (pc.gamePosition.X >= 4000) temp++;
+            if (pc.gamePosition.X >= 5000) temp++;
+            if (pc.gamePosition.X >= 6000) temp++;
+            if (pc.gamePosition.X >= 7000) temp++;
             currentBlock = temp;
             if (previousBlock < currentBlock)
             {
@@ -61,11 +61,18 @@ namespace EksamensProjekt20.MapNManager
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            for(int i = currentBlock-1; i<=(currentBlock+1); i++)
+            int temp = 0;
+            if (stageVector.X <= -1800) temp++;
+            if (stageVector.X <= -3600) temp++;
+            if (stageVector.X <= -5400) temp++;
+            if (stageVector.X <= -7200) temp++;
+            if (stageVector.X <= -9000) temp++;
+
+            for (int i = temp-1; i<=(temp+1); i++)
             {
-                if(i >= 0 && i <= 5)
+                if(i >= 0 && i <= 4)
                 {
-                    mapRect[i] = new Rectangle((int)stageVector.X + 1000 * i, 0, 1000, (int)Game1.screenSize.Y);
+                    mapRect[i] = new Rectangle((int)stageVector.X + 1800 * i, 0, 1800, (int)Game1.screenSize.Y);
                     spriteBatch.Draw(mapSprite[i], mapRect[i], Color.White);
                 }
             }

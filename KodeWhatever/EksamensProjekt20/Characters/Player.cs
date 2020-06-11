@@ -24,6 +24,14 @@ namespace EksamensProjekt20.Characters
         public void Move(Vector2 velocity)
         {
             moveVector = velocity;
+            if(velocity.X > 0)
+            {
+                animation.Walking(true);
+            }
+            else if (velocity.X < 0)
+            {
+                animation.Walking(false);
+            }
         }
         public override void Update(double deltaTime)
         {

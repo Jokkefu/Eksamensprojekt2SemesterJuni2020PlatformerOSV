@@ -16,6 +16,7 @@ namespace EksamensProjekt20.Controls
         private bool isHovering;
         private MouseState previousMouse;
         private Texture2D _texture;
+        public Vector2 buttonSize;
         public string Text { get; set; }
 
         public event EventHandler Click;
@@ -26,7 +27,7 @@ namespace EksamensProjekt20.Controls
         {
             get
             {
-                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+                return new Rectangle((int)Position.X, (int)Position.Y, (int)buttonSize.X, (int)buttonSize.Y);
             }
         }
 

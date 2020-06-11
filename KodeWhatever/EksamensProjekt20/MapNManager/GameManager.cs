@@ -94,6 +94,7 @@ namespace EksamensProjekt20.MapNManager
                         originalObject.GroundCollisionDetection(gameObject);
                     }
                 }
+                
             }
         }
         

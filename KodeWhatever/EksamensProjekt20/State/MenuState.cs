@@ -1,4 +1,5 @@
 ﻿using EksamensProjekt20.Controls;
+using EksamensProjekt20.MapNManager;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -13,17 +14,17 @@ namespace EksamensProjekt20.States
     class MenuState : State
     {
         private List<Components> components;
-        private Texture2D menuBackground;
 
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
-            var buttonTexture = content1.Load<Texture2D>("Controls/Knap");
-            var buttonFont = content1.Load<SpriteFont>("Fonts/Font");
-            menuBackground = content1.Load<Texture2D>("MenuBackground");
+            menuBackground = ContentCollection.menuBackground;
+            var buttonTexture = ContentCollection.buttonTexture;
+            var buttonFont = ContentCollection.buttonFont;
 
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(700, 150),
+                Position = new Vector2(760, 500),
+                buttonSize = new Vector2(400, 80),
                 Text = "New Game",
             };
 
@@ -31,7 +32,8 @@ namespace EksamensProjekt20.States
 
             var leaderboardButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(700, 400),
+                Position = new Vector2(760, 600),
+                buttonSize = new Vector2(400, 80),
                 Text = "Leaderboard",
             };
 
@@ -39,7 +41,8 @@ namespace EksamensProjekt20.States
 
             var quitGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(700, 650),
+                Position = new Vector2(760, 700),
+                buttonSize = new Vector2(400, 80),
                 Text = "Quit Game",
             };
 

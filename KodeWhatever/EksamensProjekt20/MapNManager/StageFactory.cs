@@ -52,6 +52,7 @@ namespace EksamensProjekt20.MapNManager
                         gO.gamePosition.Y += 100;
                     }
                     break;
+
                 case 2:
                     
                     break;
