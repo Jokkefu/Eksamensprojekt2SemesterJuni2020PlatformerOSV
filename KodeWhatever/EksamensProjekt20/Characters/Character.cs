@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using EksamensProjekt20.StatePattern;
 using DiagnosticsUtils;
+using EksamensProjekt20.MapNManager;
 
 namespace EksamensProjekt20.Characters
 {
@@ -89,6 +90,7 @@ namespace EksamensProjekt20.Characters
         }
         public virtual void Death()
         {
+            
             alive = false;
         }
         public override void Update(double deltaTime)
@@ -112,6 +114,7 @@ namespace EksamensProjekt20.Characters
             }
             buffRemovals = new List<Buff>();
             if (attackDelay > 0) attackDelay -= deltaTime;
+            if (gamePosition.Y >= Game1.screenSize.Y + 20) OutOfBounds();
             base.Update(deltaTime);
         }
         public void AddBuff(Buff buff)
@@ -133,6 +136,12 @@ namespace EksamensProjekt20.Characters
                 this.velocity.Y = velocity.Y;
                 isGrounded = false;
             }
+        }
+
+        public void OutOfBounds()
+        {
+            gamePosition.Y = -10;
+            TakeDamage(10);
         }
     }
 }

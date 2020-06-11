@@ -11,7 +11,7 @@ namespace EksamensProjekt20.MapNManager
     class StageBlock
     {
         public List<GameObject> terrainSetup = new List<GameObject>();
-
+        private List<GameObject> removeList = new List<GameObject>();
         public StageBlock()
         {
             
@@ -23,5 +23,19 @@ namespace EksamensProjekt20.MapNManager
                 gO.Draw(spriteBatch);
             }
         }
+        public void Update(double deltaTime)
+        {
+            foreach(GameObject gO in removeList)
+            {
+                terrainSetup.Remove(gO);
+            }
+            removeList = new List<GameObject>();
+        }
+
+        public void RemoveObject(GameObject gameObject)
+        {
+
+        }
+
     }
 }
