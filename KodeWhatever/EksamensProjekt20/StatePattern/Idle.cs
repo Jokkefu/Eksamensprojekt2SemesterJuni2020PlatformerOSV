@@ -1,4 +1,5 @@
 ﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.MapNManager;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,19 @@ namespace EksamensProjekt20.StatePattern
             this.enemy = enemy;
             //velocity = new Vector2(0.001f, 0);
 
+        }
+        private void Blockinfo()
+        {
+            foreach (StageBlock stageBlock in GameManager.currentStage.stageSetup)
+            {
+                foreach (GameObject gameObject in stageBlock.terrainSetup)
+                {
+                    if (gameObject.tag == "Terrain")
+                    {
+
+                    }
+                }
+            }
         }
 
         public void Execute(double deltatime)
@@ -55,3 +69,16 @@ namespace EksamensProjekt20.StatePattern
         }
     }
 }
+/*GameManager.currentStage
+foreach (StageBlock stageBlock in currentStage.stageSetup)
+                {
+                    foreach (GameObject gameObject in stageBlock.terrainSetup)
+                    {
+                        if(gameObject.tag == "Terrain")
+                        {
+                            TerrainPiece temp = (TerrainPiece)gameObject;
+                            //Kode her
+                        }
+                    }
+                }
+temp.gamePosition*/
