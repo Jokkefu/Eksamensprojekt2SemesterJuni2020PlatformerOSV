@@ -24,6 +24,7 @@ namespace EksamensProjekt20.States
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(760, 500),
+                buttonSize = new Vector2(400, 80),
                 Text = "New Game",
             };
 
@@ -32,6 +33,7 @@ namespace EksamensProjekt20.States
             var leaderboardButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(760, 600),
+                buttonSize = new Vector2(400, 80),
                 Text = "Leaderboard",
             };
 
@@ -40,6 +42,7 @@ namespace EksamensProjekt20.States
             var quitGameButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(760, 700),
+                buttonSize = new Vector2(400, 80),
                 Text = "Quit Game",
             };
 

@@ -22,7 +22,8 @@ namespace EksamensProjekt20.States
 
             var returnButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(1700, 900),
+                Position = new Vector2(1000, 900),
+                buttonSize = new Vector2(400, 80),
                 Text = "Return",
             };
 

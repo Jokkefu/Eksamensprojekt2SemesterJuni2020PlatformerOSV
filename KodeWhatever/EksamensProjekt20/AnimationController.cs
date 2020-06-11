@@ -13,7 +13,7 @@ namespace EksamensProjekt20
 {
     class AnimationController
     {
-        public Texture2D[] spriteArray;
+        public Texture2D[] spriteArray = new Texture2D[0];
         private Texture2D currentSprite;
 
         public AnimationController()
@@ -22,7 +22,14 @@ namespace EksamensProjekt20
         }
         public Texture2D GetSprite()
         {
-            if (currentSprite == null) currentSprite = spriteArray[0];
+            if (currentSprite == null)
+            {
+                if (spriteArray.Length >= 1)
+                {
+                    currentSprite = spriteArray[0];
+                }
+                else currentSprite = null;
+            }
             return currentSprite;
         }
         public void SetSprite(int spriteIndex)

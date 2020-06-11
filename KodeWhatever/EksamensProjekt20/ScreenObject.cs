@@ -36,7 +36,11 @@ namespace EksamensProjekt20
             {
                 if (spriteRect.Bottom < Game1.screenSize.Y && spriteRect.Top > 0)
                 {
-                    spriteBatch.Draw(animation.GetSprite(), spriteRect, Color.White);
+                    Texture2D temp = animation.GetSprite();
+                    if (temp != null)
+                    {
+                        spriteBatch.Draw(temp, spriteRect, Color.White);
+                    }
                 }
             }
         }

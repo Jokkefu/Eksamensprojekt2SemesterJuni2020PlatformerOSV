@@ -47,6 +47,7 @@ namespace EksamensProjekt20.MapNManager
                     tempList.Add(new NormalPlatform(new Vector2(748, 419), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(55, 419), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(848, 420), blockNumber, false));
+                    tempList.Add(new Archibald(new Vector2(758, 430), blockNumber));
                     foreach(GameObject gO in tempList)
                     {
                         gO.gamePosition.Y += 100;

@@ -22,6 +22,7 @@ namespace EksamensProjekt20.PrimaryAttacks
             {
                 GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(10,0)));
             }
+            else GameManager.AddProjectile(new SwordSlashProjectile(basePower + unit.damage, unit.gamePosition + new Vector2(-10, 0)));
             base.Attack();
         }
         public override void HoldAttack()
