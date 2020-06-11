@@ -15,11 +15,7 @@ namespace EksamensProjekt20.Characters
         protected SecondaryAttack secondaryAttack;
         protected double secondaryDelay;
         protected float secondaryCD;
-        public Player()
-        {
-
-            
-        }
+        
         public override void Death()
         {
 
@@ -36,8 +32,6 @@ namespace EksamensProjekt20.Characters
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            spriteBatch.DrawString(ContentCollection.font, isGrounded.ToString(), new Vector2(10, 30), Color.Black);
-            spriteBatch.DrawString(ContentCollection.font, velocity.ToString(), new Vector2(10, 45), Color.Black);
         }
 
         public virtual void SecAttack()

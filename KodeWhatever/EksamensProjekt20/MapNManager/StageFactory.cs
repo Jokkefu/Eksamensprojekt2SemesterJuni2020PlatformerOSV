@@ -21,13 +21,15 @@ namespace EksamensProjekt20.MapNManager
         {
             Stage tempStage = new Stage(stageTheme);
             List<StageBlock> tempBlockList = new List<StageBlock>();
+            tempBlockList.Add(new StartPlatform());
             for(int i = 0; i < 8; i++)
             {
                 StageBlock tempBlock = new StageBlock();
-                tempBlock.terrainSetup = GenerateTerrain(random.Next(1,3), i);
+                tempBlock.terrainSetup = GenerateTerrain(random.Next(1,2), i);
                 tempBlockList.Add(tempBlock);
             }
             tempStage.stageSetup = tempBlockList;
+            tempBlockList.Add(new EndPlatform());
             return tempStage;
         }
         public List<GameObject> GenerateTerrain(int random, int blockNumber)
@@ -36,27 +38,22 @@ namespace EksamensProjekt20.MapNManager
             switch (random)
             {
                 case 1:
-                    tempList.Add(new Archibald(new Vector2(636, 372), blockNumber));
-                    tempList.Add(new NormalPlatform(new Vector2(18, 471), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(111, 471), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(193, 447), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(275, 422), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(358, 452), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(434, 484), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(527, 482), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(614, 482), blockNumber, true));
+                    tempList.Add(new NormalPlatform(new Vector2(155, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(255, 418), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(353, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(452, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(551, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(650, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(748, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(55, 419), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(848, 420), blockNumber, false));
+                    foreach(GameObject gO in tempList)
+                    {
+                        gO.gamePosition.Y += 100;
+                    }
                     break;
                 case 2:
-                    tempList.Add(new NormalPlatform(new Vector2(9, 457), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(81, 489), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(146, 519), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(226, 550), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(308, 578), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(376, 498), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(404, 441), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(435, 442), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(523, 441), blockNumber, false));
-                    tempList.Add(new Archibald(new Vector2(549, 332), blockNumber));
+                    
                     break;
             }
             return tempList;

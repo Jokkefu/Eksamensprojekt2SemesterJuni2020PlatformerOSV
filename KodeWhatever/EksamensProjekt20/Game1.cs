@@ -15,7 +15,7 @@ namespace EksamensProjekt20
     /// <summary>
     /// This is the main type for your game. Which lau's pc cant handle
     /// </summary>
-    public class Game1 : Game
+    class Game1 : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -24,14 +24,13 @@ namespace EksamensProjekt20
         private bool fullScreen = false;
         public static GameTime gameTime;
         private SpriteFont font;
-        GameManager gm;
+        public static GameManager gm;
         private int scene;
         Song song;
         private State menuState;
         private State leaderboardState;
-        bool stageChange;
         private bool gameStarted = false;
-
+        
 
         public Game1()
         {

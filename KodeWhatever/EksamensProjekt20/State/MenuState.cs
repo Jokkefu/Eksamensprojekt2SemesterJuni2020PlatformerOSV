@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.States
 {
-    public class MenuState : State
+    class MenuState : State
     {
         private List<Components> components;
         private Texture2D menuBackground;

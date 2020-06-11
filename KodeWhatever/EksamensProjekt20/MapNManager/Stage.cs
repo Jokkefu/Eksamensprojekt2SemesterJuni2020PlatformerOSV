@@ -17,15 +17,14 @@ namespace EksamensProjekt20.MapNManager
         public StartPlatform startPlatform;
         public EndPlatform endPlatform;
         public List<StageBlock> stageSetup = new List<StageBlock>();
-        public List<Enemy> enemySetup = new List<Enemy>();
-        private Texture2D mapSprite;
-        private Rectangle mapRect;
+        private Texture2D[] mapSprite = new Texture2D[5];
+        private Rectangle[] mapRect = new Rectangle[5];
         public Stage(int stageTheme)
         {
             switch (stageTheme)
             {
                 case 1:
-                    mapSprite = ContentCollection.background1;
+                    mapSprite = ContentCollection.background;
                     break;
                 
             }
@@ -34,15 +33,24 @@ namespace EksamensProjekt20.MapNManager
         }
         public void Update(Player pc)
         {
-            stageVector = new Vector2(-pc.gamePosition.X + (Game1.screenSize.X/2), 0);
+            if (pc.gamePosition.X >= 960)
+            {
+                if (pc.gamePosition.X <= 7500)
+                {
+                    stageVector = new Vector2(-pc.gamePosition.X + 960, 0);
+                }
+                else stageVector = new Vector2(-800, 0);
+            }
+            else stageVector = new Vector2(0, 0);
+
             int temp = 0;
-            if (pc.gamePosition.X >= 1000) temp++;
-            if (pc.gamePosition.X >= 2000) temp++;
-            if (pc.gamePosition.X >= 3000) temp++;
-            if (pc.gamePosition.X >= 4000) temp++;
-            if (pc.gamePosition.X >= 5000) temp++;
-            if (pc.gamePosition.X >= 6000) temp++;
-            if (pc.gamePosition.X >= 7000) temp++;
+            if (pc.gamePosition.X >= 500) temp++;
+            if (pc.gamePosition.X >= 1500) temp++;
+            if (pc.gamePosition.X >= 2500) temp++;
+            if (pc.gamePosition.X >= 3500) temp++;
+            if (pc.gamePosition.X >= 4500) temp++;
+            if (pc.gamePosition.X >= 5500) temp++;
+            if (pc.gamePosition.X >= 6500) temp++;
             currentBlock = temp;
             if (previousBlock < currentBlock)
             {
@@ -53,8 +61,16 @@ namespace EksamensProjekt20.MapNManager
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            mapRect = new Rectangle((int)stageVector.X, (int)stageVector.X, 7000, 2000);
-            //spriteBatch.Draw(mapSprite, mapRect, Color.White);
+            for(int i = currentBlock-1; i<=(currentBlock+1); i++)
+            {
+                if(i >= 0 && i <= 5)
+                {
+                    mapRect[i] = new Rectangle((int)stageVector.X + 1000 * i, 0, 1000, (int)Game1.screenSize.Y);
+                    spriteBatch.Draw(mapSprite[i], mapRect[i], Color.White);
+                }
+            }
+            
+            spriteBatch.DrawString(ContentCollection.font, stageVector.ToString(), new Vector2(10, 90), Color.Black);
             foreach(StageBlock block in stageSetup)
             {
                 block.Draw(spriteBatch);

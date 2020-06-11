@@ -28,10 +28,6 @@ namespace EksamensProjekt20
 
         public override void Update(double deltaTime)
         {
-            if(tag == "Enemy")
-            {
-                tag = "Enemy";
-            }
             Gravity(deltaTime);
             Movement(deltaTime);
             GameManager.CollisionCheck(this);
@@ -113,7 +109,7 @@ namespace EksamensProjekt20
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            screenPosition = gamePosition + Stage.stageVector - (spriteSize / 2);
+            screenPosition = gamePosition + Stage.stageVector - (spriteSize/2);
             base.Draw(spriteBatch);
         }
         public void Movement(double deltaTime)

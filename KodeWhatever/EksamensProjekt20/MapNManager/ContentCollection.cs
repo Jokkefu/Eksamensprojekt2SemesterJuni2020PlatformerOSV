@@ -19,7 +19,7 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D[] triggerPlatform = new Texture2D[1];
         public static Texture2D[] startPlatform = new Texture2D[1];
         public static Texture2D[] endPlatform = new Texture2D[1];
-        public static Texture2D background1;
+        public static Texture2D[] background = new Texture2D[5];
 
         //UI
         public static Texture2D container;
@@ -64,7 +64,10 @@ namespace EksamensProjekt20.MapNManager
             container = content.Load<Texture2D>("healthGauge");
             lifebar = content.Load<Texture2D>("healthBar");
 
-            //background1 = content.Load<Texture2D>("background1");
+            for(int i = 0; i < 5; i++)
+            {
+                background[i] = content.Load<Texture2D>($"background_{i+1}");
+            }
 
             //Enemy
             archibald[0] = content.Load<Texture2D>("archibald");

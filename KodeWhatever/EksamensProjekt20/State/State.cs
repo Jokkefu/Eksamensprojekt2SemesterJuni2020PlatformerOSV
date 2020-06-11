@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.States
 {
-    public abstract class State
+    abstract class State
     {
         protected ContentManager content1;
         protected GraphicsDevice graphicsDevice1;
