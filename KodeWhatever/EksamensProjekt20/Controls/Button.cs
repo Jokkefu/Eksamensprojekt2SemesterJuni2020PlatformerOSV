@@ -26,7 +26,7 @@ namespace EksamensProjekt20.Controls
         {
             get
             {
-                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+                return new Rectangle((int)Position.X, (int)Position.Y, 400, 80);
             }
         }
 
