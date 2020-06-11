@@ -17,9 +17,9 @@ namespace EksamensProjekt20.CommandPattern
         private MouseState preMouseState;
         public InputHandler()
         {
-            keybinds.Add(Keys.D, new MoveCommand(new Vector2(10, 0)));
-            keybinds.Add(Keys.A, new MoveCommand(new Vector2(-10, 0)));
-            keybinds.Add(Keys.W, new JumpCommand(new Vector2(0, -80)));
+            keybinds.Add(Keys.D, new MoveCommand(new Vector2(1, 0)));
+            keybinds.Add(Keys.A, new MoveCommand(new Vector2(-1, 0)));
+            keybinds.Add(Keys.W, new JumpCommand(new Vector2(0, -100)));
             mousebinds.Add(new PrimaryAttackCommand());
             mousebinds.Add(new SecondaryAttackCommand());
         }
