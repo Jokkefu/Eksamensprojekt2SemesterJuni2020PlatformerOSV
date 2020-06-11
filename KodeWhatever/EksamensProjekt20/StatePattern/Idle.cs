@@ -12,10 +12,6 @@ namespace EksamensProjekt20.StatePattern
     {
         private Vector2 velocity;
 
-        private float cooldown;
-
-        private float elapsed;
-
         private Enemy enemy;
 
         double currenttime = Game1.gameTime.ElapsedGameTime.TotalSeconds;

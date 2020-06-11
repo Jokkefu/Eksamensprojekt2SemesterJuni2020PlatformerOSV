@@ -12,30 +12,35 @@ namespace EksamensProjekt20.StatePattern
     {
         private Vector2 velocity;
 
-        private float cooldown;
-
-        private float elapsed;
-
         private Enemy enemy;
-
 
         public void Enter(Enemy enemy)
         {
             this.enemy = enemy;
-            enemy.movementSpeed = 200;
-            elapsed = 0;
+            //velocity = new Vector2(0.001f, 0);
 
         }
 
         public void Execute(double deltatime)
         {
-            //if ()
-            //ChangeState
+                if ( true == true)
+                {
+                    velocity = new Vector2(0.5f, 0);
+                    enemy.moveVector = velocity;
+                }/*
+                if ()
+                {
+                    velocity = new Vector2(-0.5f, 0);
+                    turntime = currenttime + 20;
+                    enemy.moveVector = velocity;
+                    timetoturn = true;
+                }*/
+            
         }
 
         public void Exit()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

@@ -29,6 +29,20 @@ namespace EksamensProjekt20.Characters
         {
             base.Update(deltaTime);
             currentState.Execute(deltaTime);
+            ChangeStateTrigger(deltaTime);
+        }
+        //Triggers the enemy to be Aggressive or idle depending on the following conditions
+        public void ChangeStateTrigger(double deltaTime)
+        {
+            //Aggro range
+            if (Game1.gm.playerCharacter.gamePosition.X > this.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X < this.gamePosition.X + 100 || Game1.gm.playerCharacter.gamePosition.X < this.gamePosition.X && Game1.gm.playerCharacter.gamePosition.X > this.gamePosition.X - 100)
+            {
+                ChangeState(new Attack());
+            }
+            else
+            {
+                ChangeState(new Idle());
+            }
         }
         public void ChangeState(IEnemyState newEnemyState)
         {
