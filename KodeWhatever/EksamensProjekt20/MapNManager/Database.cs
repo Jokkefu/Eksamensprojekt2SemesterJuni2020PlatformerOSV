@@ -1,6 +1,9 @@
 ﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.States;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -20,15 +23,12 @@ namespace EksamensProjekt20.MapNManager
             var connection = new SQLiteConnection("Data Source=oom.db; Version=3;New=True");
             connection.Open();
 
-            var cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Player (userID integer PRIMARY KEY, CurrentStageID integer, Highscore integer, Totalkills integer, CharacterKills integer, RunKills integer, Ranking integer, FOREIGN KEY (CurrentStageID) REFERENCES game(CurrentStage));", connection);
+            var cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Player (userID string PRIMARY KEY, CurrentStageID integer, Highscore integer, TotalKills integer);", connection);
             cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Leaderboard (userID integer PRIMARY KEY, Ranking integer, FOREIGN KEY (userID) REFERENCES player(userID), FOREIGN KEY (Highscore) REFERENCES player(Highscore), FOREIGN KEY (CurrentStageID) REFERENCES player(CurrentStageID));", connection);
+            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Leaderboard (userID string PRIMARY KEY, Ranking integer, Highscore integer, stagesCleared integer, FOREIGN KEY (userID) REFERENCES player(userID), FOREIGN KEY (Highscore) REFERENCES player(Highscore));", connection);
             cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Game (CurrentStage integer PRIMARY KEY, userID integer, FOREIGN KEY (userID) REFERENCES player (userID));", connection);
-            cmd.ExecuteNonQuery();
-          
             connection.Close();
         }
         public void InsertData()
@@ -51,39 +51,34 @@ namespace EksamensProjekt20.MapNManager
             //cmd = new SQLiteCommand("INSERT INTO Game (CurrentStage) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
 
-            var cmd = new SQLiteCommand($"INSERT INTO Player (CurrentStageID) VALUES ({gm.stageNumber})", connection);
+            var cmd = new SQLiteCommand($"INSERT INTO Player (userID, TotalKills) VALUES ({gm.playerID}, TotalKills + {GameManager.runKillSum})", connection);
+            cmd.ExecuteNonQuery(); 
+            
+            cmd = new SQLiteCommand($"INSERT INTO Leaderboard (userID, Highscore, stagesCleared) VALUES ({gm.playerID}, {GameManager.runKillSum}, {gm.stageNumber})", connection);
             cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("INSERT INTO Player (Highscore) VALUES (MAX(CurrentStageID) FROM Leaderboard)", connection);
-            cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand($"INSERT INTO Player (RunKills) VALUES ({GameManager.runKillSum})", connection);
-            cmd.ExecuteNonQuery();
-
-            cmd = new SQLiteCommand($"INSERT INTO Leaderboard (CurrentStageID) VALUES ({gm.stageNumber})", connection);
-            cmd.ExecuteNonQuery();
 
 
 
             connection.Close();
         }
-        public void ShowLeaderBoard()
+        public List<LeaderboardEntry> GetLeaderboard()
         {
+
             var connection = new SQLiteConnection("Data Source=oom.db; Version=3;New=True");
             connection.Open();
 
-            var cmd = new SQLiteCommand("SELECT * FROM Leaderboard ORDER BY CurrentStageID DESC", connection);
-            var dataset = cmd.ExecuteReader();
-
-            cmd = new SQLiteCommand("SELECT (RunKills) FROM Player", connection);
-            var dataset1 = cmd.ExecuteReader();
-
-            while (dataset.Read())
+            var cmd = new SQLiteCommand($"SELECT * from Leaderboard");
+            var dataSet = cmd.ExecuteReader();
+            List<LeaderboardEntry> leaderList = new List<LeaderboardEntry>();
+            while (dataSet.Read())
             {
-                var CurrentStageID = dataset.GetInt32(0);
+                leaderList.Add(new LeaderboardEntry(dataSet.GetInt32(4),dataSet.GetString(0)));
             }
 
             connection.Close();
+            return leaderList;
         }
 
     }

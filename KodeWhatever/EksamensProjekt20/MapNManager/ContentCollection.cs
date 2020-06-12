@@ -26,6 +26,7 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D lifebar;
         public static Texture2D menuBackground;
         public static Texture2D buttonTexture;
+        public static Texture2D titleSprite;
         
 
         //Character
@@ -78,10 +79,10 @@ namespace EksamensProjekt20.MapNManager
             menuBackground = content.Load<Texture2D>("MenuBackground");
             buttonTexture = content.Load<Texture2D>("Controls/Knap");
             buttonFont = content.Load<SpriteFont>("Fonts/Font");
-
+            //titleSprite = content.Load<Texture2D>("title");
 
             //Enemy
-            archibald[0] = content.Load<Texture2D>("archibald");
+            archibald[0] = content.Load<Texture2D>("Archibald");
             blob[0] = content.Load<Texture2D>("Blob");
 
             /*

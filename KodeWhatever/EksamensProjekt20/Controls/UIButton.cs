@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EksamensProjekt20.Controls
 {
-    class Button : Components
+    class UIButton : Components
     {
         private MouseState currentMouse;
         private SpriteFont _font;
@@ -33,7 +33,7 @@ namespace EksamensProjekt20.Controls
 
 
 
-        public Button(Texture2D texture, SpriteFont font)
+        public UIButton(Texture2D texture, SpriteFont font)
         {
             _texture = texture;
             _font = font;

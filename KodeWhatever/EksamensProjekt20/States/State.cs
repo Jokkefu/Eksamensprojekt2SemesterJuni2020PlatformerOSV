@@ -15,6 +15,7 @@ namespace EksamensProjekt20.States
         protected GraphicsDevice graphicsDevice1;
         protected Game1 game1;
         protected Texture2D menuBackground;
+        protected Texture2D lbBackground;
 
         public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
 

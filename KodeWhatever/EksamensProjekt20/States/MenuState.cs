@@ -14,14 +14,15 @@ namespace EksamensProjekt20.States
     class MenuState : State
     {
         private List<Components> components;
-
+        private Texture2D titleSprite;
+        
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content) : base(game, graphicsDevice, content)
         {
             menuBackground = ContentCollection.menuBackground;
             var buttonTexture = ContentCollection.buttonTexture;
             var buttonFont = ContentCollection.buttonFont;
 
-            var newGameButton = new Button(buttonTexture, buttonFont)
+            var newGameButton = new UIButton(buttonTexture, buttonFont)
             {
                 Position = new Vector2(760, 500),
                 buttonSize = new Vector2(400, 80),
@@ -30,7 +31,7 @@ namespace EksamensProjekt20.States
 
             newGameButton.Click += NewGameButton_Click;
 
-            var leaderboardButton = new Button(buttonTexture, buttonFont)
+            var leaderboardButton = new UIButton(buttonTexture, buttonFont)
             {
                 Position = new Vector2(760, 600),
                 buttonSize = new Vector2(400, 80),
@@ -39,7 +40,7 @@ namespace EksamensProjekt20.States
 
             leaderboardButton.Click += LeaderboardButton_Click;
 
-            var quitGameButton = new Button(buttonTexture, buttonFont)
+            var quitGameButton = new UIButton(buttonTexture, buttonFont)
             {
                 Position = new Vector2(760, 700),
                 buttonSize = new Vector2(400, 80),
@@ -54,6 +55,8 @@ namespace EksamensProjekt20.States
                 leaderboardButton,
                 quitGameButton,
             };
+            //titleSprite = ContentCollection.titleSprite;
+            
 
 
         }
@@ -76,8 +79,8 @@ namespace EksamensProjekt20.States
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(menuBackground, new Rectangle(0, 0, 1920, 1080), Color.White);
-            foreach (var component in components)
-                component.Draw(gameTime, spriteBatch);
+            //spriteBatch.Draw(titleSprite, new Rectangle(300, 200, 800, 200), Color.White);
+            foreach (var component in components) component.Draw(gameTime, spriteBatch);
             
             
         }

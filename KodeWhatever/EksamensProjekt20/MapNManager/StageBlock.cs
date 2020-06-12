@@ -20,14 +20,17 @@ namespace EksamensProjekt20.MapNManager
         {
             foreach(GameObject gO in terrainSetup)
             {
-                gO.Draw(spriteBatch);
+                if (gO.visible)
+                {
+                    gO.Draw(spriteBatch);
+                }
             }
         }
         public void Update(double deltaTime)
         {
             foreach(GameObject gO in terrainSetup)
             {
-                if(gO.tag == "Terrain")
+                if(gO.tag == "Terrain" || gO.tag == "TriggerPlatform")
                 {
                     gO.Update(deltaTime);
                 }

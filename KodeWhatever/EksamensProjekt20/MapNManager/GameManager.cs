@@ -1,10 +1,12 @@
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
 using EksamensProjekt20.Projectiles;
+using EksamensProjekt20.States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,20 +25,29 @@ namespace EksamensProjekt20.MapNManager
         private static List<Projectile> projectiles = new List<Projectile>();
         private static List<Projectile> rProjectiles = new List<Projectile>();
         private Game1 gameInstance;
+        public static bool nextActive;
+        public static bool endActive;
+        public string playerID;
+
         public GameManager(Game1 gInstance)
         {
             gameInstance = gInstance;
+            database = new Database(this);
+            database.CreateTables();
+            playerID = "Player1";
         }
-        public void EndRun()
+        private void EndRun()
         {
-            database.InsertData();
+            //database.InsertData();
+            gameInstance.ChangeScene(0);
         }
         public void NextStage()
         {
             stageNumber++;
             currentStage = stageFactory.GenerateStage(1);
             currentStage.StartUnits(0);
-            playerCharacter.gamePosition = new Vector2(40, 0);
+            playerCharacter.gamePosition = new Vector2(200, 350);
+            nextActive = false;
         }
         public void StartGame()
         {
@@ -58,11 +69,31 @@ namespace EksamensProjekt20.MapNManager
         }
         public void Update(float deltaTime)
         {
+            foreach (StageBlock stageBlock in currentStage.stageSetup)
+            {
+                foreach (GameObject gameObject in stageBlock.terrainSetup)
+                {
+                    if(gameObject.tag == "TriggerPlatform")
+                    {
+                        CollisionCheck(gameObject);
+                    }
+                }
+            }
+            if (nextActive)
+            {
+                NextStage();
+            }
+            if (endActive)
+            {
+                EndRun();
+            }
             inputHandler.Execute(playerCharacter);
             foreach (Projectile proj in projectiles)
             {
                 proj.Update(deltaTime);
+                CollisionCheck(proj);
             }
+
             foreach(Projectile projectile in rProjectiles)
             {
                 projectiles.Remove(projectile);
@@ -71,7 +102,7 @@ namespace EksamensProjekt20.MapNManager
             currentStage.Update(playerCharacter);
             currentStage.Update(deltaTime);
         }
-
+        
         public static void AddProjectile(Projectile projectile)
         {
             projectiles.Add(projectile);
@@ -81,18 +112,8 @@ namespace EksamensProjekt20.MapNManager
         {
             rProjectiles.Add(projectile);
         }
-        public static void AddKill(Enemy unit)
+        public static void AddKill()
         {
-            foreach(StageBlock sB in currentStage.stageSetup)
-            {
-                foreach(GameObject gO in sB.terrainSetup)
-                {
-                    if(gO == unit)
-                    {
-                        sB.RemoveObject(unit);
-                    }
-                }
-            }
             runKillSum++;
         }
         public static void CollisionCheck(GameObject originalObject)
@@ -104,12 +125,15 @@ namespace EksamensProjekt20.MapNManager
                     foreach (GameObject gameObject in stageBlock.terrainSetup)
                     {
                         originalObject.GroundCollisionDetection(gameObject);
+                        originalObject.CollisionDetection(gameObject);
                     }
                 }
-                
             }
         }
-        
+        public List<LeaderboardEntry> GetLeaderboard()
+        {
+            return database.GetLeaderboard();
+        }
         public void DatabaseSetup()
         {
             database = new Database(this);

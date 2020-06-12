@@ -63,13 +63,16 @@ namespace EksamensProjekt20.Characters
                 stopwatch.Start();
                 Update(deltaTime);
                 stopwatch.Stop();
-                deltaTime = stopwatch.Elapsed.TotalSeconds*8;
+                deltaTime = stopwatch.Elapsed.TotalSeconds;
             }
         }
         public virtual void Attack()
         {
-            primaryAttack.Attack();
-            attackDelay = attackSpeed;
+            if (attackDelay <= 0)
+            {
+                primaryAttack.Attack();
+                attackDelay = attackSpeed;
+            }
         }
         
         public virtual void Spell()
@@ -147,5 +150,6 @@ namespace EksamensProjekt20.Characters
             TakeDamage(10);
             base.OutOfBounds();
         }
+
     }
 }

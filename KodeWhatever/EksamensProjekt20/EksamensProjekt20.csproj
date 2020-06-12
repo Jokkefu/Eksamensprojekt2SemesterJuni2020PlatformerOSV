@@ -61,7 +61,7 @@
     <Compile Include="CommandPattern\PrimaryAttackCommand.cs" />
     <Compile Include="CommandPattern\SecondaryAttackCommand.cs" />
     <Compile Include="CommandPattern\SpellCommand.cs" />
-    <Compile Include="Controls\Button.cs" />
+    <Compile Include="Controls\UIButton.cs" />
     <Compile Include="Controls\Components.cs" />
     <Compile Include="ExecutionStopwatch.cs" />
     <Compile Include="MapNManager\ClimbablePlatform.cs" />
@@ -154,10 +154,11 @@
     <Compile Include="StatePattern\Attack.cs" />
     <Compile Include="StatePattern\Idle.cs" />
     <Compile Include="StatePattern\IEnemyState.cs" />
-    <Compile Include="State\GameState.cs" />
-    <Compile Include="State\LeaderboardState.cs" />
-    <Compile Include="State\MenuState.cs" />
-    <Compile Include="State\State.cs" />
+    <Compile Include="States\GameState.cs" />
+    <Compile Include="States\LeaderboardEntry.cs" />
+    <Compile Include="States\LeaderboardState.cs" />
+    <Compile Include="States\MenuState.cs" />
+    <Compile Include="States\State.cs" />
     <Compile Include="Projectiles\SpitProjectile.cs" />
     <Compile Include="Projectiles\SwipeProjectile.cs" />
     <Compile Include="Projectiles\ThunderSlamProjectile.cs" />

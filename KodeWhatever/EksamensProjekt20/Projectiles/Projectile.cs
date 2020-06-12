@@ -17,6 +17,7 @@ namespace EksamensProjekt20.Projectiles
         protected bool timed;
         protected int damage;
         protected float speed;
+        protected List<Character> hitUnits = new List<Character>();
 
         public Projectile(int power, Vector2 origin, Vector2 heading)
         {
@@ -24,7 +25,7 @@ namespace EksamensProjekt20.Projectiles
             gamePosition = origin;
             velocity = heading;
         }
-        public virtual void OnHit(GameObject other)
+        protected override void OnCollision(GameObject other)
         {
             if (other.tag == "Terrain")
             {
@@ -32,7 +33,19 @@ namespace EksamensProjekt20.Projectiles
             }
             else if (other.tag == "Enemy")
             {
-                EnemyHit((Character)other);
+                bool targetHit = false;
+                foreach(Character hit in hitUnits)
+                {
+                    if(other == hit)
+                    {
+                        targetHit = true;
+                    }
+                }
+                if (!targetHit)
+                {
+                    EnemyHit((Character)other);
+                }
+
             }
         }
         protected void EndProjectile()
@@ -58,7 +71,7 @@ namespace EksamensProjekt20.Projectiles
         }
         protected virtual void EnemyHit(Character other)
         {
-
+            hitUnits.Add(other);
         }
     }
 }
