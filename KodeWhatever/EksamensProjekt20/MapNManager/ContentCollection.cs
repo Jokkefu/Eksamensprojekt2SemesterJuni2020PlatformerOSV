@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
 using System;
@@ -44,10 +45,11 @@ namespace EksamensProjekt20.MapNManager
 
         //Projectiles
         public static Texture2D arrow;
-        public static Texture2D[] projectile = new Texture2D[1];
+        public static Texture2D[] projectile = new Texture2D[2];
 
         //Sound
         public static Song song;
+        public static SoundEffect swing;
 
         //Fonts
         public static SpriteFont font;
@@ -71,6 +73,8 @@ namespace EksamensProjekt20.MapNManager
 
             container = content.Load<Texture2D>("healthBar");
             lifebar = content.Load<Texture2D>("healthGauge");
+
+            swing = content.Load<SoundEffect>("swingsound");
 
             for(int i = 0; i < 5; i++)
             {
@@ -98,8 +102,8 @@ namespace EksamensProjekt20.MapNManager
 
             arrow = content.Load<Texture2D>("arrow");
             */
-            projectile[0] = content.Load<Texture2D>("ProjectileTest");
-
+            projectile[0] = content.Load<Texture2D>("swingright");
+            projectile[1] = content.Load<Texture2D>("swingleft");
             #region WarriorArray
             warrior[0] = content.Load<Texture2D>("Warrior");//Venstre
             warrior[1] = content.Load<Texture2D>("Warrior1");//Højre

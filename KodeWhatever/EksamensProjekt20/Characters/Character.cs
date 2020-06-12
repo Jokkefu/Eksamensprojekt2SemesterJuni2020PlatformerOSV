@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using EksamensProjekt20.StatePattern;
 using DiagnosticsUtils;
 using EksamensProjekt20.MapNManager;
+using Microsoft.Xna.Framework.Audio;
 
 namespace EksamensProjekt20.Characters
 {
