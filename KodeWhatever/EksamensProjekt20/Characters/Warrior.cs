@@ -26,7 +26,7 @@ namespace EksamensProjekt20.Characters
             maxHealth = 100;
             currentHealth = maxHealth;
             healthRegen = 1;
-            damage = 30;
+            damage = 50;
             primaryAttack = new SwordSlash(this);
             secondaryAttack = new Rage(this);
             attackSpeed = 1;
