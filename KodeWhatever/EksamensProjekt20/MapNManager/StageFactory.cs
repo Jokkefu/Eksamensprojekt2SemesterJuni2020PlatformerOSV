@@ -54,7 +54,7 @@ namespace EksamensProjekt20.MapNManager
                     tempList.Add(new NormalPlatform(new Vector2(652, 904), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(750, 904), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(850, 904), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(559, 873), blockNumber, true));
+                    tempList.Add(new NormalPlatform(new Vector2(559, 873), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(920, 874), blockNumber, true));
                     tempList.Add(new NormalPlatform(new Vector2(775, 751), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(951, 844), blockNumber, false));
@@ -81,8 +81,6 @@ namespace EksamensProjekt20.MapNManager
                     tempList.Add(new NormalPlatform(new Vector2(647, 613), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(747, 613), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(839, 613), blockNumber, false));
-                    tempList.Add(new NormalPlatform(new Vector2(804, 582), blockNumber, true));
-                    tempList.Add(new NormalPlatform(new Vector2(155, 568), blockNumber, true));
                     tempList.Add(new Archibald(new Vector2(501, 534), blockNumber));
                     tempList.Add(new Blob(new Vector2(295, 532), blockNumber));
                     tempList.Add(new Blob(new Vector2(694, 532), blockNumber));

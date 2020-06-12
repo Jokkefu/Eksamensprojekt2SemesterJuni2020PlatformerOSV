@@ -16,13 +16,14 @@ namespace EksamensProjekt20.StatePattern
         private Enemy enemy;
 
         double currenttime = Game1.gameTime.ElapsedGameTime.TotalSeconds;
-        double turntime = 0;
-        bool timetoturn = false;
+
+        private bool turnRight;
 
         public void Enter(Enemy enemy)
         {
             this.enemy = enemy;
             //velocity = new Vector2(0.001f, 0);
+
 
         }
         private void Blockinfo()
@@ -33,7 +34,23 @@ namespace EksamensProjekt20.StatePattern
                 {
                     if (gameObject.tag == "Terrain")
                     {
+                        if ((this.enemy.gamePosition.X + (gameObject.spriteRect.Width * 2) > gameObject.spriteRect.Right && this.enemy.gamePosition.X - (gameObject.spriteRect.Width * 2) < gameObject.spriteRect.Left) && (this.enemy.spriteRect.Bottom + 30 > gameObject.gamePosition.Y && this.enemy.spriteRect.Bottom - 30 < gameObject.gamePosition.Y))
+                        {
+                            if (this.enemy.spriteRect.Right > gameObject.spriteRect.Right)
+                            {
+                                turnRight = false;
+                            }
 
+                            //venstre
+                            else if (this.enemy.spriteRect.Left < gameObject.spriteRect.Left)
+                            {
+
+                                turnRight = true;
+
+                            }
+
+
+                        }
                     }
                 }
             }
@@ -41,26 +58,18 @@ namespace EksamensProjekt20.StatePattern
 
         public void Execute(double deltatime)
         {
-
-            currenttime += deltatime;
-
-            if (currenttime > turntime)
+            Blockinfo();
+            if (turnRight == true)
             {
-                if (timetoturn == true)
-                {
-                    velocity = new Vector2 (0.5f, 0);
-                    turntime = currenttime + 20;
-                    enemy.moveVector = velocity;
-                    timetoturn = false;
-                }
-                else if (timetoturn == false)
-                {
-                    velocity = new Vector2 (-0.5f, 0);
-                    turntime = currenttime + 20;
-                    enemy.moveVector = velocity;
-                    timetoturn = true;
-                }
+                  velocity = new Vector2 (0.5f, 0);
+                  enemy.moveVector = velocity;
             }
+            if (turnRight == false)
+            {
+                velocity = new Vector2 (-0.5f, 0);
+                enemy.moveVector = velocity;
+            }
+            
         }
 
         public void Exit()
