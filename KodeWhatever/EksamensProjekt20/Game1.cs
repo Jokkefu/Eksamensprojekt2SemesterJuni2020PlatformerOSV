@@ -29,7 +29,7 @@ namespace EksamensProjekt20
         private Song song;
         private State menuState;
         private State leaderboardState;
-        private bool gameStarted = false;
+        public bool gameStarted = false;
         
 
         public Game1()
@@ -72,6 +72,7 @@ namespace EksamensProjekt20
             font = ContentCollection.font;
             song = ContentCollection.song;
             MediaPlayer.Play(song);
+            MediaPlayer.Volume = 0.1f;
             MediaPlayer.IsRepeating = true;
             // TODO: use this.Content to load your game content here
         }
