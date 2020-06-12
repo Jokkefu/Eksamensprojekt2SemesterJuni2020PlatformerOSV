@@ -29,7 +29,7 @@ namespace EksamensProjekt20
         private Song song;
         private State menuState;
         private State leaderboardState;
-        private bool gameStarted = false;
+        public bool gameStarted = false;
         
 
         public Game1()
