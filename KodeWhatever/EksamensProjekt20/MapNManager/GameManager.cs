@@ -22,15 +22,19 @@ namespace EksamensProjekt20.MapNManager
         private InputHandler inputHandler = new InputHandler();
         private static List<Projectile> projectiles = new List<Projectile>();
         private static List<Projectile> rProjectiles = new List<Projectile>();
-
+        private Game1 gameInstance;
+        public GameManager(Game1 gInstance)
+        {
+            gameInstance = gInstance;
+        }
         public void EndRun()
         {
             database.InsertData();
         }
         public void NextStage()
         {
-            //stageNumber++;
-            currentStage = stageFactory.GenerateStage(stageNumber);
+            stageNumber++;
+            currentStage = stageFactory.GenerateStage(1);
             currentStage.StartUnits(0);
             playerCharacter.gamePosition = new Vector2(40, 0);
         }
@@ -38,14 +42,11 @@ namespace EksamensProjekt20.MapNManager
         {
             playerCharacter = new Warrior();
             stageNumber = 1;
-            currentStage = stageFactory.GenerateStage(stageNumber);
+            currentStage = stageFactory.GenerateStage(1);
             currentStage.StartUnits(0);
             currentStage.StartUnits(1);
         }
-        public void OutOfBoundsCheck()
-        {
-
-        }
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             currentStage.Draw(spriteBatch);
@@ -68,6 +69,7 @@ namespace EksamensProjekt20.MapNManager
             }
             rProjectiles = new List<Projectile>();
             currentStage.Update(playerCharacter);
+            currentStage.Update(deltaTime);
         }
 
         public static void AddProjectile(Projectile projectile)
@@ -85,7 +87,10 @@ namespace EksamensProjekt20.MapNManager
             {
                 foreach(GameObject gO in sB.terrainSetup)
                 {
-
+                    if(gO == unit)
+                    {
+                        sB.RemoveObject(unit);
+                    }
                 }
             }
             runKillSum++;

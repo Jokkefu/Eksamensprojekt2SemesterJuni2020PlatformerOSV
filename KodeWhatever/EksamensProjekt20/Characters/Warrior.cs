@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using EksamensProjekt20.UI;
 
 namespace EksamensProjekt20.Characters
 {
     class Warrior : Player
     {
+        private HealthBar hpBar;
         public Warrior()
         {
+            hpBar = new HealthBar(this);
             animation.spriteArray = ContentCollection.warrior;
             spriteSize = new Vector2(40, 100);
             gamePosition = new Vector2(200, 350);
@@ -27,6 +31,10 @@ namespace EksamensProjekt20.Characters
             secondaryCD = 10;
             StartThread();
         }
-
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            hpBar.Draw(spriteBatch);
+            base.Draw(spriteBatch);
+        }
     }
 }

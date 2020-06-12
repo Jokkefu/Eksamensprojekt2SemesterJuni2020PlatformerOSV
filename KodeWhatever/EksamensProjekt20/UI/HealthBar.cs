@@ -11,14 +11,14 @@ namespace EksamensProjekt20.UI
     class HealthBar
     {
         private Texture2D container, lifeBar;
-        private Enemy character;
+        private Character character;
         private Rectangle containerRect;
         private Rectangle lifebarRect;
 
 
-        public HealthBar(Enemy enemyinstance)
+        public HealthBar(Character instance)
         {
-            character = enemyinstance;
+            character = instance;
             container = ContentCollection.container;
             lifeBar = ContentCollection.lifebar;
         }
@@ -29,9 +29,10 @@ namespace EksamensProjekt20.UI
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            containerRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, 40, 15);
             lifebarRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, (int)(40 * character.currentHealth / character.maxHealth), 15);
-            
+            containerRect = new Rectangle((int)character.screenPosition.X, (int)character.screenPosition.Y + 100, 40, 15);
+
+
 
             spriteBatch.Draw(container, containerRect, Color.White);
             spriteBatch.Draw(lifeBar, lifebarRect, Color.White);

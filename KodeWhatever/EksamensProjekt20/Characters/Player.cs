@@ -1,5 +1,6 @@
 ﻿using EksamensProjekt20.MapNManager;
 using EksamensProjekt20.SecondaryAttacks;
+using EksamensProjekt20.UI;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -16,9 +17,10 @@ namespace EksamensProjekt20.Characters
         protected double secondaryDelay;
         protected float secondaryCD;
         
+        
         public override void Death()
         {
-
+            
             base.Death();
         }
         public void Move(Vector2 velocity)
@@ -26,11 +28,11 @@ namespace EksamensProjekt20.Characters
             moveVector = velocity;
             if(velocity.X > 0)
             {
-                animation.Walking(true);
+                lookingRight = true;
             }
             else if (velocity.X < 0)
             {
-                animation.Walking(false);
+                lookingRight = false;
             }
         }
         public override void Update(double deltaTime)
@@ -39,6 +41,7 @@ namespace EksamensProjekt20.Characters
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
+            
             base.Draw(spriteBatch);
         }
 

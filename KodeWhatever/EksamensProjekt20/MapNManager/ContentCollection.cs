@@ -68,8 +68,8 @@ namespace EksamensProjekt20.MapNManager
             startPlatform[0] = content.Load<Texture2D>("platform texture 6");
             endPlatform[0] = content.Load<Texture2D>("platform texture 6");
 
-            container = content.Load<Texture2D>("healthGauge");
-            lifebar = content.Load<Texture2D>("healthBar");
+            container = content.Load<Texture2D>("healthBar");
+            lifebar = content.Load<Texture2D>("healthGauge");
 
             for(int i = 0; i < 5; i++)
             {

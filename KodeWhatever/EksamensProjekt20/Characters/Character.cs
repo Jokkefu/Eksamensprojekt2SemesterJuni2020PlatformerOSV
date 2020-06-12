@@ -38,7 +38,12 @@ namespace EksamensProjekt20.Characters
         private List<Buff> buffRemovals = new List<Buff>();
         
 
-
+        public Character()
+        {
+            gravityOn = true;
+            returnValue = -20;
+                
+        }
         
         public void StartThread()
         {
@@ -58,7 +63,7 @@ namespace EksamensProjekt20.Characters
                 stopwatch.Start();
                 Update(deltaTime);
                 stopwatch.Stop();
-                deltaTime = stopwatch.Elapsed.TotalSeconds*8f;
+                deltaTime = stopwatch.Elapsed.TotalSeconds*8;
             }
         }
         public virtual void Attack()
@@ -114,7 +119,6 @@ namespace EksamensProjekt20.Characters
             }
             buffRemovals = new List<Buff>();
             if (attackDelay > 0) attackDelay -= deltaTime;
-            if (gamePosition.Y >= Game1.screenSize.Y + 20) OutOfBounds();
             base.Update(deltaTime);
         }
         public void AddBuff(Buff buff)
@@ -138,10 +142,10 @@ namespace EksamensProjekt20.Characters
             }
         }
 
-        public void OutOfBounds()
+        public override void OutOfBounds()
         {
-            gamePosition.Y = -10;
             TakeDamage(10);
+            base.OutOfBounds();
         }
     }
 }
