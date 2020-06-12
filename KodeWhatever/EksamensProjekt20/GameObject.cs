@@ -23,12 +23,16 @@ namespace EksamensProjekt20
         public Vector2 gamePosition;
         private Vector2 actualVelocity;
         public float movementSpeed;
-        private GameObject standingOn;
-
+        protected GameObject standingOn;
+        protected bool gravityOn;
+        protected float returnValue;
 
         public override void Update(double deltaTime)
         {
-            Gravity(deltaTime);
+            if (gravityOn)
+            {
+                Gravity(deltaTime);
+            }
             Movement(deltaTime);
             GameManager.CollisionCheck(this);
             base.Update(deltaTime);
@@ -66,13 +70,9 @@ namespace EksamensProjekt20
                     velocity.X = 0;
                 }
             }
-            if (isGrounded)
-            {
-                if(standingOn.spriteRect.Left>spriteRect.Right || standingOn.spriteRect.Right < spriteRect.Left)
-                {
-                    isGrounded = false;
-                }
-            }
+            
+
+
         }
         public void CharacterCollisionDetection(Character other1)
         {
@@ -97,15 +97,28 @@ namespace EksamensProjekt20
 
         public void Gravity(double deltaTime)
         {
+            
             if (isGrounded == false)
             {
-                velocity += new Vector2(0, (float)(50 * deltaTime));
+                velocity += new Vector2(0, (float)(40 * deltaTime));
             }
-            else if (isGrounded == true)
+            else
             {
-                velocity.Y = 0;
+                if (standingOn.spriteRect.Left > spriteRect.Right || standingOn.spriteRect.Right < spriteRect.Left || standingOn.spriteRect.Top > spriteRect.Bottom + 5)
+                {
+                    isGrounded = false;
+                }
+                else velocity.Y = 0;
+
 
             }
+
+            if (gamePosition.Y >= Game1.screenSize.Y + 20) OutOfBounds();
+
+        }
+        public virtual void OutOfBounds()
+        {
+            gamePosition.Y = returnValue;
         }
         public override void Draw(SpriteBatch spriteBatch)
         {

@@ -55,6 +55,7 @@ namespace EksamensProjekt20.Characters
         {
             base.Draw(spriteBatch);
             healthBar.Draw(spriteBatch);
+            
         }
     }
 }

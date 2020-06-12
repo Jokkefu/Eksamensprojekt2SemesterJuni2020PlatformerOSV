@@ -12,6 +12,8 @@ namespace EksamensProjekt20.MapNManager
     {
         public TerrainPiece(Vector2 pos, int blockNumber, bool flipped)
         {
+            gravityOn = false;
+            returnValue = pos.Y;
             tag = "Terrain";
             gamePosition = pos + new Vector2((1000 * blockNumber) + 500, 0);
             if (flipped)

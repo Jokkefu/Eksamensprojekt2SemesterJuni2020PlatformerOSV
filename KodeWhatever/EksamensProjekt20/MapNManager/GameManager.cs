@@ -34,8 +34,8 @@ namespace EksamensProjekt20.MapNManager
         }
         public void NextStage()
         {
-            //stageNumber++;
-            currentStage = stageFactory.GenerateStage(stageNumber);
+            stageNumber++;
+            currentStage = stageFactory.GenerateStage(1);
             currentStage.StartUnits(0);
             playerCharacter.gamePosition = new Vector2(40, 0);
         }
@@ -43,14 +43,11 @@ namespace EksamensProjekt20.MapNManager
         {
             playerCharacter = new Warrior();
             stageNumber = 1;
-            currentStage = stageFactory.GenerateStage(stageNumber);
+            currentStage = stageFactory.GenerateStage(1);
             currentStage.StartUnits(0);
             currentStage.StartUnits(1);
         }
-        public void OutOfBoundsCheck()
-        {
-
-        }
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             currentStage.Draw(spriteBatch);
@@ -73,6 +70,7 @@ namespace EksamensProjekt20.MapNManager
             }
             rProjectiles = new List<Projectile>();
             currentStage.Update(playerCharacter);
+            currentStage.Update(deltaTime);
         }
 
         public static void AddProjectile(Projectile projectile)
@@ -90,7 +88,10 @@ namespace EksamensProjekt20.MapNManager
             {
                 foreach(GameObject gO in sB.terrainSetup)
                 {
-
+                    if(gO == unit)
+                    {
+                        sB.RemoveObject(unit);
+                    }
                 }
             }
             runKillSum++;
