@@ -19,6 +19,9 @@ namespace EksamensProjekt20.MapNManager
         public List<StageBlock> stageSetup = new List<StageBlock>();
         private Texture2D[] mapSprite = new Texture2D[5];
         private Rectangle[] mapRect = new Rectangle[5];
+        public int[] sequence;
+
+
         public Stage(int stageTheme)
         {
             switch (stageTheme)
@@ -59,6 +62,13 @@ namespace EksamensProjekt20.MapNManager
             previousBlock = currentBlock;
         }
 
+        public void Update(double deltaTime)
+        {
+            foreach (StageBlock sB in stageSetup)
+            {
+                sB.Update(deltaTime);
+            }
+        }
         public void Draw(SpriteBatch spriteBatch)
         {
             int temp = 0;
@@ -77,7 +87,7 @@ namespace EksamensProjekt20.MapNManager
                 }
             }
             
-            spriteBatch.DrawString(ContentCollection.font, stageVector.ToString(), new Vector2(10, 90), Color.Black);
+            spriteBatch.DrawString(ContentCollection.font, $"Sequence: {sequence[0]}, {sequence[1]}, {sequence[2]}, {sequence[3]}, {sequence[4]}, {sequence[5]}, {sequence[6]}, {sequence[7]}", new Vector2(10, 90), Color.Black);
             foreach(StageBlock block in stageSetup)
             {
                 block.Draw(spriteBatch);

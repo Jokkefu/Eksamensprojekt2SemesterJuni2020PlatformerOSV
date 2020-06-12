@@ -11,9 +11,24 @@ namespace EksamensProjekt20.MapNManager
     class FallingPlatform : TerrainPiece
     {
         private double delay;
-        public FallingPlatform(Vector2 pos, int blockNumber, bool rotated) : base(pos, blockNumber, rotated)
+        public FallingPlatform(Vector2 pos, int blockNumber, bool rotated, float triggerDelay) : base(pos, blockNumber, rotated)
         {
             animation.spriteArray = ContentCollection.fallingPlatform;
+            delay = triggerDelay;
+        }
+        public override void Update(double deltaTime)
+        {
+            if (delay > 0)
+            {
+                delay -= deltaTime;
+            }
+            else gravityOn = true;
+            base.Update(deltaTime);
+        }
+        public override void OutOfBounds()
+        {
+            base.OutOfBounds();
+            gravityOn = false;
         }
     }
 }

@@ -47,7 +47,8 @@ namespace EksamensProjekt20.Characters
         }
         public override void Death()
         {
-            GameManager.AddKill(this);
+            GameManager.AddKill();
+            visible = false;
             base.Death();
 
         }
@@ -55,6 +56,7 @@ namespace EksamensProjekt20.Characters
         {
             base.Draw(spriteBatch);
             healthBar.Draw(spriteBatch);
+            
         }
     }
 }
