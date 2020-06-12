@@ -13,7 +13,7 @@ namespace EksamensProjekt20.Characters
     {
         public Blob(Vector2 position, int block) : base(position, block)
         {
-            currentSprite = ContentCollection.blob[0];
+            animation.spriteArray = ContentCollection.blob;
             spriteSize = new Vector2(50, 40);
             movementSpeed = 10f;
             maxHealth = 100;
@@ -21,6 +21,7 @@ namespace EksamensProjekt20.Characters
             healthRegen = 1;
             primaryAttack = new Spit(this);
             attackSpeed = 1;
+            tag = "Enemy";
         }
     }
 }

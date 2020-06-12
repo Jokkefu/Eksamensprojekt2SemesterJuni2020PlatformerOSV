@@ -64,9 +64,9 @@ namespace EksamensProjekt20.MapNManager
         public static void LoadContent(ContentManager content)
         {
             normalPlatform[0] = content.Load<Texture2D>("platform texture 1");
-            slowingPlatform[0] = content.Load<Texture2D>("platform texture 2");
+            slowingPlatform[0] = content.Load<Texture2D>("platform texture 4");
             fallingPlatform[0] = content.Load<Texture2D>("platform texture 3");
-            climbablePlatform[0] = content.Load<Texture2D>("platform texture 4");
+            climbablePlatform[0] = content.Load<Texture2D>("platform texture 2");
             triggerPlatform[0] = content.Load<Texture2D>("platform texture 5");
             startPlatform[0] = content.Load<Texture2D>("platform texture 6");
             endPlatform[0] = content.Load<Texture2D>("platform texture 6");

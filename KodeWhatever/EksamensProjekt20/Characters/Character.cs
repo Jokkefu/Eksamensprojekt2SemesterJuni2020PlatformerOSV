@@ -148,7 +148,7 @@ namespace EksamensProjekt20.Characters
 
         public override void OutOfBounds()
         {
-            TakeDamage(10);
+            TakeDamage(20);
             base.OutOfBounds();
         }
 

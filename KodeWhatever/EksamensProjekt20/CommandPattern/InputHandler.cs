@@ -19,7 +19,7 @@ namespace EksamensProjekt20.CommandPattern
         {
             keybinds.Add(Keys.D, new MoveCommand(new Vector2(1, 0)));
             keybinds.Add(Keys.A, new MoveCommand(new Vector2(-1, 0)));
-            keybinds.Add(Keys.W, new JumpCommand(new Vector2(0, -100)));
+            keybinds.Add(Keys.W, new JumpCommand(new Vector2(0, -110)));
             mousebinds.Add(new PrimaryAttackCommand());
             mousebinds.Add(new SecondaryAttackCommand());
         }
