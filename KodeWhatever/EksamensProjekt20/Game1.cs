@@ -52,7 +52,7 @@ namespace EksamensProjekt20
             ApplyGraphics();
             // TODO: Add your initialization logic here
             IsMouseVisible = true;
-            gm = new GameManager();
+            gm = new GameManager(this);
 
             inputHandler = new InputHandler();
             base.Initialize();

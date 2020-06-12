@@ -22,10 +22,15 @@ namespace EksamensProjekt20.MapNManager
         private InputHandler inputHandler = new InputHandler();
         private static List<Projectile> projectiles = new List<Projectile>();
         private static List<Projectile> rProjectiles = new List<Projectile>();
-
+        private Game1 gameInstance;
+        public GameManager(Game1 gInstance)
+        {
+            gameInstance = gInstance;
+        }
         public void EndRun()
         {
             database.InsertData();
+            gameInstance.ChangeScene(0);
         }
         public void NextStage()
         {
