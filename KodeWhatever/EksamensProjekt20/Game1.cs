@@ -72,6 +72,7 @@ namespace EksamensProjekt20
             font = ContentCollection.font;
             song = ContentCollection.song;
             MediaPlayer.Play(song);
+            MediaPlayer.Volume = 0.1f;
             MediaPlayer.IsRepeating = true;
             // TODO: use this.Content to load your game content here
         }
