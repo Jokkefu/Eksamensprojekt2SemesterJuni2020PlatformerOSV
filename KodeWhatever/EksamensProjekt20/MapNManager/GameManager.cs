@@ -27,14 +27,18 @@ namespace EksamensProjekt20.MapNManager
         private Game1 gameInstance;
         public static bool nextActive;
         public static bool endActive;
+        public string playerID;
 
         public GameManager(Game1 gInstance)
         {
             gameInstance = gInstance;
+            database = new Database(this);
+            database.CreateTables();
+            playerID = "Player1";
         }
         private void EndRun()
         {
-            database.InsertData();
+            //database.InsertData();
             gameInstance.ChangeScene(0);
         }
         public void NextStage()

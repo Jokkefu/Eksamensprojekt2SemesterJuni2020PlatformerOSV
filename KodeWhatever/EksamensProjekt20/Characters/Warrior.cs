@@ -20,7 +20,7 @@ namespace EksamensProjekt20.Characters
             hpBar = new HealthBar(this);
             tag = "Player";
             animation.spriteArray = ContentCollection.warrior;
-            spriteSize = new Vector2(40, 100);
+            spriteSize = new Vector2(40, 90);
             gamePosition = new Vector2(200, 350);
             movementSpeed = 150;
             maxHealth = 100;

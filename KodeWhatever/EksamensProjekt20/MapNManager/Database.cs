@@ -23,12 +23,12 @@ namespace EksamensProjekt20.MapNManager
             var connection = new SQLiteConnection("Data Source=oom.db; Version=3;New=True");
             connection.Open();
 
-            var cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Player (userID string PRIMARY KEY, CurrentStageID integer, Highscore integer, Totalkills integer, CharacterKills integer, RunKills integer, Ranking integer, FOREIGN KEY (CurrentStageID) REFERENCES game(CurrentStage));", connection);
+            var cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Player (userID string PRIMARY KEY, CurrentStageID integer, Highscore integer, TotalKills integer);", connection);
             cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Leaderboard VARCHAR 10 (userID string PRIMARY KEY, Ranking integer, FOREIGN KEY (userID) REFERENCES player(userID), FOREIGN KEY (Highscore) REFERENCES player(Highscore), FOREIGN KEY (CurrentStageID) REFERENCES player(CurrentStageID));", connection);
+            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Leaderboard (userID string PRIMARY KEY, Ranking integer, Highscore integer, stagesCleared integer, FOREIGN KEY (userID) REFERENCES player(userID), FOREIGN KEY (Highscore) REFERENCES player(Highscore));", connection);
             cmd.ExecuteNonQuery();
-          
+
             connection.Close();
         }
         public void InsertData()
@@ -51,31 +51,13 @@ namespace EksamensProjekt20.MapNManager
             //cmd = new SQLiteCommand("INSERT INTO Game (CurrentStage) VALUES (placeholder)", connection);
             //cmd.ExecuteNonQuery();
 
-            var cmd = new SQLiteCommand($"INSERT INTO Player (CurrentStageID) VALUES ({gm.stageNumber})", connection);
+            var cmd = new SQLiteCommand($"INSERT INTO Player (userID, TotalKills) VALUES ({gm.playerID}, TotalKills + {GameManager.runKillSum})", connection);
+            cmd.ExecuteNonQuery(); 
+            
+            cmd = new SQLiteCommand($"INSERT INTO Leaderboard (userID, Highscore, stagesCleared) VALUES ({gm.playerID}, {GameManager.runKillSum}, {gm.stageNumber})", connection);
             cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("SELECT (Highscore) from Player", connection);
-            var dataSet = cmd.ExecuteReader();
-            bool newHighScore = false;
-            while (dataSet.Read())
-            {
-                int currScore = dataSet.GetInt32(0);
-                if (currScore > GameManager.runKillSum)
-                {
-                    newHighScore = true;
-                }
-            }
-            if (newHighScore)
-            {
-                cmd = new SQLiteCommand($"INSERT INTO Player (Highscore) VALUES ({GameManager.runKillSum})");
-                cmd.ExecuteNonQuery();
-            }
 
-            cmd = new SQLiteCommand($"INSERT INTO Player (RunKills) VALUES (RunKills + {GameManager.runKillSum})", connection);
-            cmd.ExecuteNonQuery();
-
-            cmd = new SQLiteCommand($"INSERT INTO Leaderboard (CurrentStageID) VALUES ({gm.stageNumber})", connection);
-            cmd.ExecuteNonQuery();
 
 
 
