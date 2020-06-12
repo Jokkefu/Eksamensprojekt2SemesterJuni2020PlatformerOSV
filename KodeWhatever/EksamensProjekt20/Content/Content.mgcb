@@ -213,7 +213,7 @@
 /processorParam:TextureFormat=Color
 /build:platform texture 1.png
 
-#begin platform texture 2.png
+#begin platform texture 2 (2).png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -223,7 +223,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:platform texture 2.png
+/build:platform texture 2 (2).png;platform texture 2 .png
 
 #begin platform texture 3.png
 /importer:TextureImporter
