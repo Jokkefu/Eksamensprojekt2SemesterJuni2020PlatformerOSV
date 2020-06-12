@@ -1,4 +1,6 @@
 ﻿using EksamensProjekt20.Characters;
+using EksamensProjekt20.States;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -23,7 +25,7 @@ namespace EksamensProjekt20.MapNManager
             var cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Player (userID integer PRIMARY KEY, CurrentStageID integer, Highscore integer, Totalkills integer, CharacterKills integer, RunKills integer, Ranking integer, FOREIGN KEY (CurrentStageID) REFERENCES game(CurrentStage));", connection);
             cmd.ExecuteNonQuery();
 
-            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Leaderboard (userID integer PRIMARY KEY, Ranking integer, FOREIGN KEY (userID) REFERENCES player(userID), FOREIGN KEY (Highscore) REFERENCES player(Highscore), FOREIGN KEY (CurrentStageID) REFERENCES player(CurrentStageID));", connection);
+            cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Leaderboard VARCHAR 10 (userID integer PRIMARY KEY, Ranking integer, FOREIGN KEY (userID) REFERENCES player(userID), FOREIGN KEY (Highscore) REFERENCES player(Highscore), FOREIGN KEY (CurrentStageID) REFERENCES player(CurrentStageID));", connection);
             cmd.ExecuteNonQuery();
 
             cmd = new SQLiteCommand("CREATE TABLE IF NOT EXISTS Game (CurrentStage integer PRIMARY KEY, userID integer, FOREIGN KEY (userID) REFERENCES player (userID));", connection);
@@ -67,20 +69,25 @@ namespace EksamensProjekt20.MapNManager
 
             connection.Close();
         }
-        public void ShowLeaderBoard()
+        public void ShowLeaderBoard(SQLiteCommand command)
         {
+
             var connection = new SQLiteConnection("Data Source=oom.db; Version=3;New=True");
             connection.Open();
 
-            var cmd = new SQLiteCommand("SELECT * FROM Leaderboard ORDER BY CurrentStageID DESC", connection);
-            var dataset = cmd.ExecuteReader();
+            command = new SQLiteCommand("CREATE UNIQUE INDEX Ranking ON Leaderboard(CurrentStageID); ");
+            var dataset1 = command.ExecuteReader();
 
-            cmd = new SQLiteCommand("SELECT (RunKills) FROM Player", connection);
-            var dataset1 = cmd.ExecuteReader();
+            command = new SQLiteCommand("CREATE VIEW leaderboard (Ranking) AS TEXT SELECT FROM Leaderboard ORDER BY CurrentStageID DESC", connection);
+            var dataset = command.ExecuteReader();
 
             while (dataset.Read())
             {
                 var CurrentStageID = dataset.GetInt32(0);
+            }
+            while (dataset1.Read())
+            {
+                var Ranking = dataset1.GetInt32(0);
             }
 
             connection.Close();

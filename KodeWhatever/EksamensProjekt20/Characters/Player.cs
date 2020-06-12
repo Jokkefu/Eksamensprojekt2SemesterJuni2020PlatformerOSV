@@ -16,10 +16,15 @@ namespace EksamensProjekt20.Characters
         protected SecondaryAttack secondaryAttack;
         protected double secondaryDelay;
         protected float secondaryCD;
+        private GameManager gameManager;
         
         
         public override void Death()
         {
+            if (currentHealth <= 0)
+            {
+                gameManager.EndRun();
+            }
             
             base.Death();
         }
@@ -37,6 +42,7 @@ namespace EksamensProjekt20.Characters
         }
         public override void Update(double deltaTime)
         {
+            this.Death();
             base.Update(deltaTime);
         }
         public override void Draw(SpriteBatch spriteBatch)

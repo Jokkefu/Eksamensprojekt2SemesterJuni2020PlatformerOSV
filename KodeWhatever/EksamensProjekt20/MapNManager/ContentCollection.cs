@@ -81,7 +81,7 @@ namespace EksamensProjekt20.MapNManager
 
 
             //Enemy
-            archibald[0] = content.Load<Texture2D>("archibald");
+            archibald[0] = content.Load<Texture2D>("Archibald");
             blob[0] = content.Load<Texture2D>("Blob");
 
             /*

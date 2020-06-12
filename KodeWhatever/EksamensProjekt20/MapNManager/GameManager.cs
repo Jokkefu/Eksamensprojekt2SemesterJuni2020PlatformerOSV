@@ -34,6 +34,7 @@ namespace EksamensProjekt20.MapNManager
         public void EndRun()
         {
             database.InsertData();
+            gameInstance.ChangeScene(0);
         }
         public void NextStage()
         {
