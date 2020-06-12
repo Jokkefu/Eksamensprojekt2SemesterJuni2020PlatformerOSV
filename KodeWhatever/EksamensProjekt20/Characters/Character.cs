@@ -68,8 +68,11 @@ namespace EksamensProjekt20.Characters
         }
         public virtual void Attack()
         {
-            primaryAttack.Attack();
-            attackDelay = attackSpeed;
+            if (attackDelay <= 0)
+            {
+                primaryAttack.Attack();
+                attackDelay = attackSpeed;
+            }
         }
         
         public virtual void Spell()

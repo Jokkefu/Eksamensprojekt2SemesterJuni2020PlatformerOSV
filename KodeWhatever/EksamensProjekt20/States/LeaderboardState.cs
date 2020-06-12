@@ -17,6 +17,7 @@ namespace EksamensProjekt20.States
     {
         //private Database leaderboard;
         private List<Components> components;
+        private List<LeaderboardEntry> entries = new List<LeaderboardEntry>();
         public LeaderboardState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content/*,Database lBoard*/) : base(game, graphicsDevice, content)
         {
             menuBackground = ContentCollection.menuBackground;
@@ -25,7 +26,7 @@ namespace EksamensProjekt20.States
             lbBackground = ContentCollection.buttonTexture;
             //lBoard = leaderboard;
 
-            var returnButton = new Button(buttonTexture, buttonFont)
+            var returnButton = new UIButton(buttonTexture, buttonFont)
             {
                 Position = new Vector2(1000, 900),
                 buttonSize = new Vector2(400, 80),
@@ -34,23 +35,12 @@ namespace EksamensProjekt20.States
             returnButton.Click += ReturnButton_Click;
 
 
-            var leaderBoard = new Button(buttonTexture, buttonFont)
+            var leaderBoard = new UIButton(buttonTexture, buttonFont)
             {
                 Position = new Vector2(50, 100),
                 buttonSize = new Vector2(500, 800),
-                Text =
-                $"High Score:   " +
-                "\nRun Nr. 2:   " +
-                "\nRun Nr. 3:   " +
-                "\nRun Nr. 4:   " +
-                "\nRun Nr. 5:   " +
-                "\nRun Nr. 6:   " +
-                "\nRun Nr. 7:   " +
-                "\nRun Nr. 8:   " +
-                "\nRun Nr. 9:   " +
-                "\nRun Nr. 10:   ",
+                Text = "",
             };
-
             components = new List<Components>()
             {
                 returnButton,
@@ -68,8 +58,7 @@ namespace EksamensProjekt20.States
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(menuBackground, new Rectangle(0, 0, 1920, 1080), Color.White);
-            foreach (var component in components)
-                component.Draw(gameTime, spriteBatch);
+            foreach (var component in components) component.Draw(gameTime, spriteBatch);
             
         }
 
@@ -80,8 +69,21 @@ namespace EksamensProjekt20.States
 
         public override void Update(GameTime gameTime)
         {
-            foreach (var component in components)
-                component.Update(gameTime);
+            foreach (var component in components) component.Update(gameTime);
+            
+        }
+        private string GetBoardString()
+        {
+            return $"High Score: {entries[0].kills}, by {entries[0].name} " +
+                $"\nRun Nr. 2: {entries[1].kills}, by {entries[1].name} " +
+                $"\nRun Nr. 3: {entries[2].kills}, by {entries[2].name}  " +
+                $"\nRun Nr. 4: {entries[3].kills}, by {entries[3].name}  " +
+                $"\nRun Nr. 5: {entries[4].kills}, by {entries[4].name}  " +
+                $"\nRun Nr. 6: {entries[5].kills}, by {entries[5].name}  " +
+                $"\nRun Nr. 7: {entries[6].kills}, by {entries[6].name}  " +
+                $"\nRun Nr. 8: {entries[7].kills}, by {entries[7].name}  " +
+                $"\nRun Nr. 9: {entries[8].kills}, by {entries[8].name}  " +
+                $"\nRun Nr. 10: {entries[9].kills}, by {entries[9].name}  ";
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using EksamensProjekt20.Characters;
 using EksamensProjekt20.CommandPattern;
 using EksamensProjekt20.Projectiles;
+using EksamensProjekt20.States;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -25,13 +26,13 @@ namespace EksamensProjekt20.MapNManager
         private static List<Projectile> rProjectiles = new List<Projectile>();
         private Game1 gameInstance;
         public static bool nextActive;
-
+        public static bool endActive;
 
         public GameManager(Game1 gInstance)
         {
             gameInstance = gInstance;
         }
-        public void EndRun()
+        private void EndRun()
         {
             database.InsertData();
             gameInstance.ChangeScene(0);
@@ -78,6 +79,10 @@ namespace EksamensProjekt20.MapNManager
             {
                 NextStage();
             }
+            if (endActive)
+            {
+                EndRun();
+            }
             inputHandler.Execute(playerCharacter);
             foreach (Projectile proj in projectiles)
             {
@@ -121,7 +126,10 @@ namespace EksamensProjekt20.MapNManager
                 }
             }
         }
-        
+        public List<LeaderboardEntry> GetLeaderboard()
+        {
+            return database.GetLeaderboard();
+        }
         public void DatabaseSetup()
         {
             database = new Database(this);

@@ -26,6 +26,7 @@ namespace EksamensProjekt20.MapNManager
         public static Texture2D lifebar;
         public static Texture2D menuBackground;
         public static Texture2D buttonTexture;
+        public static Texture2D titleSprite;
         
 
         //Character

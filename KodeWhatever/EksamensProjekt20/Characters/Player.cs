@@ -15,15 +15,14 @@ namespace EksamensProjekt20.Characters
     {
         protected SecondaryAttack secondaryAttack;
         protected double secondaryDelay;
-        protected float secondaryCD;
-        private GameManager gameManager;
+        protected double secondaryCD;
         
         
         public override void Death()
         {
             if (currentHealth <= 0)
             {
-                gameManager.EndRun();
+                GameManager.endActive = true;
             }
             
             base.Death();
@@ -42,19 +41,25 @@ namespace EksamensProjekt20.Characters
         }
         public override void Update(double deltaTime)
         {
-            this.Death();
             base.Update(deltaTime);
+            if (secondaryDelay > 0)
+            {
+                secondaryDelay -= deltaTime;
+            }
+
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(ContentCollection.font, tag, new Vector2(70, 80), Color.Black);
             base.Draw(spriteBatch);
         }
 
         public virtual void SecAttack()
         {
-            secondaryAttack.Attack();
-            secondaryDelay = secondaryCD;
+            if (secondaryCD <= 0)
+            {
+                secondaryAttack.Attack();
+                secondaryDelay = secondaryCD;
+            }
         }
         
     }
