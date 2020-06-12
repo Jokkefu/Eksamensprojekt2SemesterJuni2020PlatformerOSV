@@ -63,7 +63,7 @@ namespace EksamensProjekt20.Characters
                 stopwatch.Start();
                 Update(deltaTime);
                 stopwatch.Stop();
-                deltaTime = stopwatch.Elapsed.TotalSeconds*8;
+                deltaTime = stopwatch.Elapsed.TotalSeconds;
             }
         }
         public virtual void Attack()
@@ -147,5 +147,6 @@ namespace EksamensProjekt20.Characters
             TakeDamage(10);
             base.OutOfBounds();
         }
+
     }
 }

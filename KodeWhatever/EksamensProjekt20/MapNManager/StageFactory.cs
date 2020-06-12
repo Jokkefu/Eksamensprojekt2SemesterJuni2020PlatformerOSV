@@ -29,7 +29,7 @@ namespace EksamensProjekt20.MapNManager
                 StageBlock tempBlock = new StageBlock();
                 int rnd = random.Next(1, mapCount+1);
                 sequence[i] = rnd;
-                tempBlock.terrainSetup = GenerateTerrain(rnd, i);
+                tempBlock.terrainSetup = GenerateTerrain(0, i);
                 tempBlockList.Add(tempBlock);
             }
             tempStage.stageSetup = tempBlockList;
@@ -43,6 +43,20 @@ namespace EksamensProjekt20.MapNManager
             
             switch (rnd)
             {
+                default:
+                    tempList.Add(new NormalPlatform(new Vector2(49, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(147, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(246, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(346, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(445, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(545, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(644, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(744, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(844, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(943, 526), blockNumber, false));
+                    tempList.Add(new NormalPlatform(new Vector2(967, 526), blockNumber, false));
+                    break;
+
                 case 1:
                     tempList.Add(new NormalPlatform(new Vector2(48, 529), blockNumber, false));
                     tempList.Add(new NormalPlatform(new Vector2(145, 529), blockNumber, false));

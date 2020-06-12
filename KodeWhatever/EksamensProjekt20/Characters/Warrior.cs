@@ -18,13 +18,15 @@ namespace EksamensProjekt20.Characters
         public Warrior()
         {
             hpBar = new HealthBar(this);
+            tag = "Player";
             animation.spriteArray = ContentCollection.warrior;
             spriteSize = new Vector2(40, 100);
             gamePosition = new Vector2(200, 350);
-            movementSpeed = 30f;
+            movementSpeed = 1000f;
             maxHealth = 100;
             currentHealth = maxHealth;
             healthRegen = 1;
+            damage = 10;
             primaryAttack = new SwordSlash(this);
             secondaryAttack = new Rage(this);
             attackSpeed = 1;

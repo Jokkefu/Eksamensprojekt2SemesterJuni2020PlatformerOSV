@@ -17,8 +17,8 @@ namespace EksamensProjekt20
     /// </summary>
     class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
         private InputHandler inputHandler;
         public static Vector2 screenSize;
         private bool fullScreen = false;
@@ -26,7 +26,7 @@ namespace EksamensProjekt20
         private SpriteFont font;
         public static GameManager gm;
         private int scene;
-        Song song;
+        private Song song;
         private State menuState;
         private State leaderboardState;
         private bool gameStarted = false;

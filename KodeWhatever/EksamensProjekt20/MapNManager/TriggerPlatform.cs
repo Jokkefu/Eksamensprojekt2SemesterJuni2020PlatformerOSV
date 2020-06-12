@@ -12,8 +12,18 @@ namespace EksamensProjekt20.MapNManager
     {
         public TriggerPlatform(Vector2 pos, int blockNumber, bool rotated) : base(pos, blockNumber, rotated)
         {
-            
+            exteriorCollision = false;
             animation.spriteArray = ContentCollection.triggerPlatform;
+            tag = "TriggerPlatform";
+        }
+
+        protected override void OnCollision(GameObject other)
+        {
+            if(other.tag == "Player")
+            {
+                GameManager.nextActive = true;
+                base.OnCollision(other);
+            }
         }
     }
 }

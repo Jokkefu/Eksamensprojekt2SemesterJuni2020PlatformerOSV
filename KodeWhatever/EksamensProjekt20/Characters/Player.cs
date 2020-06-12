@@ -41,7 +41,7 @@ namespace EksamensProjekt20.Characters
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
-            
+            spriteBatch.DrawString(ContentCollection.font, tag, new Vector2(70, 80), Color.Black);
             base.Draw(spriteBatch);
         }
 
