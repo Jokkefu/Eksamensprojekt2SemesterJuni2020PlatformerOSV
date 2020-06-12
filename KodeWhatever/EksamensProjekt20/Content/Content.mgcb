@@ -297,6 +297,12 @@
 /processorParam:TextureFormat=Color
 /build:swingright.png
 
+#begin swingsound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:swingsound.wav
+
 #begin title.png
 /importer:TextureImporter
 /processor:TextureProcessor
