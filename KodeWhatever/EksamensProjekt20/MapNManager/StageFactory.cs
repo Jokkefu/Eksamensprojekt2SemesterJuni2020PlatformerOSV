@@ -29,7 +29,7 @@ namespace EksamensProjekt20.MapNManager
                 StageBlock tempBlock = new StageBlock();
                 int rnd = random.Next(1, mapCount+1);
                 sequence[i] = rnd;
-                tempBlock.terrainSetup = GenerateTerrain(0, i);
+                tempBlock.terrainSetup = GenerateTerrain(rnd, i);
                 tempBlockList.Add(tempBlock);
             }
             tempStage.stageSetup = tempBlockList;

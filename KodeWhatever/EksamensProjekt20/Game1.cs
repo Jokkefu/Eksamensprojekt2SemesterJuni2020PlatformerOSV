@@ -71,7 +71,7 @@ namespace EksamensProjekt20
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = ContentCollection.font;
             song = ContentCollection.song;
-            //MediaPlayer.Play(song);
+            MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
             // TODO: use this.Content to load your game content here
         }
@@ -139,7 +139,6 @@ namespace EksamensProjekt20
                     if (GameManager.currentStage != null)
                     {
                         gm.Draw(spriteBatch);
-                        spriteBatch.DrawString(font, gm.playerCharacter.gamePosition.ToString(), new Vector2(10, 10), Color.Black);
                     }
                     break;
                 case 2:

@@ -87,7 +87,6 @@ namespace EksamensProjekt20.MapNManager
                 }
             }
             
-            spriteBatch.DrawString(ContentCollection.font, $"Sequence: {sequence[0]}, {sequence[1]}, {sequence[2]}, {sequence[3]}, {sequence[4]}, {sequence[5]}, {sequence[6]}, {sequence[7]}", new Vector2(10, 90), Color.Black);
             foreach(StageBlock block in stageSetup)
             {
                 block.Draw(spriteBatch);

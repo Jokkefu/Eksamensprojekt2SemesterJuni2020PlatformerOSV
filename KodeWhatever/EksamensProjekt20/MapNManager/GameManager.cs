@@ -69,6 +69,10 @@ namespace EksamensProjekt20.MapNManager
         }
         public void Update(float deltaTime)
         {
+            if (playerCharacter.gamePosition.X >= 9000)
+            {
+                NextStage();
+            }
             foreach (StageBlock stageBlock in currentStage.stageSetup)
             {
                 foreach (GameObject gameObject in stageBlock.terrainSetup)
