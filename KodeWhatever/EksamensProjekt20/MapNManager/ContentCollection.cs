@@ -83,7 +83,7 @@ namespace EksamensProjekt20.MapNManager
             menuBackground = content.Load<Texture2D>("MenuBackground");
             buttonTexture = content.Load<Texture2D>("Controls/Knap");
             buttonFont = content.Load<SpriteFont>("Fonts/Font");
-            //titleSprite = content.Load<Texture2D>("title");
+            titleSprite = content.Load<Texture2D>("title");
 
             //Enemy
             archibald[0] = content.Load<Texture2D>("Archibald");
