@@ -16,7 +16,11 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+<<<<<<< HEAD
     <PublishUrl>publish\</PublishUrl>
+=======
+    <PublishUrl>C:\Users\lau\Desktop\climbing hell\</PublishUrl>
+>>>>>>> 3668255be4ad270d51f9029c96941376ec430967
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,10 +30,18 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+<<<<<<< HEAD
+=======
+    <AutorunEnabled>true</AutorunEnabled>
+>>>>>>> 3668255be4ad270d51f9029c96941376ec430967
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+<<<<<<< HEAD
+=======
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+>>>>>>> 3668255be4ad270d51f9029c96941376ec430967
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -56,6 +68,18 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2F020342C9FE65AF3FE46AED55387CC81864DA2C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>EksamensProjekt20_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnimationController.cs" />
@@ -259,6 +283,7 @@
     <None Include="Content\obj\Windows\platform texture 6.mgcontent" />
     <None Include="Content\obj\Windows\Warrior.mgcontent" />
     <None Include="Content\obj\Windows\Warrior1.mgcontent" />
+    <None Include="EksamensProjekt20_TemporaryKey.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

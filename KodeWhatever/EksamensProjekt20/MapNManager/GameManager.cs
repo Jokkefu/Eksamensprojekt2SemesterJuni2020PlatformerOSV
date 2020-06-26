@@ -67,6 +67,8 @@ namespace EksamensProjekt20.MapNManager
             {
                 proj.Draw(spriteBatch);
             }
+            spriteBatch.DrawString(ContentCollection.font, $"Round: { stageNumber}", new Vector2(1700, 50), Color.Yellow);
+
         }
         public void Update(float deltaTime)
         {
